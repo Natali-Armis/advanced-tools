@@ -2,7 +2,10 @@ package aws_client
 
 import (
 	"context"
+	"fmt"
 	"strings"
+
+	"advanced-tools/pkg/vars"
 
 	aws_config "github.com/aws/aws-sdk-go-v2/config"
 	as "github.com/aws/aws-sdk-go-v2/service/autoscaling"
@@ -46,6 +49,8 @@ func GetAwsClient(profile string, region string) *AwsClient {
 }
 
 func (client *AwsClient) DescribeAutoScalingGroups(clusterNameSubstring string) ([]as_types.AutoScalingGroup, error) {
+	clusterNameSubstring = strings.ReplaceAll(clusterNameSubstring, "-", "_")
+	clusterNameSubstring = fmt.Sprintf("%v_%v", clusterNameSubstring, vars.ASG_REQUIRED_LABEL)
 	output, err := client.asgClient.DescribeAutoScalingGroups(context.TODO(), &as.DescribeAutoScalingGroupsInput{})
 	if err != nil {
 		log.Error().Msgf("error during describing cluster %v autoscaling groups %v", clusterNameSubstring, err.Error())
