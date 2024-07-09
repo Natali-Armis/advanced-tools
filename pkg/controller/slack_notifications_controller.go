@@ -2,6 +2,7 @@ package controller
 
 import (
 	"advanced-tools/pkg/client"
+	"advanced-tools/pkg/vars"
 )
 
 type SlackNotificationController struct {
@@ -12,4 +13,8 @@ func GetSlackNotificationController(clients *client.Client) *SlackNotificationCo
 	return &SlackNotificationController{
 		clients: clients,
 	}
+}
+
+func (controller *SlackNotificationController) NotifyInUpgradeNotificationsChannel(message string) error {
+	return controller.clients.SlackClient.SendMessage(vars.SlackUpgradeNotificationsChannel, message)
 }

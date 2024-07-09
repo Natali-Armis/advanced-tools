@@ -3,6 +3,9 @@ package manager
 import (
 	"advanced-tools/pkg/client"
 	"advanced-tools/pkg/controller"
+	"advanced-tools/pkg/entity"
+	"fmt"
+	"strings"
 )
 
 type KubernetesUpgradeManager struct {
@@ -21,6 +24,15 @@ func (manager *KubernetesUpgradeManager) Run() {
 	// pre process
 	// lock loop on request to start upgrade process by a devops team member - input should contain "target version: [target version]"
 	// post to channel "upgrade process is starting, stage [pre-process-validations], target version [provided target version]"
+	asgs, err := manager.k8sUpgradeController.GetASGsNodeList()
+	if err != nil {
+		return
+	}
+	asgsStr := formatOutAsgNodeList(asgs)
+	err = manager.slackNotificationController.NotifyInUpgradeNotificationsChannel(asgsStr)
+	if err != nil {
+		return
+	}
 	// verify all nodes are in the same version
 	// post result to channel, wait for response: abort or proceed
 	// perform search of all crash loop / image pull err / errored pods in cluster
@@ -43,4 +55,17 @@ func (manager *KubernetesUpgradeManager) Run() {
 	// upgrade process is in finalize state
 	// post report of all non aligned nodes if any
 	// post report of imagepull / crashloop / errored pods in cluster
+}
+
+func formatOutAsgNodeList(asgList []*entity.ASGNodeList) string {
+	var builder strings.Builder
+	fmt.Fprintf(&builder, "%-140s %-40s %-30s %-60s %-20s\n", "AutoScaling Group", "Service Label", "Instance ID", "Private DNS", "Kubelet Version")
+	fmt.Fprintf(&builder, "%-100s %-30s %-30s %-60s %-20s\n", strings.Repeat("-", 100), strings.Repeat("-", 30), strings.Repeat("-", 30), strings.Repeat("-", 60), strings.Repeat("-", 20))
+
+	for _, asg := range asgList {
+		for _, node := range asg.NodeList {
+			fmt.Fprintf(&builder, "%-100s %-30s %-30s %-60s %-20s\n", asg.AsgName, asg.Label, node.InstanceId, node.PrivateDnsName, node.KubeletVersion)
+		}
+	}
+	return "\n" + builder.String() + "\n"
 }
