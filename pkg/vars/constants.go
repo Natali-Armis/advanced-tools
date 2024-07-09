@@ -3,6 +3,8 @@ package vars
 import (
 	"fmt"
 	"os"
+
+	"github.com/rs/zerolog/log"
 )
 
 const (
@@ -46,34 +48,38 @@ const (
 	DEBUG = "debug"
 
 	// env vars names
-	SERVER_TYPE = "SERVER_TYPE"
-	ENVIRONMENT = "ENVIRONMENT"
-	LOG_LEVEL   = "LOG_LEVEL"
-	AWS_PROFILE = "AWS_PROFILE"
-	AWS_REGION  = "AWS_REGION"
+	PROMETHEUS_SERVER_TYPE = "SERVER_TYPE"
+	PROMETHEUS_URL         = "PROMETHEUS_URL"
+	ENVIRONMENT            = "ENVIRONMENT"
+	LOG_LEVEL              = "LOG_LEVEL"
+	AWS_PROFILE            = "AWS_PROFILE"
+	AWS_REGION             = "AWS_REGION"
+	SLACK_AUTH_TOKEN       = "SLACK_AUTH_TOKEN"
 
 	// env vars default
-	SERVER_TYPE_DEFAULT = FEDERATION
-	ENVIRONMENT_DEFAULT = DEV
-	LOG_LEVEL_DEFAULT   = DEBUG
-	AWS_PROFILE_DEFAULT = PROFILE_DEFAULT
-	AWS_REGION_DEFAULT  = US_EAST_1
+	PROMETHEUS_SERVER_TYPE_DEFAULT = FEDERATION
+	ENVIRONMENT_DEFAULT            = DEV
+	LOG_LEVEL_DEFAULT              = DEBUG
+	AWS_PROFILE_DEFAULT            = PROFILE_DEFAULT
+	AWS_REGION_DEFAULT             = US_EAST_1
 
 	// misc
-	ASG_REQUIRED_LABEL           = "k8s_armis_com"
-	INGRESS_NAMESPACE            = "ingress-nginx"
-	INGRESS_LABEL_SELECTOR       = "app.kubernetes.io/component"
-	INGRESS_LABEL_SELECTOR_VALUE = "controller"
+	ASG_REQUIRED_LABEL            = "k8s_armis_com"
+	INGRESS_NAMESPACE             = "ingress-nginx"
+	INGRESS_LABEL_SELECTOR        = "app.kubernetes.io/component"
+	INGRESS_LABEL_SELECTOR_VALUE  = "controller"
 	INGRESS_NODE_SELECTOR_MATCHER = "armis.com/node-version"
 )
 
 var (
-	ServerType    = ""
-	Environment   = ""
-	PrometheusUrl = ""
-	LogLevel      = ""
-	AwsProfile    = ""
-	AwsRegion     = ""
+	PrometheusServerType = ""
+	Environment          = ""
+	PrometheusUrl        = ""
+	LogLevel             = ""
+	AwsProfile           = ""
+	AwsRegion            = ""
+
+	SlackAuthToken = ""
 
 	ClusterToRegionMapper map[string]string
 )
@@ -83,23 +89,32 @@ func init() {
 	if len(LogLevel) == 0 {
 		LogLevel = LOG_LEVEL_DEFAULT
 	}
-	ServerType = os.Getenv(SERVER_TYPE)
-	if len(ServerType) == 0 {
-		ServerType = SERVER_TYPE_DEFAULT
+	log.Debug().Msgf("config: %v [%v]", LOG_LEVEL, LogLevel)
+	PrometheusServerType = os.Getenv(PROMETHEUS_SERVER_TYPE)
+	if len(PrometheusServerType) == 0 {
+		PrometheusServerType = PROMETHEUS_SERVER_TYPE_DEFAULT
 	}
+	log.Debug().Msgf("config: %v [%v]", PROMETHEUS_SERVER_TYPE, PrometheusServerType)
 	Environment = os.Getenv(ENVIRONMENT)
 	if len(Environment) == 0 {
 		Environment = ENVIRONMENT_DEFAULT
 	}
-	PrometheusUrl = fmt.Sprintf("http://prometheus-%v-%v.armis.internal:%v", ServerType, Environment, PROMETHEUS_PORT)
+	log.Debug().Msgf("config: %v [%v]", ENVIRONMENT, Environment)
+	PrometheusUrl = os.Getenv(PROMETHEUS_URL)
+	if len(PrometheusUrl) == 0 {
+		PrometheusUrl = fmt.Sprintf("http://prometheus-%v-%v.armis.internal:%v", PrometheusServerType, Environment, PROMETHEUS_PORT)
+	}
+	log.Debug().Msgf("config: %v [%v]", PROMETHEUS_URL, PrometheusUrl)
 	AwsProfile = os.Getenv(AWS_PROFILE)
 	if len(AwsProfile) == 0 {
 		AwsProfile = AWS_PROFILE_DEFAULT
 	}
+	log.Debug().Msgf("config: %v [%v]", AWS_PROFILE, AwsProfile)
 	AwsRegion = os.Getenv(AWS_REGION)
 	if len(AwsRegion) == 0 {
 		AwsRegion = AWS_REGION_DEFAULT
 	}
+	log.Debug().Msgf("config: %v [%v]", AWS_REGION, AwsRegion)
 	ClusterToRegionMapper = map[string]string{
 		DEV:             US_EAST_1,
 		QA:              US_EAST_1,
@@ -113,4 +128,9 @@ func init() {
 		PROD8:           US_GOV_EAST_1,
 		PROD9:           AP_SOUTH_1,
 	}
+	SlackAuthToken = os.Getenv(SLACK_AUTH_TOKEN)
+	if len(SlackAuthToken) == 0 {
+		log.Fatal().Msgf("environment variable %v must be defined", SLACK_AUTH_TOKEN)
+	}
+	log.Debug().Msgf("config: %v was set to non empty value", SLACK_AUTH_TOKEN)
 }

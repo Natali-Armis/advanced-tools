@@ -24,15 +24,15 @@ type K8sClient struct {
 }
 
 func GetK8sClient(contextName string) *K8sClient {
-	log.Info().Msgf("configuring k8s client")
+	log.Info().Msgf("client: configuring k8s client")
 	kubeConfig, err := rest.InClusterConfig()
 	if err != nil {
-		log.Info().Msgf("in-cluster config not found, falling back to out-of-cluster config")
+		log.Info().Msgf("client: in-cluster config not found, falling back to out-of-cluster config")
 		var kubeconfigPath *string
 		if home := homedir.HomeDir(); home != "" {
-			kubeconfigPath = flag.String("kubeconfig", filepath.Join(home, ".kube", "config"), "(optional) absolute path to the kubeconfig file")
+			kubeconfigPath = flag.String("client: kubeconfig", filepath.Join(home, ".kube", "config"), "(optional) absolute path to the kubeconfig file")
 		} else {
-			kubeconfigPath = flag.String("kubeconfig", "", "absolute path to the kubeconfig file")
+			kubeconfigPath = flag.String("client: kubeconfig", "", "absolute path to the kubeconfig file")
 		}
 		flag.Parse()
 
@@ -43,16 +43,16 @@ func GetK8sClient(contextName string) *K8sClient {
 			&clientcmd.ClientConfigLoadingRules{ExplicitPath: *kubeconfigPath},
 			configOverrides).ClientConfig()
 		if err != nil {
-			log.Fatal().Msgf("unable to load Kubernetes client config, %v", err)
+			log.Fatal().Msgf("client: unable to load Kubernetes client config, %v", err)
 		}
 	} else {
-		log.Info().Msgf("in-cluster config loaded successfully")
+		log.Info().Msgf("client: in-cluster config loaded successfully")
 	}
 	k8sClient, err := kubernetes.NewForConfig(kubeConfig)
 	if err != nil {
-		log.Fatal().Msgf("unable to create Kubernetes client, %v", err)
+		log.Fatal().Msgf("client: unable to create Kubernetes client, %v", err)
 	}
-	log.Info().Msgf("k8s client configured, context: %v", contextName)
+	log.Info().Msgf("client: k8s client configured, context: %v", contextName)
 	return &K8sClient{
 		k8sClient: k8sClient,
 		config:    kubeConfig,
@@ -63,21 +63,21 @@ func GetK8sClient(contextName string) *K8sClient {
 func (client *K8sClient) GetNodes() (*core_v1.NodeList, error) {
 	nodes, err := client.k8sClient.CoreV1().Nodes().List(context.TODO(), metav1.ListOptions{})
 	if err != nil {
-		log.Error().Msgf("unable to list kubernetes nodes, %v", err)
+		log.Error().Msgf("client: unable to list kubernetes nodes, %v", err)
 		return nil, err
 	}
 	return nodes, nil
 }
 
-func (client *K8sClient) GetNodeVersionAndLabels(nodeName string) (string, string, error) {
+func (client *K8sClient) GetNodeVersionAndLabel(nodeName string) (string, string, error) {
 	node, err := client.k8sClient.CoreV1().Nodes().Get(context.TODO(), nodeName, metav1.GetOptions{})
 	if err != nil {
-		log.Error().Msgf("could not get node %v metada: %v", nodeName, err.Error())
+		log.Error().Msgf("client: could not get node %v metada: %v", nodeName, err.Error())
 		return "", "", err
 	}
 	version := node.Status.NodeInfo.KubeletVersion
-	labels := node.Labels["armis.com/services"]
-	return version, labels, nil
+	label := node.Labels["armis.com/services"]
+	return version, label, nil
 }
 
 func (client *K8sClient) GetDeploymentsByLabelSlector(labelSelectorMap map[string]string) ([]v1.Deployment, error) {
@@ -90,7 +90,7 @@ func (client *K8sClient) GetDeploymentsByLabelSlector(labelSelectorMap map[strin
 		LabelSelector: selector.String(),
 	})
 	if err != nil {
-		log.Error().Msgf("unable to list deployments with label selector %v, %v", labelSelectorMap, err)
+		log.Error().Msgf("client: unable to list deployments with label selector %v, %v", labelSelectorMap, err)
 		return nil, err
 	}
 	return deployments.Items, nil
@@ -103,7 +103,7 @@ func (client *K8sClient) EditIngressDeploymentToMatchVersionLabel(deployment *v1
 	deployment.Spec.Template.Spec.NodeSelector[vars.INGRESS_NODE_SELECTOR_MATCHER] = newVersion
 	_, err := client.k8sClient.AppsV1().Deployments(deployment.Namespace).Update(context.TODO(), deployment, metav1.UpdateOptions{})
 	if err != nil {
-		log.Error().Msgf("unable to update deployment %v, %v", deployment.Name, err)
+		log.Error().Msgf("client: unable to update deployment %v, %v", deployment.Name, err)
 		return err
 	}
 	return nil
@@ -117,7 +117,7 @@ func (client *K8sClient) VerifyIngressDeploymentToMatchVersionLabel(deployment *
 	if !exists {
 		return false, nil
 	}
-	log.Debug().Msgf("ingress deployment [%v] has version label [%v]", deployment.Name, currentVersion)
+	log.Debug().Msgf("client: ingress deployment [%v] has version label [%v]", deployment.Name, currentVersion)
 	if currentVersion == newVersion {
 		return true, nil
 	}

@@ -24,22 +24,22 @@ type AwsClient struct {
 }
 
 func GetAwsClient(profile string, region string) *AwsClient {
-	log.Info().Msgf("configuring aws client")
-	log.Info().Msg("loading default AWS profile")
+	log.Info().Msgf("client: configuring aws client")
+	log.Info().Msg("client: loading default AWS profile")
 	awsCfg, err := aws_config.LoadDefaultConfig(context.TODO(), aws_config.WithRegion(region))
 	if len(profile) > 0 {
-		log.Info().Msgf("loading AWS profile: %s", profile)
+		log.Info().Msgf("client: loading AWS profile: %s", profile)
 		awsCfg, err = aws_config.LoadDefaultConfig(context.TODO(), aws_config.WithSharedConfigProfile(profile), aws_config.WithRegion(region))
 	}
 
 	if err != nil {
-		log.Fatal().Msgf("unable to load SDK config, %v", err)
+		log.Fatal().Msgf("client: unable to load SDK config, %v", err)
 	}
 	eksClient := eks.NewFromConfig(awsCfg)
 	asgClient := as.NewFromConfig(awsCfg)
 	ec2Client := ec2.NewFromConfig(awsCfg)
 
-	log.Info().Msgf("aws client configured, profile: %v, region: %v", profile, region)
+	log.Info().Msgf("client: aws client configured, profile: %v, region: %v", profile, region)
 	return &AwsClient{
 		eksClient: eksClient,
 		asgClient: asgClient,
@@ -53,7 +53,7 @@ func (client *AwsClient) DescribeAutoScalingGroups(clusterNameSubstring string) 
 	clusterNameSubstring = fmt.Sprintf("%v_%v", clusterNameSubstring, vars.ASG_REQUIRED_LABEL)
 	output, err := client.asgClient.DescribeAutoScalingGroups(context.TODO(), &as.DescribeAutoScalingGroupsInput{})
 	if err != nil {
-		log.Error().Msgf("error during describing cluster %v autoscaling groups %v", clusterNameSubstring, err.Error())
+		log.Error().Msgf("client: error during describing cluster %v autoscaling groups %v", clusterNameSubstring, err.Error())
 		return nil, err
 	}
 
@@ -71,7 +71,7 @@ func (client *AwsClient) ListInstances(asgName string) ([]string, error) {
 		AutoScalingGroupNames: []string{asgName},
 	})
 	if err != nil {
-		log.Error().Msgf("error during listing asg %v instancess %v", asgName, err.Error())
+		log.Error().Msgf("client: error during listing asg %v instancess %v", asgName, err.Error())
 		return nil, err
 	}
 	var instanceIDs []string
@@ -88,7 +88,7 @@ func (client *AwsClient) DescribeInstances(instanceIDs []string) ([]ec2_types.In
 		InstanceIds: instanceIDs,
 	})
 	if err != nil {
-		log.Error().Msgf("error during describing instances ids %v", err.Error())
+		log.Error().Msgf("client: error during describing instances ids %v", err.Error())
 		return nil, err
 	}
 

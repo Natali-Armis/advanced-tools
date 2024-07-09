@@ -30,7 +30,7 @@ func (controller *K8sUpgradeController) GetASGsNodeList() ([]*entity.ASGNodeList
 			return asgList, err
 		}
 		for _, instance := range instancesDescribe {
-			version, label, err := controller.clients.K8sClient.GetNodeVersionAndLabels(*instance.PrivateDnsName)
+			version, label, err := controller.clients.K8sClient.GetNodeVersionAndLabel(*instance.PrivateDnsName)
 			if err != nil {
 				continue
 			}
