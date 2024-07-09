@@ -60,7 +60,11 @@ const (
 	AWS_REGION_DEFAULT  = US_EAST_1
 
 	// misc
-	ASG_REQUIRED_LABEL = "k8s_armis_com"
+	ASG_REQUIRED_LABEL           = "k8s_armis_com"
+	INGRESS_NAMESPACE            = "ingress-nginx"
+	INGRESS_LABEL_SELECTOR       = "app.kubernetes.io/component"
+	INGRESS_LABEL_SELECTOR_VALUE = "controller"
+	INGRESS_NODE_SELECTOR_MATCHER = "armis.com/node-version"
 )
 
 var (
