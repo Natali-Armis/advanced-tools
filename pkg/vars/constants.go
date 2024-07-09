@@ -48,13 +48,14 @@ const (
 	DEBUG = "debug"
 
 	// env vars names
-	PROMETHEUS_SERVER_TYPE = "SERVER_TYPE"
-	PROMETHEUS_URL         = "PROMETHEUS_URL"
-	ENVIRONMENT            = "ENVIRONMENT"
-	LOG_LEVEL              = "LOG_LEVEL"
-	AWS_PROFILE            = "AWS_PROFILE"
-	AWS_REGION             = "AWS_REGION"
-	SLACK_AUTH_TOKEN       = "SLACK_AUTH_TOKEN"
+	PROMETHEUS_SERVER_TYPE              = "SERVER_TYPE"
+	PROMETHEUS_URL                      = "PROMETHEUS_URL"
+	ENVIRONMENT                         = "ENVIRONMENT"
+	LOG_LEVEL                           = "LOG_LEVEL"
+	AWS_PROFILE                         = "AWS_PROFILE"
+	AWS_REGION                          = "AWS_REGION"
+	SLACK_AUTH_TOKEN                    = "SLACK_AUTH_TOKEN"
+	SLACK_UPGRADE_NOTIFICATIONS_CHANNEL = "SLACK_UPGRADE_NOTIFICATIONS_CHANNEL"
 
 	// env vars default
 	PROMETHEUS_SERVER_TYPE_DEFAULT = FEDERATION
@@ -79,7 +80,8 @@ var (
 	AwsProfile           = ""
 	AwsRegion            = ""
 
-	SlackAuthToken = ""
+	SlackAuthToken                   = ""
+	SlackUpgradeNotificationsChannel = ""
 
 	ClusterToRegionMapper map[string]string
 )
@@ -133,4 +135,9 @@ func init() {
 		log.Fatal().Msgf("environment variable %v must be defined", SLACK_AUTH_TOKEN)
 	}
 	log.Debug().Msgf("config: %v was set to non empty value", SLACK_AUTH_TOKEN)
+	SlackUpgradeNotificationsChannel = os.Getenv(SLACK_UPGRADE_NOTIFICATIONS_CHANNEL)
+	if len(SlackUpgradeNotificationsChannel) == 0 {
+		log.Fatal().Msgf("environment variable %v must be defined", SLACK_UPGRADE_NOTIFICATIONS_CHANNEL)
+	}
+	log.Debug().Msgf("config: %v [%v]", SLACK_UPGRADE_NOTIFICATIONS_CHANNEL, SlackUpgradeNotificationsChannel)
 }

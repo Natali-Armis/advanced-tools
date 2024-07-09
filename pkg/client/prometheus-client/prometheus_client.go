@@ -36,7 +36,7 @@ func GetPrometheusClient() *PrometheusClient {
 		log.Fatal().Msgf("client: error occured while creating prometheus client: %v", err.Error())
 	}
 	v1api := prom_api_v1.NewAPI(client)
-	log.Info().Msgf("client: prometheus client configured, server url %v", vars.PrometheusUrl)
+	log.Info().Msgf("client: prometheus client configured, server url [%v]", vars.PrometheusUrl)
 	return &PrometheusClient{
 		client: client,
 		v1api:  v1api,

@@ -52,7 +52,7 @@ func GetK8sClient(contextName string) *K8sClient {
 	if err != nil {
 		log.Fatal().Msgf("client: unable to create Kubernetes client, %v", err)
 	}
-	log.Info().Msgf("client: k8s client configured, context: %v", contextName)
+	log.Info().Msgf("client: k8s client configured, context [%v]", contextName)
 	return &K8sClient{
 		k8sClient: k8sClient,
 		config:    kubeConfig,

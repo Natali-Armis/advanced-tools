@@ -10,6 +10,12 @@ type K8sUpgradeController struct {
 	clients *client.Client
 }
 
+func GetK8sUpgradeController(clients *client.Client) *K8sUpgradeController {
+	return &K8sUpgradeController{
+		clients: clients,
+	}
+}
+
 func (controller *K8sUpgradeController) GetASGsNodeList() ([]*entity.ASGNodeList, error) {
 	asgList := []*entity.ASGNodeList{}
 	clusterAsgs, err := controller.clients.AwsClient.DescribeAutoScalingGroups(vars.DEV)

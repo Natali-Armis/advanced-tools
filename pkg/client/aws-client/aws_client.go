@@ -28,7 +28,7 @@ func GetAwsClient(profile string, region string) *AwsClient {
 	log.Info().Msg("client: loading default AWS profile")
 	awsCfg, err := aws_config.LoadDefaultConfig(context.TODO(), aws_config.WithRegion(region))
 	if len(profile) > 0 {
-		log.Info().Msgf("client: loading AWS profile: %s", profile)
+		log.Info().Msgf("client: loading AWS profile [%s]", profile)
 		awsCfg, err = aws_config.LoadDefaultConfig(context.TODO(), aws_config.WithSharedConfigProfile(profile), aws_config.WithRegion(region))
 	}
 
@@ -39,7 +39,7 @@ func GetAwsClient(profile string, region string) *AwsClient {
 	asgClient := as.NewFromConfig(awsCfg)
 	ec2Client := ec2.NewFromConfig(awsCfg)
 
-	log.Info().Msgf("client: aws client configured, profile: %v, region: %v", profile, region)
+	log.Info().Msgf("client: aws client configured, profile [%v], region [%v]", profile, region)
 	return &AwsClient{
 		eksClient: eksClient,
 		asgClient: asgClient,
