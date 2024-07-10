@@ -8,12 +8,14 @@ import (
 type KubernetesUpgradeManager struct {
 	k8sUpgradeController        *controller.K8sUpgradeController
 	slackNotificationController *controller.SlackNotificationController
+	alertsController            *controller.AlertsController
 }
 
 func GetKubernetesUpgradeManager(clients *client.Client) *KubernetesUpgradeManager {
 	return &KubernetesUpgradeManager{
 		k8sUpgradeController:        controller.GetK8sUpgradeController(clients),
 		slackNotificationController: controller.GetSlackNotificationController(clients),
+		alertsController:            controller.GetAlertsController(clients),
 	}
 }
 
@@ -21,15 +23,18 @@ func (manager *KubernetesUpgradeManager) Run() {
 	// pre process
 	// lock loop on request to start upgrade process by a devops team member - input should contain "target version: [target version]"
 	// post to channel "upgrade process is starting, stage [pre-process-validations], target version [provided target version]"
-	asgs, err := manager.k8sUpgradeController.GetASGsNodeList()
-	if err != nil {
-		return
-	}
-	asgsStr := controller.FormatOutAsgNodeList(asgs)
-	err = manager.slackNotificationController.NotifyInUpgradeNotificationsChannel(asgsStr)
-	if err != nil {
-		return
-	}
+
+	// asgs, err := manager.k8sUpgradeController.GetASGsNodeList()
+	// if err != nil {
+	// 	return
+	// }
+	// asgsStr := controller.FormatOutAsgNodeList(asgs)
+	// err = manager.slackNotificationController.NotifyInUpgradeNotificationsChannel(asgsStr)
+	// if err != nil {
+	// 	return
+	// }
+	manager.alertsController.SilenceAlerts()
+
 	// verify all nodes are in the same version
 	// post result to channel, wait for response: abort or proceed
 	// perform search of all crash loop / image pull err / errored pods in cluster
