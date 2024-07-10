@@ -1,12 +1,5 @@
 package vars
 
-import (
-	"fmt"
-	"os"
-
-	"github.com/rs/zerolog/log"
-)
-
 const (
 	// server types
 	FEDERATION = "federation"
@@ -50,6 +43,7 @@ const (
 	// env vars names
 	PROMETHEUS_SERVER_TYPE              = "SERVER_TYPE"
 	PROMETHEUS_URL                      = "PROMETHEUS_URL"
+	ALERT_MANAGER_URL                   = "ALERT_MANAGER_URL"
 	ENVIRONMENT                         = "ENVIRONMENT"
 	LOG_LEVEL                           = "LOG_LEVEL"
 	AWS_PROFILE                         = "AWS_PROFILE"
@@ -63,6 +57,7 @@ const (
 	LOG_LEVEL_DEFAULT              = DEBUG
 	AWS_PROFILE_DEFAULT            = PROFILE_DEFAULT
 	AWS_REGION_DEFAULT             = US_EAST_1
+	ALERT_MANAGER_URL_DEFAULT      = "http://prometheus-federation-prod.armis.internal:9093"
 
 	// misc
 	ASG_REQUIRED_LABEL            = "k8s_armis_com"
@@ -70,74 +65,13 @@ const (
 	INGRESS_LABEL_SELECTOR        = "app.kubernetes.io/component"
 	INGRESS_LABEL_SELECTOR_VALUE  = "controller"
 	INGRESS_NODE_SELECTOR_MATCHER = "armis.com/node-version"
+	ALERTMANAGER_SILENCE_ROUT     = "/api/v2/silences"
+
+	// alert manager silencing
+	ALERT_NAME_LABEL                   = "alertname"
+	ALERT_ENV_LABEL                    = "env"
+	PIPELINE_TARGET_DOWN               = "pipeline target down"
+	PIPELINE_CONTAINER_RESTARTING      = "pipeline container restarting tenant"
+	SERVER_INTEGRATION_CRASHED         = "server integratio crashed on tenant"
+	CONTAINER_CRASHED_MULTIPLE_TENANTS = "container crashed on multiple tenants"
 )
-
-var (
-	PrometheusServerType = ""
-	Environment          = ""
-	PrometheusUrl        = ""
-	LogLevel             = ""
-	AwsProfile           = ""
-	AwsRegion            = ""
-
-	SlackAuthToken                   = ""
-	SlackUpgradeNotificationsChannel = ""
-
-	ClusterToRegionMapper map[string]string
-)
-
-func init() {
-	LogLevel = os.Getenv(LOG_LEVEL)
-	if len(LogLevel) == 0 {
-		LogLevel = LOG_LEVEL_DEFAULT
-	}
-	log.Debug().Msgf("config: %v [%v]", LOG_LEVEL, LogLevel)
-	PrometheusServerType = os.Getenv(PROMETHEUS_SERVER_TYPE)
-	if len(PrometheusServerType) == 0 {
-		PrometheusServerType = PROMETHEUS_SERVER_TYPE_DEFAULT
-	}
-	log.Debug().Msgf("config: %v [%v]", PROMETHEUS_SERVER_TYPE, PrometheusServerType)
-	Environment = os.Getenv(ENVIRONMENT)
-	if len(Environment) == 0 {
-		Environment = ENVIRONMENT_DEFAULT
-	}
-	log.Debug().Msgf("config: %v [%v]", ENVIRONMENT, Environment)
-	PrometheusUrl = os.Getenv(PROMETHEUS_URL)
-	if len(PrometheusUrl) == 0 {
-		PrometheusUrl = fmt.Sprintf("http://prometheus-%v-%v.armis.internal:%v", PrometheusServerType, Environment, PROMETHEUS_PORT)
-	}
-	log.Debug().Msgf("config: %v [%v]", PROMETHEUS_URL, PrometheusUrl)
-	AwsProfile = os.Getenv(AWS_PROFILE)
-	if len(AwsProfile) == 0 {
-		AwsProfile = AWS_PROFILE_DEFAULT
-	}
-	log.Debug().Msgf("config: %v [%v]", AWS_PROFILE, AwsProfile)
-	AwsRegion = os.Getenv(AWS_REGION)
-	if len(AwsRegion) == 0 {
-		AwsRegion = AWS_REGION_DEFAULT
-	}
-	log.Debug().Msgf("config: %v [%v]", AWS_REGION, AwsRegion)
-	ClusterToRegionMapper = map[string]string{
-		DEV:             US_EAST_1,
-		QA:              US_EAST_1,
-		DEMO:            US_EAST_1,
-		OPERATIONS_TEST: US_EAST_1,
-		OPERATIONS:      US_EAST_1,
-		PROD:            US_EAST_1,
-		PROD4:           EU_CENTRAL_1,
-		PROD5:           AP_SOUTHEAST_2,
-		PROD7:           AP_SOUTHEAST_1,
-		PROD8:           US_GOV_EAST_1,
-		PROD9:           AP_SOUTH_1,
-	}
-	SlackAuthToken = os.Getenv(SLACK_AUTH_TOKEN)
-	if len(SlackAuthToken) == 0 {
-		log.Fatal().Msgf("environment variable %v must be defined", SLACK_AUTH_TOKEN)
-	}
-	log.Debug().Msgf("config: %v was set to non empty value", SLACK_AUTH_TOKEN)
-	SlackUpgradeNotificationsChannel = os.Getenv(SLACK_UPGRADE_NOTIFICATIONS_CHANNEL)
-	if len(SlackUpgradeNotificationsChannel) == 0 {
-		log.Fatal().Msgf("environment variable %v must be defined", SLACK_UPGRADE_NOTIFICATIONS_CHANNEL)
-	}
-	log.Debug().Msgf("config: %v [%v]", SLACK_UPGRADE_NOTIFICATIONS_CHANNEL, SlackUpgradeNotificationsChannel)
-}
