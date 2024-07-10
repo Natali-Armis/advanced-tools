@@ -11,10 +11,13 @@ func padRight(str string, length int) string {
 	return str + strings.Repeat(" ", length-len(str))
 }
 
-func chunkString(input string, chunkSize int) []string {
+func chunkString(input string) []string {
 	var chunks []string
-	for len(input) > chunkSize {
-		chunk := input[:chunkSize]
+	if len(input) <= vars.MAX_SLACK_MESSAGE_SIZE {
+		chunks = append(chunks, "```\n"+input+"\n```")
+	}
+	for len(input) > vars.MAX_SLACK_MESSAGE_SIZE {
+		chunk := input[:vars.MAX_SLACK_MESSAGE_SIZE]
 		lastNewlineIndex := strings.LastIndex(chunk, "\n")
 		if lastNewlineIndex != -1 {
 			chunk = input[:lastNewlineIndex]
@@ -68,7 +71,7 @@ func FormatOutAsgNodeList(header string, asgList []*entity.ASGNodeList) []string
 		}
 	}
 
-	return chunkString("\n"+builder.String()+"\n", vars.MAX_SLACK_MESSAGE_SIZE)
+	return chunkString("\n" + builder.String() + "\n")
 }
 
 func FormatFailingPodsList(header string, failingPods []*entity.FailingPod) []string {
@@ -100,5 +103,5 @@ func FormatFailingPodsList(header string, failingPods []*entity.FailingPod) []st
 			padRight(pod.Status, maxStatus))
 	}
 
-	return chunkString("\n"+builder.String()+"\n", vars.MAX_SLACK_MESSAGE_SIZE)
+	return chunkString("\n" + builder.String() + "\n")
 }

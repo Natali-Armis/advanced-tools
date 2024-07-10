@@ -66,7 +66,7 @@ const (
 	INGRESS_LABEL_SELECTOR_VALUE  = "controller"
 	INGRESS_NODE_SELECTOR_MATCHER = "armis.com/node-version"
 	ALERTMANAGER_SILENCE_ROUT     = "/api/v2/silences"
-	MAX_SLACK_MESSAGE_SIZE = 4000
+	MAX_SLACK_MESSAGE_SIZE        = 4000
 
 	// alert manager silencing
 	ALERT_NAME_LABEL                   = "alertname"
@@ -83,4 +83,16 @@ const (
 	RUN_CONTAINER_ERROR           = "RunContainerError"
 	CREATE_CONTAINER_CONFIG_ERROR = "CreateContainerConfigError"
 	CREATE_CONTAINER_ERROR        = "CreateContainerError"
+
+	// upgrade manager stages
+	PRE_PROCESS       = "PRE_PROCESS_VALIDATIONS"
+	PENDING_APPROVAL  = "PENDING_APPROVAL"
+	EDITING_TF_FILES  = "EDITING_TF_FILES"
+	APPLYING_TF       = "APPLYING_TF"
+	ROLLING_EKS_NODES = "ROLLING_EKS_NODES"
+	POST_PROCESS      = "POST_PROCESS_VALIDATIONS"
+
+	// upgrade
+	UPGEADE_INITIALIZE_SUBSTR  = `kubernetes-manager upgrade cluster`
+	UPGRADE_INITIALIZE_PATTERN = `kubernetes-manager upgrade cluster (\d+\.\d+)`
 )

@@ -3,12 +3,17 @@ package manager
 import (
 	"advanced-tools/pkg/client"
 	"advanced-tools/pkg/controller"
+	"advanced-tools/pkg/vars"
+	"fmt"
+	"regexp"
+	"time"
 )
 
 type KubernetesUpgradeManager struct {
 	k8sUpgradeController        *controller.K8sUpgradeController
 	slackNotificationController *controller.SlackNotificationController
 	alertsController            *controller.AlertsController
+	stage                       string
 }
 
 func GetKubernetesUpgradeManager(clients *client.Client) *KubernetesUpgradeManager {
@@ -16,19 +21,44 @@ func GetKubernetesUpgradeManager(clients *client.Client) *KubernetesUpgradeManag
 		k8sUpgradeController:        controller.GetK8sUpgradeController(clients),
 		slackNotificationController: controller.GetSlackNotificationController(clients),
 		alertsController:            controller.GetAlertsController(clients),
+		stage:                       "",
 	}
 }
 
 func (manager *KubernetesUpgradeManager) Run() {
 	// pre process
-	// lock loop on request to start upgrade process by a devops team member - input should contain "target version: [target version]"
-	// post to channel "upgrade process is starting, stage [pre-process-validations], target version [provided target version]"
+	targetVersion := ""
+	for len(targetVersion) == 0 {
+		lastMessageFromChannel, userId, err := manager.slackNotificationController.FetchLastMessageFromUpgradeNotificationsChannelMatchPattern(vars.UPGEADE_INITIALIZE_SUBSTR)
+		if err != nil {
+			return
+		}
+		if len(lastMessageFromChannel) > 0 {
+			if !manager.slackNotificationController.IdentifySelfMessage(userId) {
+				targetVersion = extractTargetVersion(lastMessageFromChannel)
+			}
+			if len(targetVersion) > 0 {
+				break
+			}
+		} else {
+			err := manager.slackNotificationController.NotifyInUpgradeNotificationsChannel("kubernetes manager for upgrade service, usage: `kubernetes-manager upgrade cluster <target version>`\n(i.e target version must be formatted as `\\d+\\.\\d+` example `1.30`)")
+			if err != nil {
+				return
+			}
+		}
+		time.Sleep(10 * time.Second)
+	}
+
+	err := manager.slackNotificationController.NotifyInUpgradeNotificationsChannel(fmt.Sprintf("upgrade process is starting, stage [%v], target version [%v]", vars.PRE_PROCESS, targetVersion))
+	if err != nil {
+		return
+	}
 
 	asgs, err := manager.k8sUpgradeController.GetASGsNodeList()
 	if err != nil {
 		return
 	}
-	asgsStr := controller.FormatOutAsgNodeList("Listing cluster autoscaling groups and their owned nodes", asgs)
+	asgsStr := controller.FormatOutAsgNodeList("listing cluster autoscaling groups and their owned nodes", asgs)
 	for _, str := range asgsStr {
 		err = manager.slackNotificationController.NotifyInUpgradeNotificationsChannel(str)
 		if err != nil {
@@ -36,15 +66,15 @@ func (manager *KubernetesUpgradeManager) Run() {
 		}
 	}
 
-	err = manager.alertsController.SilenceAlerts()
-	if err != nil {
-		return
-	}
+	// err = manager.alertsController.SilenceAlerts()
+	// if err != nil {
+	// 	return
+	// }
 	failingPods, err := manager.k8sUpgradeController.GetErroredPodsList()
 	if err != nil {
 		return
 	}
-	failingPodsStr := controller.FormatFailingPodsList("Listing failing pods in cluster", failingPods)
+	failingPodsStr := controller.FormatFailingPodsList("listing failing pods in cluster", failingPods)
 	for _, str := range failingPodsStr {
 		err = manager.slackNotificationController.NotifyInUpgradeNotificationsChannel(str)
 		if err != nil {
@@ -74,4 +104,13 @@ func (manager *KubernetesUpgradeManager) Run() {
 	// upgrade process is in finalize state
 	// post report of all non aligned nodes if any
 	// post report of imagepull / crashloop / errored pods in cluster
+}
+
+func extractTargetVersion(message string) string {
+	re := regexp.MustCompile(vars.UPGRADE_INITIALIZE_PATTERN)
+	matches := re.FindStringSubmatch(message)
+	if len(matches) > 1 {
+		return matches[1]
+	}
+	return ""
 }
