@@ -3,7 +3,6 @@ package manager
 import (
 	"advanced-tools/pkg/client"
 	"advanced-tools/pkg/controller"
-	"fmt"
 )
 
 type KubernetesUpgradeManager struct {
@@ -25,22 +24,27 @@ func (manager *KubernetesUpgradeManager) Run() {
 	// lock loop on request to start upgrade process by a devops team member - input should contain "target version: [target version]"
 	// post to channel "upgrade process is starting, stage [pre-process-validations], target version [provided target version]"
 
-	// asgs, err := manager.k8sUpgradeController.GetASGsNodeList()
-	// if err != nil {
-	// 	return
-	// }
-	// asgsStr := controller.FormatOutAsgNodeList(asgs)
-	// err = manager.slackNotificationController.NotifyInUpgradeNotificationsChannel(asgsStr)
-	// if err != nil {
-	// 	return
-	// }
-	// manager.alertsController.SilenceAlerts()
+	asgs, err := manager.k8sUpgradeController.GetASGsNodeList()
+	if err != nil {
+		return
+	}
+	asgsStr := controller.FormatOutAsgNodeList("Listring cluster autoscaling groups and their owned nodes", asgs)
+	err = manager.slackNotificationController.NotifyInUpgradeNotificationsChannel(asgsStr)
+	if err != nil {
+		return
+	}
+	err = manager.alertsController.SilenceAlerts()
+	if err != nil {
+		return
+	}
 	failingPods, err := manager.k8sUpgradeController.GetErroredPodsList()
 	if err != nil {
 		return
 	}
-	for _, failingPod := range failingPods {
-		fmt.Printf("Name: %v | NS: %v\n", failingPod.PodName, failingPod.Namespace)
+	failingPodsStr := controller.FormatFailingPodsList("Listing failing pods in cluster", failingPods)
+	err = manager.slackNotificationController.NotifyInUpgradeNotificationsChannel(failingPodsStr)
+	if err != nil {
+		return
 	}
 
 	// verify all nodes are in the same version

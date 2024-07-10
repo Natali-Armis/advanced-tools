@@ -72,7 +72,7 @@ const (
 	ALERT_ENV_LABEL                    = "env"
 	PIPELINE_TARGET_DOWN               = "pipeline target down"
 	PIPELINE_CONTAINER_RESTARTING      = "pipeline container restarting tenant"
-	SERVER_INTEGRATION_CRASHED         = "server integratio crashed on tenant"
+	SERVER_INTEGRATION_CRASHED         = "server integration crashed on tenant"
 	CONTAINER_CRASHED_MULTIPLE_TENANTS = "container crashed on multiple tenants"
 
 	// unhealthy pod states

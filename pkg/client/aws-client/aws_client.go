@@ -57,7 +57,7 @@ func (client *AwsClient) DescribeAutoScalingGroups(clusterNameSubstring string) 
 		return nil, err
 	}
 
-	var asgs []as_types.AutoScalingGroup
+	asgs := []as_types.AutoScalingGroup{}
 	for _, asg := range output.AutoScalingGroups {
 		if strings.Contains(*asg.AutoScalingGroupName, clusterNameSubstring) {
 			asgs = append(asgs, asg)
@@ -74,7 +74,7 @@ func (client *AwsClient) ListInstances(asgName string) ([]string, error) {
 		log.Error().Msgf("client: error during listing asg %v instancess %v", asgName, err.Error())
 		return nil, err
 	}
-	var instanceIDs []string
+	instanceIDs := []string{}
 	for _, asg := range output.AutoScalingGroups {
 		for _, instance := range asg.Instances {
 			instanceIDs = append(instanceIDs, *instance.InstanceId)
@@ -92,9 +92,13 @@ func (client *AwsClient) DescribeInstances(instanceIDs []string) ([]ec2_types.In
 		return nil, err
 	}
 
-	var instances []ec2_types.Instance
+	instances := []ec2_types.Instance{}
 	for _, reservation := range output.Reservations {
-		instances = append(instances, reservation.Instances...)
+		for _, instance := range reservation.Instances {
+			if _, exists := vars.AwsInstancesCodes[*instance.State.Code]; exists {
+				instances = append(instances, instance)
+			}
+		}
 	}
 	return instances, nil
 }

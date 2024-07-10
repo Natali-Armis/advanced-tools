@@ -130,7 +130,7 @@ func (client *K8sClient) ListPodsByState(states map[string]bool) ([]core_v1.Pod,
 		log.Error().Msgf("client: unable to list pods, %v", err)
 		return nil, err
 	}
-	var filteredPods []core_v1.Pod
+	filteredPods := []core_v1.Pod{}
 	for _, pod := range podList.Items {
 		for _, containerStatus := range pod.Status.ContainerStatuses {
 			if containerStatus.State.Waiting != nil {

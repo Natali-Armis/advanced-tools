@@ -4,6 +4,9 @@ import (
 	"advanced-tools/pkg/client"
 	"advanced-tools/pkg/entity"
 	"advanced-tools/pkg/vars"
+	"strings"
+
+	"github.com/rs/zerolog/log"
 )
 
 type K8sUpgradeController struct {
@@ -18,11 +21,15 @@ func GetK8sUpgradeController(clients *client.Client) *K8sUpgradeController {
 
 func (controller *K8sUpgradeController) GetASGsNodeList() ([]*entity.ASGNodeList, error) {
 	asgList := []*entity.ASGNodeList{}
-	clusterAsgs, err := controller.clients.AwsClient.DescribeAutoScalingGroups(vars.DEV)
+	clusterAsgs, err := controller.clients.AwsClient.DescribeAutoScalingGroups(strings.ReplaceAll(vars.Environment, "-", "_"))
 	if err != nil {
 		return asgList, err
 	}
 	for _, clusterAsg := range clusterAsgs {
+		if *clusterAsg.DesiredCapacity == 0 {
+			log.Debug().Msgf("skipping [%v] asg as its desired capacity is [0]", *clusterAsg.AutoScalingGroupName)
+			continue
+		}
 		asg := &entity.ASGNodeList{
 			AsgName:  *clusterAsg.AutoScalingGroupName,
 			NodeList: []*entity.AsgNode{},
@@ -97,23 +104,31 @@ func (controller *K8sUpgradeController) VerifyAllNodesVersionsAligned(asgList []
 }
 
 func (controller *K8sUpgradeController) GetErroredPodsList() ([]*entity.FailingPod, error) {
-	erroredPods, err := controller.clients.K8sClient.ListPodsByState(map[string]bool{
+	states := map[string]bool{
 		vars.IMAGE_PULL_ERROR:              true,
 		vars.ERR_IMAGE_PULL:                true,
 		vars.CRASH_LOOP_BACKOFF:            true,
 		vars.RUN_CONTAINER_ERROR:           true,
 		vars.CREATE_CONTAINER_CONFIG_ERROR: true,
 		vars.CREATE_CONTAINER_ERROR:        true,
-	})
+	}
+	erroredPods, err := controller.clients.K8sClient.ListPodsByState(states)
 	if err != nil {
 		return nil, err
 	}
 	failingPodsReport := []*entity.FailingPod{}
 	for _, pod := range erroredPods {
-		failingPodsReport = append(failingPodsReport, &entity.FailingPod{
-			PodName:   pod.Name,
-			Namespace: pod.Namespace,
-		})
+		for _, containerStatus := range pod.Status.ContainerStatuses {
+			if containerStatus.State.Waiting != nil {
+				if _, exists := states[containerStatus.State.Waiting.Reason]; exists {
+					failingPodsReport = append(failingPodsReport, &entity.FailingPod{
+						PodName:   pod.Name,
+						Namespace: pod.Namespace,
+						Status:    containerStatus.State.Waiting.Reason,
+					})
+				}
+			}
+		}
 	}
 	return failingPodsReport, nil
 }

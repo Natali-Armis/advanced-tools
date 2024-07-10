@@ -19,8 +19,9 @@ var (
 	SlackAuthToken                   = ""
 	SlackUpgradeNotificationsChannel = ""
 
-	ClusterToRegionMapper map[string]string
+	ClusterToRegionMapper        map[string]string
 	AlertsToSilenceDuringUpgrade []string
+	AwsInstancesCodes            map[int32]string
 )
 
 func init() {
@@ -77,6 +78,12 @@ func init() {
 		PIPELINE_CONTAINER_RESTARTING,
 		SERVER_INTEGRATION_CRASHED,
 		CONTAINER_CRASHED_MULTIPLE_TENANTS,
+	}
+	AwsInstancesCodes = map[int32]string{
+		0:  "pending",
+		16: "running",
+		32: "shutting-down",
+		64: "stopping",
 	}
 	SlackAuthToken = os.Getenv(SLACK_AUTH_TOKEN)
 	if len(SlackAuthToken) == 0 {
