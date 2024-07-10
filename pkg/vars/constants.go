@@ -74,4 +74,12 @@ const (
 	PIPELINE_CONTAINER_RESTARTING      = "pipeline container restarting tenant"
 	SERVER_INTEGRATION_CRASHED         = "server integratio crashed on tenant"
 	CONTAINER_CRASHED_MULTIPLE_TENANTS = "container crashed on multiple tenants"
+
+	// unhealthy pod states
+	IMAGE_PULL_ERROR              = "ImagePullBackOff"
+	ERR_IMAGE_PULL                = "ErrImagePull"
+	CRASH_LOOP_BACKOFF            = "CrashLoopBackOff"
+	RUN_CONTAINER_ERROR           = "RunContainerError"
+	CREATE_CONTAINER_CONFIG_ERROR = "CreateContainerConfigError"
+	CREATE_CONTAINER_ERROR        = "CreateContainerError"
 )

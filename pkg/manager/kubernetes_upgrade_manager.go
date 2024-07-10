@@ -3,6 +3,7 @@ package manager
 import (
 	"advanced-tools/pkg/client"
 	"advanced-tools/pkg/controller"
+	"fmt"
 )
 
 type KubernetesUpgradeManager struct {
@@ -33,7 +34,14 @@ func (manager *KubernetesUpgradeManager) Run() {
 	// if err != nil {
 	// 	return
 	// }
-	manager.alertsController.SilenceAlerts()
+	// manager.alertsController.SilenceAlerts()
+	failingPods, err := manager.k8sUpgradeController.GetErroredPodsList()
+	if err != nil {
+		return
+	}
+	for _, failingPod := range failingPods {
+		fmt.Printf("Name: %v | NS: %v\n", failingPod.PodName, failingPod.Namespace)
+	}
 
 	// verify all nodes are in the same version
 	// post result to channel, wait for response: abort or proceed

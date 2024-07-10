@@ -95,3 +95,25 @@ func (controller *K8sUpgradeController) VerifyAllNodesVersionsAligned(asgList []
 	}
 	return nonAlignedAsgs
 }
+
+func (controller *K8sUpgradeController) GetErroredPodsList() ([]*entity.FailingPod, error) {
+	erroredPods, err := controller.clients.K8sClient.ListPodsByState(map[string]bool{
+		vars.IMAGE_PULL_ERROR:              true,
+		vars.ERR_IMAGE_PULL:                true,
+		vars.CRASH_LOOP_BACKOFF:            true,
+		vars.RUN_CONTAINER_ERROR:           true,
+		vars.CREATE_CONTAINER_CONFIG_ERROR: true,
+		vars.CREATE_CONTAINER_ERROR:        true,
+	})
+	if err != nil {
+		return nil, err
+	}
+	failingPodsReport := []*entity.FailingPod{}
+	for _, pod := range erroredPods {
+		failingPodsReport = append(failingPodsReport, &entity.FailingPod{
+			PodName:   pod.Name,
+			Namespace: pod.Namespace,
+		})
+	}
+	return failingPodsReport, nil
+}

@@ -123,3 +123,22 @@ func (client *K8sClient) VerifyIngressDeploymentToMatchVersionLabel(deployment *
 	}
 	return false, nil
 }
+
+func (client *K8sClient) ListPodsByState(states map[string]bool) ([]core_v1.Pod, error) {
+	podList, err := client.k8sClient.CoreV1().Pods("").List(context.TODO(), metav1.ListOptions{})
+	if err != nil {
+		log.Error().Msgf("client: unable to list pods, %v", err)
+		return nil, err
+	}
+	var filteredPods []core_v1.Pod
+	for _, pod := range podList.Items {
+		for _, containerStatus := range pod.Status.ContainerStatuses {
+			if containerStatus.State.Waiting != nil {
+				if _, exists := states[containerStatus.State.Waiting.Reason]; exists {
+					filteredPods = append(filteredPods, pod)
+				}
+			}
+		}
+	}
+	return filteredPods, nil
+}
