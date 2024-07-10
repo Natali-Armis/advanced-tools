@@ -28,11 +28,14 @@ func (manager *KubernetesUpgradeManager) Run() {
 	if err != nil {
 		return
 	}
-	asgsStr := controller.FormatOutAsgNodeList("Listring cluster autoscaling groups and their owned nodes", asgs)
-	err = manager.slackNotificationController.NotifyInUpgradeNotificationsChannel(asgsStr)
-	if err != nil {
-		return
+	asgsStr := controller.FormatOutAsgNodeList("Listing cluster autoscaling groups and their owned nodes", asgs)
+	for _, str := range asgsStr {
+		err = manager.slackNotificationController.NotifyInUpgradeNotificationsChannel(str)
+		if err != nil {
+			return
+		}
 	}
+
 	err = manager.alertsController.SilenceAlerts()
 	if err != nil {
 		return
@@ -42,9 +45,11 @@ func (manager *KubernetesUpgradeManager) Run() {
 		return
 	}
 	failingPodsStr := controller.FormatFailingPodsList("Listing failing pods in cluster", failingPods)
-	err = manager.slackNotificationController.NotifyInUpgradeNotificationsChannel(failingPodsStr)
-	if err != nil {
-		return
+	for _, str := range failingPodsStr {
+		err = manager.slackNotificationController.NotifyInUpgradeNotificationsChannel(str)
+		if err != nil {
+			return
+		}
 	}
 
 	// verify all nodes are in the same version

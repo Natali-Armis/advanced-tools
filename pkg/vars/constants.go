@@ -66,6 +66,7 @@ const (
 	INGRESS_LABEL_SELECTOR_VALUE  = "controller"
 	INGRESS_NODE_SELECTOR_MATCHER = "armis.com/node-version"
 	ALERTMANAGER_SILENCE_ROUT     = "/api/v2/silences"
+	MAX_SLACK_MESSAGE_SIZE = 4000
 
 	// alert manager silencing
 	ALERT_NAME_LABEL                   = "alertname"

@@ -2,11 +2,30 @@ package controller
 
 import (
 	"advanced-tools/pkg/entity"
+	"advanced-tools/pkg/vars"
 	"fmt"
 	"strings"
 )
 
-func FormatOutAsgNodeList(header string, asgList []*entity.ASGNodeList) string {
+func padRight(str string, length int) string {
+	return str + strings.Repeat(" ", length-len(str))
+}
+
+func chunkString(input string, chunkSize int) []string {
+	var chunks []string
+	for len(input) > chunkSize {
+		chunk := input[:chunkSize]
+		lastNewlineIndex := strings.LastIndex(chunk, "\n")
+		if lastNewlineIndex != -1 {
+			chunk = input[:lastNewlineIndex]
+		}
+		chunks = append(chunks, "```\n"+chunk+"\n```")
+		input = input[len(chunk):]
+	}
+	return chunks
+}
+
+func FormatOutAsgNodeList(header string, asgList []*entity.ASGNodeList) []string {
 	var builder strings.Builder
 
 	maxAsgName := len("AsgName")
@@ -40,18 +59,19 @@ func FormatOutAsgNodeList(header string, asgList []*entity.ASGNodeList) string {
 
 	for _, asg := range asgList {
 		for _, node := range asg.NodeList {
-			fmt.Fprintf(&builder, "%-*s %-*s %-*s %-*s %-*s\n",
-				maxAsgName, asg.AsgName,
-				maxLabel, asg.Label,
-				maxInstanceId, node.InstanceId,
-				maxPrivateDnsName, node.PrivateDnsName,
-				maxKubeletVersion, node.KubeletVersion)
+			fmt.Fprintf(&builder, "%s %s %s %s %s\n",
+				padRight(asg.AsgName, maxAsgName),
+				padRight(asg.Label, maxLabel),
+				padRight(node.InstanceId, maxInstanceId),
+				padRight(node.PrivateDnsName, maxPrivateDnsName),
+				padRight(node.KubeletVersion, maxKubeletVersion))
 		}
 	}
-	return "\n" + builder.String() + "\n"
+
+	return chunkString("\n"+builder.String()+"\n", vars.MAX_SLACK_MESSAGE_SIZE)
 }
 
-func FormatFailingPodsList(header string, failingPods []*entity.FailingPod) string {
+func FormatFailingPodsList(header string, failingPods []*entity.FailingPod) []string {
 	var builder strings.Builder
 
 	maxPodName := len("PodName")
@@ -74,10 +94,11 @@ func FormatFailingPodsList(header string, failingPods []*entity.FailingPod) stri
 	fmt.Fprintf(&builder, "%v\n", strings.Repeat("-", maxPodName+maxNamespace+maxStatus+20))
 
 	for _, pod := range failingPods {
-		fmt.Fprintf(&builder, "%-*s %-*s %-*s\n",
-			maxPodName, pod.PodName,
-			maxNamespace, pod.Namespace,
-			maxStatus, pod.Status)
+		fmt.Fprintf(&builder, "%s %s %s\n",
+			padRight(pod.PodName, maxPodName),
+			padRight(pod.Namespace, maxNamespace),
+			padRight(pod.Status, maxStatus))
 	}
-	return "\n" + builder.String() + "\n"
+
+	return chunkString("\n"+builder.String()+"\n", vars.MAX_SLACK_MESSAGE_SIZE)
 }
