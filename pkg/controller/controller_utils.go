@@ -58,7 +58,7 @@ func FormatOutAsgNodeList(header string, asgList []*entity.ASGNodeList) []string
 	}
 
 	fmt.Fprintf(&builder, "%v:\n", header)
-	fmt.Fprintf(&builder, "%v\n", strings.Repeat("-", maxAsgName+maxLabel+maxInstanceId+maxPrivateDnsName+maxKubeletVersion+50))
+	fmt.Fprintf(&builder, "%v\n", strings.Repeat("-", maxAsgName+maxLabel+maxInstanceId+maxPrivateDnsName+maxKubeletVersion+20))
 
 	for _, asg := range asgList {
 		for _, node := range asg.NodeList {
