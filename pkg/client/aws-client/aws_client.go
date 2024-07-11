@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"strings"
+	"time"
 
 	"advanced-tools/pkg/vars"
 
@@ -101,4 +102,134 @@ func (client *AwsClient) DescribeInstances(instanceIDs []string) ([]ec2_types.In
 		}
 	}
 	return instances, nil
+}
+
+func (client *AwsClient) GetMaxSizeOfASG(asgName string) (int32, error) {
+	output, err := client.asgClient.DescribeAutoScalingGroups(context.TODO(), &as.DescribeAutoScalingGroupsInput{
+		AutoScalingGroupNames: []string{asgName},
+	})
+	if err != nil {
+		log.Error().Msgf("client: error during getting max size of asg %v, %v", asgName, err.Error())
+		return 0, err
+	}
+	if len(output.AutoScalingGroups) == 0 {
+		return 0, fmt.Errorf("client: no ASG found with name %v", asgName)
+	}
+	return *output.AutoScalingGroups[0].MaxSize, nil
+}
+
+func (client *AwsClient) ModifyMaxSizeOfASG(asgName string, newSize int32) error {
+	_, err := client.asgClient.UpdateAutoScalingGroup(context.TODO(), &as.UpdateAutoScalingGroupInput{
+		AutoScalingGroupName: &asgName,
+		MaxSize:              &newSize,
+	})
+	if err != nil {
+		log.Error().Msgf("client: error during modifying max size of asg %v, %v", asgName, err.Error())
+		return err
+	}
+	return nil
+}
+
+func (client *AwsClient) GetDesiredSizeOfASG(asgName string) (int32, error) {
+	output, err := client.asgClient.DescribeAutoScalingGroups(context.TODO(), &as.DescribeAutoScalingGroupsInput{
+		AutoScalingGroupNames: []string{asgName},
+	})
+	if err != nil {
+		log.Error().Msgf("client: error during getting desired size of asg %v, %v", asgName, err.Error())
+		return 0, err
+	}
+	if len(output.AutoScalingGroups) == 0 {
+		return 0, fmt.Errorf("client: no ASG found with name %v", asgName)
+	}
+	return *output.AutoScalingGroups[0].DesiredCapacity, nil
+}
+
+func (client *AwsClient) ModifyDesiredSizeOfASG(asgName string, newSize int32) error {
+	_, err := client.asgClient.UpdateAutoScalingGroup(context.TODO(), &as.UpdateAutoScalingGroupInput{
+		AutoScalingGroupName: &asgName,
+		DesiredCapacity:      &newSize,
+	})
+	if err != nil {
+		log.Error().Msgf("client: error during modifying desired size of asg %v, %v", asgName, err.Error())
+		return err
+	}
+	return nil
+}
+
+func (client *AwsClient) GetInstancesWithScaleInProtection(asgName string) ([]string, error) {
+	output, err := client.asgClient.DescribeAutoScalingGroups(context.TODO(), &as.DescribeAutoScalingGroupsInput{
+		AutoScalingGroupNames: []string{asgName},
+	})
+	if err != nil {
+		log.Error().Msgf("client: error during getting instances with scale-in protection for asg %v, %v", asgName, err.Error())
+		return nil, err
+	}
+
+	instanceIDs := []string{}
+	for _, asg := range output.AutoScalingGroups {
+		for _, instance := range asg.Instances {
+			if *instance.ProtectedFromScaleIn {
+				instanceIDs = append(instanceIDs, *instance.InstanceId)
+			}
+		}
+	}
+	return instanceIDs, nil
+}
+
+func (client *AwsClient) RemoveScaleInProtection(asgName string, instanceID string) error {
+	protected := false
+	_, err := client.asgClient.SetInstanceProtection(context.TODO(), &as.SetInstanceProtectionInput{
+		AutoScalingGroupName: &asgName,
+		InstanceIds:          []string{instanceID},
+		ProtectedFromScaleIn: &protected,
+	})
+	if err != nil {
+		log.Error().Msgf("client: error during removing scale-in protection for instance %v in asg %v, %v", instanceID, asgName, err.Error())
+		return err
+	}
+	return nil
+}
+
+func (client *AwsClient) AddScaleInProtection(asgName string, instanceID string) error {
+	protected := true
+	_, err := client.asgClient.SetInstanceProtection(context.TODO(), &as.SetInstanceProtectionInput{
+		AutoScalingGroupName: &asgName,
+		InstanceIds:          []string{instanceID},
+		ProtectedFromScaleIn: &protected,
+	})
+	if err != nil {
+		log.Error().Msgf("client: error during adding scale-in protection for instance %v in asg %v, %v", instanceID, asgName, err.Error())
+		return err
+	}
+	return nil
+}
+
+func (client *AwsClient) GetNewInstances(asgName string, createdAfter time.Time) ([]string, error) {
+	output, err := client.asgClient.DescribeAutoScalingGroups(context.TODO(), &as.DescribeAutoScalingGroupsInput{
+		AutoScalingGroupNames: []string{asgName},
+	})
+	if err != nil {
+		log.Error().Msgf("client: error during getting new instances for asg %v, %v", asgName, err.Error())
+		return nil, err
+	}
+	instanceIDs := []string{}
+	for _, asg := range output.AutoScalingGroups {
+		for _, instance := range asg.Instances {
+			instanceOutput, err := client.ec2Client.DescribeInstances(context.TODO(), &ec2.DescribeInstancesInput{
+				InstanceIds: []string{*instance.InstanceId},
+			})
+			if err != nil {
+				log.Error().Msgf("client: error during describing instance %v, %v", *instance.InstanceId, err.Error())
+				return nil, err
+			}
+			for _, reservation := range instanceOutput.Reservations {
+				for _, instanceDetail := range reservation.Instances {
+					if instanceDetail.LaunchTime.After(createdAfter) {
+						instanceIDs = append(instanceIDs, *instance.InstanceId)
+					}
+				}
+			}
+		}
+	}
+	return instanceIDs, nil
 }

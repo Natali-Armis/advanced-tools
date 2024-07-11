@@ -132,3 +132,18 @@ func (controller *K8sUpgradeController) GetErroredPodsList() ([]*entity.FailingP
 	}
 	return failingPodsReport, nil
 }
+
+func (controller *K8sUpgradeController) RemoveAllScaleInProtection(asgName string) error {
+	instancesWithScaleInProtection, err := controller.clients.AwsClient.GetInstancesWithScaleInProtection(asgName)
+	if err != nil {
+		return err
+	}
+	for _, instanceId := range instancesWithScaleInProtection {
+		err = controller.clients.AwsClient.RemoveScaleInProtection(asgName, instanceId)
+		if err != nil {
+			// todo: handle
+			continue
+		}
+	}
+	return nil
+}
