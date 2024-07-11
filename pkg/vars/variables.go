@@ -21,6 +21,7 @@ var (
 
 	ClusterToRegionMapper        map[string]string
 	AlertsToSilenceDuringUpgrade []string
+	AlertsTeamsToNotSilence      []string
 	AwsInstancesCodes            map[int32]string
 )
 
@@ -77,7 +78,16 @@ func init() {
 		PIPELINE_TARGET_DOWN,
 		PIPELINE_CONTAINER_RESTARTING,
 		SERVER_INTEGRATION_CRASHED,
+		SERVER_INTEGRATION_CRASHED_MULTIPLE,
 		CONTAINER_CRASHED_MULTIPLE_TENANTS,
+		CONTAINER_GOT_OOM,
+	}
+	AlertsTeamsToNotSilence = []string{
+		DEVOPS_INFRA,
+		SOLUTIONS,
+		APPS_INFRA,
+		DATA_INFRA,
+		STREAMING_INFRA,
 	}
 	AwsInstancesCodes = map[int32]string{
 		0:  "pending",

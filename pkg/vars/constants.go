@@ -69,12 +69,21 @@ const (
 	MAX_SLACK_MESSAGE_SIZE        = 4000
 
 	// alert manager silencing
-	ALERT_NAME_LABEL                   = "alertname"
-	ALERT_ENV_LABEL                    = "env"
-	PIPELINE_TARGET_DOWN               = "pipeline target down"
-	PIPELINE_CONTAINER_RESTARTING      = "pipeline container restarting tenant"
-	SERVER_INTEGRATION_CRASHED         = "server integration crashed on tenant"
-	CONTAINER_CRASHED_MULTIPLE_TENANTS = "container crashed on multiple tenants"
+	ALERT_NAME_LABEL                    = "alertname"
+	ALERT_ENV_LABEL                     = "env"
+	PIPELINE_TARGET_DOWN                = "pipeline target down"
+	PIPELINE_CONTAINER_RESTARTING       = "pipeline container restarting tenant"
+	SERVER_INTEGRATION_CRASHED          = "server integration crashed on tenant"
+	SERVER_INTEGRATION_CRASHED_MULTIPLE = "server integration crashed on multiple tenants"
+	CONTAINER_CRASHED_MULTIPLE_TENANTS  = "container crashed on multiple tenants"
+	CONTAINER_GOT_OOM                   = "pipeline container got oom"
+
+	// alert manager dont silence teams
+	DEVOPS_INFRA    = "devops-infra"
+	SOLUTIONS       = "solutions"
+	APPS_INFRA      = "apps-infra"
+	DATA_INFRA      = "data-infra"
+	STREAMING_INFRA = "streaming-infra"
 
 	// unhealthy pod states
 	IMAGE_PULL_ERROR              = "ImagePullBackOff"
