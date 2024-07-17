@@ -55,7 +55,7 @@ func (prom *PrometheusClient) ExecuteQuery(query string) (string, error) {
 	return result.String(), nil
 }
 
-func (prom *PrometheusClient) GetDistinctMetricsAndUsage() {
+func (prom *PrometheusClient) GetDistinctMetricsAndUsage(singleTenantTarget ...string) {
 	query := `count by (__name__)({__name__=~".+"})`
 	result, err := prom.ExecuteQuery(query)
 	if err != nil {
@@ -88,7 +88,12 @@ func (prom *PrometheusClient) GetDistinctMetricsAndUsage() {
 		log.Error().Msgf("client: error marshaling metrics to JSON: %v", err)
 		return
 	}
-	fileName := fmt.Sprintf("metric_usage_%s.json", vars.Environment)
+	fileNameFormat := "output/metric_usage_%s.json"
+	fileNameSuffix := vars.Environment
+	if len(singleTenantTarget) > 0 {
+		fileNameSuffix = singleTenantTarget[0]
+	}
+	fileName := fmt.Sprintf(fileNameFormat, fileNameSuffix)
 	err = os.WriteFile(fileName, metricsJSON, 0644)
 	if err != nil {
 		log.Error().Msgf("client: error writing metrics to file: %v", err)

@@ -8,21 +8,24 @@ import (
 )
 
 var (
-	PrometheusServerType = ""
-	Environment          = ""
-	PrometheusUrl        = ""
-	AlertManagerUrl      = ""
-	LogLevel             = ""
-	AwsProfile           = ""
-	AwsRegion            = ""
+	PrometheusServerType string
+	Environment          string
+	PrometheusUrl        string
+	AlertManagerUrl      string
+	LogLevel             string
+	AwsProfile           string
+	AwsRegion            string
 
-	SlackAuthToken                   = ""
-	SlackUpgradeNotificationsChannel = ""
+	GrafanaToken                     string
+	SlackAuthToken                   string
+	SlackUpgradeNotificationsChannel string
 
 	ClusterToRegionMapper        map[string]string
 	AlertsToSilenceDuringUpgrade []string
 	AlertsTeamsToNotSilence      []string
 	AwsInstancesCodes            map[int32]string
+
+	SingleTenantTargets []string
 )
 
 func init() {
@@ -95,6 +98,10 @@ func init() {
 		32: "shutting-down",
 		64: "stopping",
 	}
+	GrafanaToken = os.Getenv(GRAFANA_TOKEN)
+	if len(GrafanaToken) == 0 {
+		log.Fatal().Msgf("environment variable %v must be defined", GRAFANA_TOKEN)
+	}
 	SlackAuthToken = os.Getenv(SLACK_AUTH_TOKEN)
 	if len(SlackAuthToken) == 0 {
 		log.Fatal().Msgf("environment variable %v must be defined", SLACK_AUTH_TOKEN)
@@ -105,4 +112,16 @@ func init() {
 		log.Fatal().Msgf("environment variable %v must be defined", SLACK_UPGRADE_NOTIFICATIONS_CHANNEL)
 	}
 	log.Debug().Msgf("config: %v [%v]", SLACK_UPGRADE_NOTIFICATIONS_CHANNEL, SlackUpgradeNotificationsChannel)
+	SingleTenantTargets = []string{
+		"nestle",
+		"lowes",
+		"kaiser",
+		"home-depot",
+		"nvidia",
+		"intel-fab",
+		"jaguar-landrover",
+		"walmart",
+		"tesla",
+		"helix",
+	}
 }

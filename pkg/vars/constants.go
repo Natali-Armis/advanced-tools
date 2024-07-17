@@ -50,6 +50,7 @@ const (
 	AWS_REGION                          = "AWS_REGION"
 	SLACK_AUTH_TOKEN                    = "SLACK_AUTH_TOKEN"
 	SLACK_UPGRADE_NOTIFICATIONS_CHANNEL = "SLACK_UPGRADE_NOTIFICATIONS_CHANNEL"
+	GRAFANA_TOKEN                       = "GRAFANA_TOKEN"
 
 	// env vars default
 	PROMETHEUS_SERVER_TYPE_DEFAULT = FEDERATION
@@ -65,6 +66,8 @@ const (
 	INGRESS_LABEL_SELECTOR        = "app.kubernetes.io/component"
 	INGRESS_LABEL_SELECTOR_VALUE  = "controller"
 	INGRESS_NODE_SELECTOR_MATCHER = "armis.com/node-version"
+	GRAFANA_URL                   = "https://grafana.dev.armis.com/api"
+	GRAFANA_DASHBAORDS_ROUT       = "/search?type=dash-db"
 	ALERTMANAGER_SILENCE_ROUT     = "/api/v2/silences"
 	MAX_SLACK_MESSAGE_SIZE        = 4000
 
