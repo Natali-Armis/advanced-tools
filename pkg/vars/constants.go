@@ -4,7 +4,7 @@ const (
 	// server types
 	FEDERATION = "federation"
 	BACKEND    = "backend"
-	K8_PROXY   = "k8s-proxy"
+	K8_PROXY   = "monitoring"
 
 	// environments
 	DEV             = "dev1"

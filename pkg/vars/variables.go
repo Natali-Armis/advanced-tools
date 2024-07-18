@@ -48,6 +48,17 @@ func init() {
 	if len(PrometheusUrl) == 0 {
 		PrometheusUrl = fmt.Sprintf("http://prometheus-%v-%v.armis.internal:%v", PrometheusServerType, Environment, PROMETHEUS_PORT)
 	}
+	PrometheusServerFormats := map[string]string{
+		FEDERATION: "http://prometheus-%v-%v.armis.internal:%v",
+		BACKEND:    "http://prometheus-%v-%v.armis.internal:%v",
+		K8_PROXY:   "http://prometheus-%v.%v.k8s.armis.com:%v",
+	}
+	PrometheusServerEnvs := map[string][]string{
+		FEDERATION: []string{DEV, QA, DEMO, PROD, PROD4, PROD5, PROD7, PROD8, PROD9},
+		BACKEND:    []string{DEV, QA, DEMO, PROD, PROD4, PROD5, PROD7, PROD8, PROD9},
+		K8_PROXY:   []string{OPERATIONS, OPERATIONS_TEST, DEV, QA, DEMO, PROD, PROD4, PROD5, PROD7, PROD8, PROD9},
+	}
+
 	log.Debug().Msgf("config: %v [%v]", PROMETHEUS_URL, PrometheusUrl)
 	AlertManagerUrl = os.Getenv(ALERT_MANAGER_URL)
 	if len(AlertManagerUrl) == 0 {

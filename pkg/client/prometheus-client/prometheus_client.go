@@ -102,79 +102,90 @@ func (prom *PrometheusClient) GetDistinctMetricsAndUsage(filter string, singleTe
 	log.Info().Msgf("client: metrics written to file: %s\n", fileName)
 }
 
-func (prom *PrometheusClient) GetConfiguredAlerts() ([]entity.AlertingRule, error) {
-	req, err := http.NewRequest("GET", fmt.Sprintf("%s/api/v1/rules", vars.PrometheusUrl), nil)
-	if err != nil {
-		log.Error().Msgf("client: error occurred while creating HTTP request: %v", err.Error())
-		return nil, err
+func (prom *PrometheusClient) GetConfiguredAlerts(prometheusTargets ...string) (map[string][]entity.AlertingRule, error) {
+	if len(prometheusTargets) == 0 {
+		prometheusTargets = []string{vars.PrometheusUrl}
 	}
-	resp, err := http.DefaultClient.Do(req)
-	if err != nil {
-		log.Error().Msgf("client: error occurred while making HTTP request: %v", err.Error())
-		return nil, err
-	}
-	defer resp.Body.Close()
-	if resp.StatusCode != http.StatusOK {
-		msg := fmt.Sprintf("client: received non-OK HTTP status: %v", resp.StatusCode)
-		log.Error().Msgf(msg)
-		return nil, fmt.Errorf(msg)
-	}
-	bytes, err := io.ReadAll(resp.Body)
-	if err != nil {
-		log.Error().Msgf("client: error occurred while reading response: %v", err.Error())
-		return nil, err
-	}
-	var result struct {
-		Status string `json:"status"`
-		Data   struct {
-			Groups []struct {
-				Name  string `json:"name"`
-				File  string `json:"file"`
-				Rules []struct {
-					State       string            `json:"state"`
-					Name        string            `json:"name"`
-					Query       string            `json:"query"`
-					Annotations map[string]string `json:"annotations"`
-					Labels      map[string]string `json:"labels"`
-				} `json:"rules"`
-			} `json:"groups"`
-		} `json:"data"`
-	}
-	err = json.Unmarshal(bytes, &result)
-	if err != nil {
-		log.Error().Msgf("client: error occurred while converting response to json: %v", err.Error())
-		return nil, err
-	}
-	var alertingRules []entity.AlertingRule
-	for _, group := range result.Data.Groups {
-		for _, rule := range group.Rules {
-			alertingRules = append(alertingRules, entity.AlertingRule{
-				Name:        rule.Name,
-				Query:       rule.Query,
-				Description: rule.Annotations["description"],
-				Severity:    rule.Labels["severity"],
-			})
+	alertingRules := map[string][]entity.AlertingRule{}
+	for _, prometheusTarget := range prometheusTargets {
+		req, err := http.NewRequest("GET", fmt.Sprintf("%s/api/v1/rules", prometheusTarget), nil)
+		if err != nil {
+			log.Error().Msgf("client: error occurred while creating HTTP request: %v", err.Error())
+			return nil, err
+		}
+		resp, err := http.DefaultClient.Do(req)
+		if err != nil {
+			log.Error().Msgf("client: error occurred while making HTTP request: %v", err.Error())
+			return nil, err
+		}
+		defer resp.Body.Close()
+		if resp.StatusCode != http.StatusOK {
+			msg := fmt.Sprintf("client: received non-OK HTTP status: %v", resp.StatusCode)
+			log.Error().Msgf(msg)
+			return nil, fmt.Errorf(msg)
+		}
+		bytes, err := io.ReadAll(resp.Body)
+		if err != nil {
+			log.Error().Msgf("client: error occurred while reading response: %v", err.Error())
+			return nil, err
+		}
+		var result struct {
+			Status string `json:"status"`
+			Data   struct {
+				Groups []struct {
+					Name  string `json:"name"`
+					File  string `json:"file"`
+					Rules []struct {
+						State       string            `json:"state"`
+						Name        string            `json:"name"`
+						Query       string            `json:"query"`
+						Annotations map[string]string `json:"annotations"`
+						Labels      map[string]string `json:"labels"`
+					} `json:"rules"`
+				} `json:"groups"`
+			} `json:"data"`
+		}
+		err = json.Unmarshal(bytes, &result)
+		if err != nil {
+			log.Error().Msgf("client: error occurred while converting response to json: %v", err.Error())
+			return nil, err
+		}
+		for _, group := range result.Data.Groups {
+			for _, rule := range group.Rules {
+				if _, exists := alertingRules[rule.Name]; !exists {
+					alertingRules[rule.Name] = []entity.AlertingRule{}
+				}
+				alertingRule := entity.AlertingRule{
+					Name:        rule.Name,
+					Query:       rule.Query,
+					Description: rule.Annotations["description"],
+					Severity:    rule.Labels["severity"],
+				}
+				alertingRules[rule.Name] = append(alertingRules[rule.Name], alertingRule)
+			}
 		}
 	}
 	return alertingRules, nil
 }
 
-func (prom *PrometheusClient) GetMetricsAlerts(metrics []entity.ExportedMetric) (map[string][]string, error) {
+func (prom *PrometheusClient) GetMetricsAlerts(metrics []entity.ExportedMetric) (map[string]map[string]string, error) {
 	alertingRules, err := prom.GetConfiguredAlerts()
 	if err != nil {
 		log.Error().Msgf("client: could not perform alert search %v", err.Error())
 		return nil, err
 	}
-	containingAlets := map[string][]string{}
+	containingAlerts := map[string]map[string]string{}
 	for _, metric := range metrics {
-		if _, hasKey := containingAlets[metric.Name]; !hasKey {
-			containingAlets[metric.Name] = []string{}
+		if _, hasKey := containingAlerts[metric.Name]; !hasKey {
+			containingAlerts[metric.Name] = map[string]string{}
 		}
-		for _, alertRule := range alertingRules {
-			if strings.Contains(alertRule.Query, metric.Name) {
-				containingAlets[metric.Name] = append(containingAlets[metric.Name], alertRule.Name)
+		for _, alertRuleList := range alertingRules {
+			for _, rule := range alertRuleList {
+				if strings.Contains(rule.Query, metric.Name) {
+					containingAlerts[metric.Name][rule.Name] = rule.Query
+				}
 			}
 		}
 	}
-	return containingAlets, nil
+	return containingAlerts, nil
 }

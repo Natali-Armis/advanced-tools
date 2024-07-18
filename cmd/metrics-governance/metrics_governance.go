@@ -4,7 +4,6 @@ import (
 	"advanced-tools/pkg/client"
 	"advanced-tools/pkg/config"
 	"advanced-tools/pkg/entity"
-	"advanced-tools/pkg/vars"
 	"encoding/json"
 	"fmt"
 	"os"
@@ -22,9 +21,9 @@ func init() {
 }
 
 func main() {
-	for _, tenant := range vars.SingleTenantTargets {
-		clients.PrometheusClient.GetDistinctMetricsAndUsage("armis", tenant)
-	}
+	// for _, tenant := range vars.SingleTenantTargets {
+	// 	clients.PrometheusClient.GetDistinctMetricsAndUsage("armis", tenant)
+	// }
 
 	// dashboards, err := clients.GrafanaClient.GetAllDashboards()
 	// if err != nil {
