@@ -1,10 +1,13 @@
 package prometheus_client
 
 import (
+	"advanced-tools/pkg/entity"
 	"advanced-tools/pkg/vars"
 	"context"
 	"encoding/json"
 	"fmt"
+	"io"
+	"net/http"
 	"os"
 	"regexp"
 	"sort"
@@ -20,11 +23,6 @@ import (
 type PrometheusClient struct {
 	client prom_api.Client
 	v1api  prom_api_v1.API
-}
-
-type MetricUsageCount struct {
-	Name  string `json:"name"`
-	Value int    `json:"value"`
 }
 
 func GetPrometheusClient() *PrometheusClient {
@@ -55,7 +53,7 @@ func (prom *PrometheusClient) ExecuteQuery(query string) (string, error) {
 	return result.String(), nil
 }
 
-func (prom *PrometheusClient) GetDistinctMetricsAndUsage(singleTenantTarget ...string) {
+func (prom *PrometheusClient) GetDistinctMetricsAndUsage(filter string, singleTenantTarget ...string) {
 	query := `count by (__name__)({__name__=~".+"})`
 	result, err := prom.ExecuteQuery(query)
 	if err != nil {
@@ -63,7 +61,7 @@ func (prom *PrometheusClient) GetDistinctMetricsAndUsage(singleTenantTarget ...s
 		return
 	}
 	metricsLines := strings.Split(result, "\n")
-	var metrics []MetricUsageCount
+	var metrics []entity.MetricUsageCount
 	reMetric := regexp.MustCompile(`(.+) => (\d+) @\[.+\]`)
 	for _, line := range metricsLines {
 		match := reMetric.FindStringSubmatch(line)
@@ -74,10 +72,12 @@ func (prom *PrometheusClient) GetDistinctMetricsAndUsage(singleTenantTarget ...s
 				log.Error().Msgf("client: error converting value to integer: %v\n", err)
 				continue
 			}
-			metrics = append(metrics, MetricUsageCount{
-				Name:  name,
-				Value: value,
-			})
+			if strings.Contains(name, filter) {
+				metrics = append(metrics, entity.MetricUsageCount{
+					Name:  name,
+					Value: value,
+				})
+			}
 		}
 	}
 	sort.Slice(metrics, func(i, j int) bool {
@@ -100,4 +100,81 @@ func (prom *PrometheusClient) GetDistinctMetricsAndUsage(singleTenantTarget ...s
 		return
 	}
 	log.Info().Msgf("client: metrics written to file: %s\n", fileName)
+}
+
+func (prom *PrometheusClient) GetConfiguredAlerts() ([]entity.AlertingRule, error) {
+	req, err := http.NewRequest("GET", fmt.Sprintf("%s/api/v1/rules", vars.PrometheusUrl), nil)
+	if err != nil {
+		log.Error().Msgf("client: error occurred while creating HTTP request: %v", err.Error())
+		return nil, err
+	}
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		log.Error().Msgf("client: error occurred while making HTTP request: %v", err.Error())
+		return nil, err
+	}
+	defer resp.Body.Close()
+	if resp.StatusCode != http.StatusOK {
+		msg := fmt.Sprintf("client: received non-OK HTTP status: %v", resp.StatusCode)
+		log.Error().Msgf(msg)
+		return nil, fmt.Errorf(msg)
+	}
+	bytes, err := io.ReadAll(resp.Body)
+	if err != nil {
+		log.Error().Msgf("client: error occurred while reading response: %v", err.Error())
+		return nil, err
+	}
+	var result struct {
+		Status string `json:"status"`
+		Data   struct {
+			Groups []struct {
+				Name  string `json:"name"`
+				File  string `json:"file"`
+				Rules []struct {
+					State       string            `json:"state"`
+					Name        string            `json:"name"`
+					Query       string            `json:"query"`
+					Annotations map[string]string `json:"annotations"`
+					Labels      map[string]string `json:"labels"`
+				} `json:"rules"`
+			} `json:"groups"`
+		} `json:"data"`
+	}
+	err = json.Unmarshal(bytes, &result)
+	if err != nil {
+		log.Error().Msgf("client: error occurred while converting response to json: %v", err.Error())
+		return nil, err
+	}
+	var alertingRules []entity.AlertingRule
+	for _, group := range result.Data.Groups {
+		for _, rule := range group.Rules {
+			alertingRules = append(alertingRules, entity.AlertingRule{
+				Name:        rule.Name,
+				Query:       rule.Query,
+				Description: rule.Annotations["description"],
+				Severity:    rule.Labels["severity"],
+			})
+		}
+	}
+	return alertingRules, nil
+}
+
+func (prom *PrometheusClient) GetMetricsAlerts(metrics []entity.ExportedMetric) (map[string][]string, error) {
+	alertingRules, err := prom.GetConfiguredAlerts()
+	if err != nil {
+		log.Error().Msgf("client: could not perform alert search %v", err.Error())
+		return nil, err
+	}
+	containingAlets := map[string][]string{}
+	for _, metric := range metrics {
+		if _, hasKey := containingAlets[metric.Name]; !hasKey {
+			containingAlets[metric.Name] = []string{}
+		}
+		for _, alertRule := range alertingRules {
+			if strings.Contains(alertRule.Query, metric.Name) {
+				containingAlets[metric.Name] = append(containingAlets[metric.Name], alertRule.Name)
+			}
+		}
+	}
+	return containingAlets, nil
 }

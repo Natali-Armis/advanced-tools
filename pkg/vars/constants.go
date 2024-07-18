@@ -67,7 +67,8 @@ const (
 	INGRESS_LABEL_SELECTOR_VALUE  = "controller"
 	INGRESS_NODE_SELECTOR_MATCHER = "armis.com/node-version"
 	GRAFANA_URL                   = "https://grafana.dev.armis.com/api"
-	GRAFANA_DASHBAORDS_ROUT       = "/search?type=dash-db"
+	GRAFANA_ALL_DASHBAORDS_ROUT   = "/search?type=dash-db"
+	GRAFANA_SINGLE_DASHBOARD_ROUT = "/api/dashboards/uid/"
 	ALERTMANAGER_SILENCE_ROUT     = "/api/v2/silences"
 	MAX_SLACK_MESSAGE_SIZE        = 4000
 
