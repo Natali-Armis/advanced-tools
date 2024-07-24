@@ -3,12 +3,7 @@ package main
 import (
 	"advanced-tools/pkg/client"
 	"advanced-tools/pkg/config"
-	"advanced-tools/pkg/entity"
-	"encoding/json"
-	"fmt"
-	"os"
-
-	"github.com/rs/zerolog/log"
+	"advanced-tools/pkg/vars"
 )
 
 var (
@@ -21,46 +16,63 @@ func init() {
 }
 
 func main() {
-	// for _, tenant := range vars.SingleTenantTargets {
-	// 	clients.PrometheusClient.GetDistinctMetricsAndUsage("armis", tenant)
-	// }
 
-	// dashboards, err := clients.GrafanaClient.GetAllDashboards()
+	err := clients.PrometheusClient.GetDistinctMetricsAndUsage("armis", vars.SingleTenantTargets...)
+	if err != nil {
+		return
+	}
+
+	// outputFileName := "output/metric_usage_kaiser.json"
+	// bytes, err := os.ReadFile(outputFileName)
 	// if err != nil {
+	// 	log.Error().Msgf("could not open file [%v] %v", outputFileName, err.Error())
 	// 	return
 	// }
-	// for _, dashabord := range dashboards {
-	// 	fmt.Println(dashabord.Title)
+	// var exportedMetrics []entity.ExportedMetric
+	// err = json.Unmarshal(bytes, &exportedMetrics)
+	// if err != nil {
+	// 	log.Error().Msgf("could not open file [%v] %v", outputFileName, err.Error())
+	// 	return
 	// }
-
-	outputFileName := "output/metric_usage_kaiser.json"
-	bytes, err := os.ReadFile(outputFileName)
-	if err != nil {
-		log.Error().Msgf("could not open file [%v] %v", outputFileName, err.Error())
-		return
-	}
-	var exportedMetrics []entity.ExportedMetric
-	err = json.Unmarshal(bytes, &exportedMetrics)
-	if err != nil {
-		log.Error().Msgf("could not open file [%v] %v", outputFileName, err.Error())
-		return
-	}
 
 	// metricsDashabords, err := clients.GrafanaClient.FindMetricsInDashboards(exportedMetrics)
 	// if err != nil {
 	// 	log.Error().Msgf("could not perform metrics search in dashboards %v", err.Error())
 	// 	return
 	// }
+	// bytes, err = json.MarshalIndent(metricsDashabords, "", "    ")
+	// if err != nil {
+	// 	log.Error().Msgf("could not perform metrics dashbords marshaling %v", err.Error())
+	// 	return
+	// }
+	// outputFile := "output/metrics_dashboards.json"
+	// err = os.WriteFile(outputFile, bytes, 0777)
+	// if err != nil {
+	// 	log.Error().Msgf("could not perform metrics alerts writing to output file [%v] %v", outputFile, err.Error())
+	// 	return
+	// }
 
-	metricsAlerts, err := clients.PrometheusClient.GetMetricsAlerts(exportedMetrics)
-	if err != nil {
-		log.Error().Msgf("could not perform metrics search in alerts %v", err.Error())
-		return
-	}
-	for metric, alertList := range metricsAlerts {
-		if len(alertList) > 0 {
-			fmt.Printf("%v | %v\n", metric, alertList)
-		}
-	}
+	// metricsAlertsFromAllEnvs, errs := clients.PrometheusClient.GetMetricsAlertsFromAllEnvs(exportedMetrics)
+	// if errs != nil {
+	// 	log.Error().Msgf("could not perform metrics search in alerts")
+	// 	for _, err := range errs {
+	// 		log.Error().Msg(err.Error())
+	// 	}
+	// }
+	// bytes, err = json.MarshalIndent(metricsAlertsFromAllEnvs, "", "    ")
+	// if err != nil {
+	// 	log.Error().Msgf("could not perform metrics alerts marshaling %v", err.Error())
+	// 	return
+	// }
+	// outputFile = "output/metrics_alerts.json"
+	// err = os.WriteFile(outputFile, bytes, 0777)
+	// if err != nil {
+	// 	log.Error().Msgf("could not perform metrics alerts writing to output file [%v] %v", outputFile, err.Error())
+	// 	return
+	// }
+
+	// for _, metric := range exportedMetrics {
+	// 	clients.PrometheusClient.GetMetricOwningTeam(metric.Name)
+	// }
 
 }

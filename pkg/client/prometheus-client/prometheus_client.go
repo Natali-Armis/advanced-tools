@@ -4,6 +4,7 @@ import (
 	"advanced-tools/pkg/entity"
 	"advanced-tools/pkg/vars"
 	"context"
+	"crypto/tls"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -21,28 +22,67 @@ import (
 )
 
 type PrometheusClient struct {
-	client prom_api.Client
-	v1api  prom_api_v1.API
+	prom_client          prom_api.Client
+	mimir_client         prom_api.Client
+	single_tenant_client prom_api.Client
+	http_client          *http.Client
+	https_client         *http.Client
+	v1api_prom_client    prom_api_v1.API
+	v1api_mimir_client   prom_api_v1.API
+	v1api_single_tenant  prom_api_v1.API
 }
 
 func GetPrometheusClient() *PrometheusClient {
 	log.Info().Msgf("client: configuring prometheus client")
-	client, err := prom_api.NewClient(prom_api.Config{
+	prom_client, err := prom_api.NewClient(prom_api.Config{
 		Address: vars.PrometheusUrl,
 	})
 	if err != nil {
 		log.Fatal().Msgf("client: error occured while creating prometheus client: %v", err.Error())
 	}
-	v1api := prom_api_v1.NewAPI(client)
+	v1api_prom_client := prom_api_v1.NewAPI(prom_client)
 	log.Info().Msgf("client: prometheus client configured, server url [%v]", vars.PrometheusUrl)
+	mimir_client, err := prom_api.NewClient(prom_api.Config{
+		Address: vars.MimirUrl,
+	})
+	if err != nil {
+		log.Fatal().Msgf("client: error occured while creating mimir client: %v", err.Error())
+	}
+	v1api_mimir_client := prom_api_v1.NewAPI(mimir_client)
+	log.Info().Msgf("client: mimir client configured, server url [%v]", vars.MimirUrl)
 	return &PrometheusClient{
-		client: client,
-		v1api:  v1api,
+		prom_client:        prom_client,
+		mimir_client:       mimir_client,
+		v1api_prom_client:  v1api_prom_client,
+		v1api_mimir_client: v1api_mimir_client,
+		http_client:        http.DefaultClient,
+		https_client: &http.Client{
+			Transport: &http.Transport{
+				TLSClientConfig: &tls.Config{
+					InsecureSkipVerify: true,
+				},
+			},
+		},
 	}
 }
 
+func (prom *PrometheusClient) SetSingleTenantClient(serverUrl string) error {
+	single_tenant_client, err := prom_api.NewClient(prom_api.Config{
+		Address: serverUrl,
+	})
+	if err != nil {
+		log.Error().Msgf("client: prometheus client could not be configured for server url [%v] %v", serverUrl, err.Error())
+		return err
+	}
+	v1api_single_tenant := prom_api_v1.NewAPI(single_tenant_client)
+	prom.single_tenant_client = single_tenant_client
+	prom.v1api_single_tenant = v1api_single_tenant
+	return nil
+}
+
 func (prom *PrometheusClient) ExecuteQuery(query string) (string, error) {
-	result, warnings, err := prom.v1api.Query(context.Background(), query, time.Now())
+	log.Debug().Msgf("client: executing prometheus query")
+	result, warnings, err := prom.v1api_prom_client.Query(context.Background(), query, time.Now())
 	if err != nil {
 		log.Error().Msgf("client: error occured during exeucitng prometheus query: %v", err.Error())
 		return "", err
@@ -53,9 +93,113 @@ func (prom *PrometheusClient) ExecuteQuery(query string) (string, error) {
 	return result.String(), nil
 }
 
-func (prom *PrometheusClient) GetDistinctMetricsAndUsage(filter string, singleTenantTarget ...string) {
+func (prom *PrometheusClient) ExecuteQueryMimir(query string) (string, error) {
+	log.Debug().Msgf("client: executing mimir prometheus query")
+	result, warnings, err := prom.v1api_mimir_client.Query(context.Background(), query, time.Now())
+	if err != nil {
+		log.Error().Msgf("client: error occured during exeucitng mimir query: %v", err.Error())
+		return "", err
+	}
+	if len(warnings) > 0 {
+		log.Warn().Msgf("client: warnings appeared during executing mimir query: %v", warnings)
+	}
+	return result.String(), nil
+}
+
+func (prom *PrometheusClient) ExecuteQuerySingleTenant(query string) (string, error) {
+	log.Debug().Msgf("client: executing single tenant prometheus query")
+	result, warnings, err := prom.v1api_single_tenant.Query(context.Background(), query, time.Now())
+	if err != nil {
+		log.Error().Msgf("client: error occured during exeucitng single tenant query: %v", err.Error())
+		return "", err
+	}
+	if len(warnings) > 0 {
+		log.Warn().Msgf("client: warnings appeared during executing single tenant query: %v", warnings)
+	}
+	return result.String(), nil
+}
+
+func (prom *PrometheusClient) GetDistinctMetricsAndUsage(filter string, singleTenantTarget ...string) (err error) {
+	var result string
 	query := `count by (__name__)({__name__=~".+"})`
-	result, err := prom.ExecuteQuery(query)
+	if len(singleTenantTarget) > 0 {
+		for _, singleTenantTarget := range singleTenantTarget {
+			log.Debug().Msgf("client: prometheus getting distinct metrics and usage, filer [%v] prometheus single tenant target [%v]", filter, singleTenantTarget)
+			serverUrl := fmt.Sprintf(vars.SINGLE_TENANT_PROM_URL_FORMAT, singleTenantTarget)
+			err = prom.SetSingleTenantClient(serverUrl)
+			if err != nil {
+				log.Error().Msgf("clinet: prometheus target [%v] failed to set client for server url [%v] %v", singleTenantTarget, serverUrl, err.Error())
+				return err
+			}
+			result, err = prom.ExecuteQuerySingleTenant(query)
+			if err != nil {
+				log.Error().Msgf("clinet: prometheus target [%v] failed to execute query %v", singleTenantTarget, err.Error())
+				return err
+			}
+			err = prom.filterAndWriteOutMetrics(result, filter, singleTenantTarget)
+			if err != nil {
+				return err
+			}
+		}
+	} else {
+		log.Debug().Msgf("client: prometheus getting distinct metrics and usage, filer [%v]", filter)
+		result, err = prom.ExecuteQuery(query)
+		if err != nil {
+			log.Error().Msgf("clinet: prometheus failed to execute query %v", err.Error())
+			return err
+		}
+		err = prom.filterAndWriteOutMetrics(result, filter, vars.Environment)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (prom *PrometheusClient) filterAndWriteOutMetrics(result string, filter string, fileSuffix string) error {
+	metricsLines := strings.Split(result, "\n")
+	var metrics []entity.MetricUsageCount
+	reMetric := regexp.MustCompile(`(.+) => (\d+) @\[.+\]`)
+	for _, line := range metricsLines {
+		match := reMetric.FindStringSubmatch(line)
+		if len(match) == 3 {
+			name := strings.TrimSpace(match[1])
+			value, err := strconv.Atoi(match[2])
+			if err != nil {
+				log.Error().Msgf("client: error converting value to integer: %v\n", err)
+				continue
+			}
+			if strings.Contains(name, filter) {
+				metrics = append(metrics, entity.MetricUsageCount{
+					Name:  name,
+					Value: value,
+				})
+			}
+		}
+	}
+	sort.Slice(metrics, func(i, j int) bool {
+		return metrics[i].Value > metrics[j].Value
+	})
+	metricsJSON, err := json.MarshalIndent(metrics, "", "  ")
+	if err != nil {
+		log.Error().Msgf("client: error marshaling metrics to JSON: %v", err)
+		return err
+	}
+	fileNameFormat := "output/metric_usage_%s.json"
+	fileName := fmt.Sprintf(fileNameFormat, fileSuffix)
+	err = os.WriteFile(fileName, metricsJSON, 0644)
+	if err != nil {
+		log.Error().Msgf("client: error writing metrics to file: %v", err)
+		return err
+	}
+	log.Info().Msgf("client: metrics written to file: %s\n", fileName)
+	return nil
+}
+
+func (prom *PrometheusClient) GetDistinctMetricsAndUsageMimir(filter string) {
+	log.Debug().Msgf("client: prometheus getting distinct metrics and usage, filer [%v]", filter)
+	query := `count by (__name__)({__name__=~".+"})`
+	result, err := prom.ExecuteQueryMimir(query)
 	if err != nil {
 		log.Error().Err(err).Msg("Failed to execute query")
 		return
@@ -89,10 +233,7 @@ func (prom *PrometheusClient) GetDistinctMetricsAndUsage(filter string, singleTe
 		return
 	}
 	fileNameFormat := "output/metric_usage_%s.json"
-	fileNameSuffix := vars.Environment
-	if len(singleTenantTarget) > 0 {
-		fileNameSuffix = singleTenantTarget[0]
-	}
+	fileNameSuffix := "mimir"
 	fileName := fmt.Sprintf(fileNameFormat, fileNameSuffix)
 	err = os.WriteFile(fileName, metricsJSON, 0644)
 	if err != nil {
@@ -106,6 +247,7 @@ func (prom *PrometheusClient) GetConfiguredAlerts(prometheusTargets ...string) (
 	if len(prometheusTargets) == 0 {
 		prometheusTargets = []string{vars.PrometheusUrl}
 	}
+	log.Debug().Msgf("client: prometheus getting configured alerts from target list %v", prometheusTargets)
 	alertingRules := map[string][]entity.AlertingRule{}
 	for _, prometheusTarget := range prometheusTargets {
 		req, err := http.NewRequest("GET", fmt.Sprintf("%s/api/v1/rules", prometheusTarget), nil)
@@ -113,7 +255,7 @@ func (prom *PrometheusClient) GetConfiguredAlerts(prometheusTargets ...string) (
 			log.Error().Msgf("client: error occurred while creating HTTP request: %v", err.Error())
 			return nil, err
 		}
-		resp, err := http.DefaultClient.Do(req)
+		resp, err := prom.https_client.Do(req)
 		if err != nil {
 			log.Error().Msgf("client: error occurred while making HTTP request: %v", err.Error())
 			return nil, err
@@ -168,24 +310,56 @@ func (prom *PrometheusClient) GetConfiguredAlerts(prometheusTargets ...string) (
 	return alertingRules, nil
 }
 
-func (prom *PrometheusClient) GetMetricsAlerts(metrics []entity.ExportedMetric) (map[string]map[string]string, error) {
-	alertingRules, err := prom.GetConfiguredAlerts()
-	if err != nil {
-		log.Error().Msgf("client: could not perform alert search %v", err.Error())
-		return nil, err
-	}
-	containingAlerts := map[string]map[string]string{}
-	for _, metric := range metrics {
-		if _, hasKey := containingAlerts[metric.Name]; !hasKey {
-			containingAlerts[metric.Name] = map[string]string{}
-		}
-		for _, alertRuleList := range alertingRules {
-			for _, rule := range alertRuleList {
-				if strings.Contains(rule.Query, metric.Name) {
-					containingAlerts[metric.Name][rule.Name] = rule.Query
+/*
+Get all the related alerts of metric list from all existing proemtheus servers,
+the returned value is in the format of the following mapping chain:
+map[metric name][prometheus url][rule name] -> rule query
+(4 dimension matrix)
+*/
+func (prom *PrometheusClient) GetMetricsAlertsFromAllEnvs(metrics []entity.ExportedMetric) (map[string]map[string]map[string]string, []error) {
+	log.Debug().Msgf("client: prometheus getting related alerts from metrics list - all prometheus environments")
+	errList := []error{}
+	alertMapping := map[string]map[string]map[string]string{}
+	for _, envs := range vars.PrometheusServers {
+		for _, promeUrl := range envs {
+			log.Debug().Msgf("client: prometheus getting related alerts from metrics list - prometheus target [%v]", promeUrl)
+			alertingRules, err := prom.GetConfiguredAlerts(promeUrl)
+			if err != nil {
+				log.Error().Msgf("client: could not perform alert search for prometheus target [%v] %v", promeUrl, err.Error())
+				errList = append(errList, err)
+				continue
+			}
+			for _, metric := range metrics {
+				if _, hasKey := alertMapping[metric.Name]; !hasKey {
+					alertMapping[metric.Name] = map[string]map[string]string{}
+				}
+				if _, hasKey := alertMapping[metric.Name][promeUrl]; !hasKey {
+					alertMapping[metric.Name][promeUrl] = map[string]string{}
+				}
+				for _, alertRuleList := range alertingRules {
+					for _, rule := range alertRuleList {
+						if strings.Contains(rule.Query, metric.Name) {
+							alertMapping[metric.Name][promeUrl][rule.Name] = rule.Query
+						}
+					}
 				}
 			}
 		}
 	}
-	return containingAlerts, nil
+	if len(errList) > 0 {
+		return alertMapping, errList
+	}
+	return alertMapping, nil
 }
+
+// func (prom *PrometheusClient) GetMetricOwningTeam(metric string) (string, error) {
+// 	query := fmt.Sprintf("count by (owner) (%v * on (srv) group_left(owner) (group by (srv, owner) (armis_pg_multitenant_management_service_owner_creation_time)))", metric)
+// 	fmt.Println(query)
+// 	str, err := prom.ExecuteQuery(query)
+// 	if err != nil {
+// 		log.Error().Msgf("client: prometheus could not get metric owning team %v", err.Error())
+// 		return "", err
+// 	}
+
+// 	return str, nil
+// }

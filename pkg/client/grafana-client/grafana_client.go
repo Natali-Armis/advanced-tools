@@ -106,12 +106,14 @@ func (client *GrafanaClient) FindMetricInDashboards(metricName string) ([]string
 }
 
 func (client *GrafanaClient) FindMetricsInDashboards(metrics []entity.ExportedMetric) (map[string][]string, error) {
+	log.Debug().Msgf("client: grafana find metrics in dashabords")
 	dashboards, err := client.GetAllDashboards()
 	if err != nil {
 		return nil, err
 	}
 	containingDashabords := map[string][]string{}
 	for _, dashboard := range dashboards {
+		log.Debug().Msgf("client: grafana dashabord name [%v] uid [%v]", dashboard.Title, dashboard.UID)
 		dash, err := client.GetDashboardByUID(dashboard.UID)
 		if err != nil {
 			log.Error().Msgf("client: could not get dashboard by UID %v", err.Error())
@@ -131,7 +133,7 @@ func (client *GrafanaClient) FindMetricsInDashboards(metrics []entity.ExportedMe
 }
 
 func containsMetric(dashboard entity.Dashboard, metricName string) bool {
-	dashboardJSON, err := json.Marshal(dashboard)
+	dashboardJSON, err := json.MarshalIndent(dashboard, "", "    ")
 	if err != nil {
 		log.Error().Msgf("client: could not marshal dashboard %v", err.Error())
 		return false

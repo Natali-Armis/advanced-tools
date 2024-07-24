@@ -5,6 +5,7 @@ const (
 	FEDERATION = "federation"
 	BACKEND    = "backend"
 	K8_PROXY   = "monitoring"
+	SINGLE_TENANT_PROM_URL_FORMAT = "http://%v.armis.internal:9090"
 
 	// environments
 	DEV             = "dev1"
@@ -43,6 +44,7 @@ const (
 	// env vars names
 	PROMETHEUS_SERVER_TYPE              = "SERVER_TYPE"
 	PROMETHEUS_URL                      = "PROMETHEUS_URL"
+	MIMIR_URL                           = "MIMIR_URL"
 	ALERT_MANAGER_URL                   = "ALERT_MANAGER_URL"
 	ENVIRONMENT                         = "ENVIRONMENT"
 	LOG_LEVEL                           = "LOG_LEVEL"
@@ -59,6 +61,7 @@ const (
 	AWS_PROFILE_DEFAULT            = PROFILE_DEFAULT
 	AWS_REGION_DEFAULT             = US_EAST_1
 	ALERT_MANAGER_URL_DEFAULT      = "http://prometheus-federation-prod.armis.internal:9093"
+	MIMIR_URL_DEFAULT              = "http://mimir-gateway.operations.k8s.armis.com:8080/prometheus"
 
 	// misc
 	ASG_REQUIRED_LABEL            = "k8s_armis_com"
@@ -66,8 +69,8 @@ const (
 	INGRESS_LABEL_SELECTOR        = "app.kubernetes.io/component"
 	INGRESS_LABEL_SELECTOR_VALUE  = "controller"
 	INGRESS_NODE_SELECTOR_MATCHER = "armis.com/node-version"
-	GRAFANA_URL                   = "https://grafana.dev.armis.com/api"
-	GRAFANA_ALL_DASHBAORDS_ROUT   = "/search?type=dash-db"
+	GRAFANA_URL                   = "https://grafana.dev.armis.com"
+	GRAFANA_ALL_DASHBAORDS_ROUT   = "/api/search?type=dash-db"
 	GRAFANA_SINGLE_DASHBOARD_ROUT = "/api/dashboards/uid/"
 	ALERTMANAGER_SILENCE_ROUT     = "/api/v2/silences"
 	MAX_SLACK_MESSAGE_SIZE        = 4000

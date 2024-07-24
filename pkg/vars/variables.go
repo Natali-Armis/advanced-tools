@@ -11,6 +11,7 @@ var (
 	PrometheusServerType string
 	Environment          string
 	PrometheusUrl        string
+	MimirUrl             string
 	AlertManagerUrl      string
 	LogLevel             string
 	AwsProfile           string
@@ -26,6 +27,7 @@ var (
 	AwsInstancesCodes            map[int32]string
 
 	SingleTenantTargets []string
+	PrometheusServers   map[string]map[string]string
 )
 
 func init() {
@@ -48,18 +50,30 @@ func init() {
 	if len(PrometheusUrl) == 0 {
 		PrometheusUrl = fmt.Sprintf("http://prometheus-%v-%v.armis.internal:%v", PrometheusServerType, Environment, PROMETHEUS_PORT)
 	}
+	log.Debug().Msgf("config: %v [%v]", PROMETHEUS_URL, PrometheusUrl)
+	MimirUrl = os.Getenv(MIMIR_URL)
+	if len(MimirUrl) == 0 {
+		MimirUrl = MIMIR_URL_DEFAULT
+	}
+	log.Debug().Msgf("config: %v [%v]", MIMIR_URL, MimirUrl)
 	PrometheusServerFormats := map[string]string{
-		FEDERATION: "http://prometheus-%v-%v.armis.internal:%v",
-		BACKEND:    "http://prometheus-%v-%v.armis.internal:%v",
-		K8_PROXY:   "http://prometheus-%v.%v.k8s.armis.com:%v",
+		FEDERATION: "http://prometheus-%v-%v.armis.internal:9090",
+		BACKEND:    "http://prometheus-%v-%v.armis.internal:9090",
+		K8_PROXY:   "https://prometheus-%v.%v.k8s.armis.com:443",
 	}
 	PrometheusServerEnvs := map[string][]string{
-		FEDERATION: []string{DEV, QA, DEMO, PROD, PROD4, PROD5, PROD7, PROD8, PROD9},
-		BACKEND:    []string{DEV, QA, DEMO, PROD, PROD4, PROD5, PROD7, PROD8, PROD9},
-		K8_PROXY:   []string{OPERATIONS, OPERATIONS_TEST, DEV, QA, DEMO, PROD, PROD4, PROD5, PROD7, PROD8, PROD9},
+		FEDERATION: {DEV, QA, DEMO, PROD, PROD4, PROD5, PROD7, PROD8, PROD9},
+		BACKEND:    {DEV, QA, DEMO, PROD, PROD4, PROD5, PROD7, PROD8, PROD9},
+		K8_PROXY:   {OPERATIONS, OPERATIONS_TEST, DEV, QA, DEMO, PROD, PROD4, PROD5, PROD7, PROD8, PROD9},
 	}
-
-	log.Debug().Msgf("config: %v [%v]", PROMETHEUS_URL, PrometheusUrl)
+	PrometheusServers = map[string]map[string]string{}
+	for serverType, urlFormat := range PrometheusServerFormats {
+		PrometheusServers[serverType] = map[string]string{}
+		envs := PrometheusServerEnvs[serverType]
+		for _, env := range envs {
+			PrometheusServers[serverType][env] = fmt.Sprintf(urlFormat, serverType, env)
+		}
+	}
 	AlertManagerUrl = os.Getenv(ALERT_MANAGER_URL)
 	if len(AlertManagerUrl) == 0 {
 		AlertManagerUrl = ALERT_MANAGER_URL_DEFAULT
@@ -127,10 +141,10 @@ func init() {
 		"nestle",
 		"lowes",
 		"kaiser",
-		"home-depot",
+		"homedepot",
 		"nvidia",
 		"intel-fab",
-		"jaguar-landrover",
+		"jaguarlandrover",
 		"walmart",
 		"tesla",
 		"helix",
