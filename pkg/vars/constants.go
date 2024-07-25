@@ -2,9 +2,9 @@ package vars
 
 const (
 	// server types
-	FEDERATION = "federation"
-	BACKEND    = "backend"
-	K8_PROXY   = "monitoring"
+	FEDERATION                    = "federation"
+	BACKEND                       = "backend"
+	K8_PROXY                      = "monitoring"
 	SINGLE_TENANT_PROM_URL_FORMAT = "http://%v.armis.internal:9090"
 
 	// environments
@@ -53,15 +53,18 @@ const (
 	SLACK_AUTH_TOKEN                    = "SLACK_AUTH_TOKEN"
 	SLACK_UPGRADE_NOTIFICATIONS_CHANNEL = "SLACK_UPGRADE_NOTIFICATIONS_CHANNEL"
 	GRAFANA_TOKEN                       = "GRAFANA_TOKEN"
+	POSTGRES_CONNECTION_STRING          = "POSTGRES_CONNECTION_STRING"
+	LOCAL_POSTGRES_CONNECTION_STRING    = "LOCAL_POSTGRES_CONNECTION_STRING"
 
 	// env vars default
-	PROMETHEUS_SERVER_TYPE_DEFAULT = FEDERATION
-	ENVIRONMENT_DEFAULT            = DEV
-	LOG_LEVEL_DEFAULT              = DEBUG
-	AWS_PROFILE_DEFAULT            = PROFILE_DEFAULT
-	AWS_REGION_DEFAULT             = US_EAST_1
-	ALERT_MANAGER_URL_DEFAULT      = "http://prometheus-federation-prod.armis.internal:9093"
-	MIMIR_URL_DEFAULT              = "http://mimir-gateway.operations.k8s.armis.com:8080/prometheus"
+	PROMETHEUS_SERVER_TYPE_DEFAULT     = FEDERATION
+	ENVIRONMENT_DEFAULT                = DEV
+	LOG_LEVEL_DEFAULT                  = DEBUG
+	AWS_PROFILE_DEFAULT                = PROFILE_DEFAULT
+	AWS_REGION_DEFAULT                 = US_EAST_1
+	ALERT_MANAGER_URL_DEFAULT          = "http://prometheus-federation-prod.armis.internal:9093"
+	MIMIR_URL_DEFAULT                  = "http://mimir-gateway.operations.k8s.armis.com:80/prometheus"
+	POSTGRES_CONNECTION_STRING_DEFAULT = "postgresql://postgres:mysecretpassword@localhost:5432/postgres?sslmode=disable"
 
 	// misc
 	ASG_REQUIRED_LABEL            = "k8s_armis_com"

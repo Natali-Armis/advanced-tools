@@ -201,7 +201,7 @@ func (prom *PrometheusClient) GetDistinctMetricsAndUsageMimir(filter string) {
 	query := `count by (__name__)({__name__=~".+"})`
 	result, err := prom.ExecuteQueryMimir(query)
 	if err != nil {
-		log.Error().Err(err).Msg("Failed to execute query")
+		log.Error().Msgf("Failed to execute query %v", err.Error())
 		return
 	}
 	metricsLines := strings.Split(result, "\n")

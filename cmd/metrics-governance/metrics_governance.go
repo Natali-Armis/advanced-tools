@@ -3,7 +3,7 @@ package main
 import (
 	"advanced-tools/pkg/client"
 	"advanced-tools/pkg/config"
-	"advanced-tools/pkg/vars"
+	// "advanced-tools/pkg/vars"
 )
 
 var (
@@ -17,10 +17,12 @@ func init() {
 
 func main() {
 
-	err := clients.PrometheusClient.GetDistinctMetricsAndUsage("armis", vars.SingleTenantTargets...)
-	if err != nil {
-		return
-	}
+	clients.PrometheusClient.GetDistinctMetricsAndUsageMimir("armis")
+
+	// err := clients.PrometheusClient.GetDistinctMetricsAndUsage("armis", vars.SingleTenantTargets...)
+	// if err != nil {
+	// 	return
+	// }
 
 	// outputFileName := "output/metric_usage_kaiser.json"
 	// bytes, err := os.ReadFile(outputFileName)

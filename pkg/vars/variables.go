@@ -17,6 +17,7 @@ var (
 	AwsProfile           string
 	AwsRegion            string
 
+	PostgresConnectionString         string
 	GrafanaToken                     string
 	SlackAuthToken                   string
 	SlackUpgradeNotificationsChannel string
