@@ -2,6 +2,8 @@ package slack_client
 
 import (
 	"regexp"
+	"strconv"
+	"time"
 
 	"github.com/rs/zerolog/log"
 	"github.com/slack-go/slack"
@@ -61,8 +63,37 @@ func (s *SlackClient) GetLastMessage(channelID string) (message string, userId s
 	return lastMessage, user, nil
 }
 
+func (s *SlackClient) FetchHistoryUpToDate(channelID string, oldestDate time.Time) ([]slack.Message, error) {
+	var allMessages []slack.Message
+	oldestTimestamp := oldestDate.Unix()
+	params := &slack.GetConversationHistoryParameters{
+		ChannelID: channelID,
+		Oldest:    strconv.FormatInt(oldestTimestamp, 10),
+		Limit:     1000,
+	}
+
+	for {
+		history, err := s.client.GetConversationHistory(params)
+		if err != nil {
+			log.Error().Msgf("failed to get conversation history from channel %v: %v", channelID, err)
+			return nil, err
+		}
+		allMessages = append(allMessages, history.Messages...)
+		if !history.HasMore {
+			break
+		}
+		params.Latest = history.Messages[len(history.Messages)-1].Timestamp
+	}
+
+	log.Info().Msgf("fetched %d messages from channel %v", len(allMessages), channelID)
+	return allMessages, nil
+}
+
 func (s *SlackClient) GetLastMessageMatchPattern(channelID string, pattern string) (message string, userId string, err error) {
 	message, userId, err = s.GetLastMessage(channelID)
+	if err != nil {
+		return "", "", err
+	}
 	re := regexp.MustCompile(pattern)
 	if re.MatchString(message) {
 		return message, userId, nil

@@ -5,6 +5,7 @@ import (
 	aws "advanced-tools/pkg/client/aws-client"
 	grafana "advanced-tools/pkg/client/grafana-client"
 	k8s "advanced-tools/pkg/client/k8s-client"
+	maestro "advanced-tools/pkg/client/maestro-client"
 	prom "advanced-tools/pkg/client/prometheus-client"
 	slack "advanced-tools/pkg/client/slack-client"
 	"advanced-tools/pkg/vars"
@@ -17,6 +18,7 @@ type Client struct {
 	AwsClient          *aws.AwsClient
 	SlackClient        *slack.SlackClient
 	GrafanaClient      *grafana.GrafanaClient
+	MaestroClient      *maestro.MaestroClient
 }
 
 func GetClient() *Client {
@@ -27,5 +29,6 @@ func GetClient() *Client {
 		AwsClient:          aws.GetAwsClient(vars.AwsProfile, vars.AwsRegion),
 		SlackClient:        slack.GetSlackClient(vars.SlackAuthToken),
 		GrafanaClient:      grafana.GetGrafanaClient(vars.GrafanaToken, vars.GRAFANA_URL),
+		MaestroClient:      maestro.GetMaestroClient(),
 	}
 }

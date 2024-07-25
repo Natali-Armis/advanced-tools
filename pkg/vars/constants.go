@@ -36,25 +36,28 @@ const (
 	PROMETHEUS_PORT = "9090"
 
 	// log levels
-	ERROR = "erro"
+	ERROR = "error"
 	WARN  = "warn"
 	INFO  = "info"
 	DEBUG = "debug"
 
 	// env vars names
-	PROMETHEUS_SERVER_TYPE              = "SERVER_TYPE"
-	PROMETHEUS_URL                      = "PROMETHEUS_URL"
-	MIMIR_URL                           = "MIMIR_URL"
-	ALERT_MANAGER_URL                   = "ALERT_MANAGER_URL"
-	ENVIRONMENT                         = "ENVIRONMENT"
-	LOG_LEVEL                           = "LOG_LEVEL"
-	AWS_PROFILE                         = "AWS_PROFILE"
-	AWS_REGION                          = "AWS_REGION"
-	SLACK_AUTH_TOKEN                    = "SLACK_AUTH_TOKEN"
-	SLACK_UPGRADE_NOTIFICATIONS_CHANNEL = "SLACK_UPGRADE_NOTIFICATIONS_CHANNEL"
-	GRAFANA_TOKEN                       = "GRAFANA_TOKEN"
-	POSTGRES_CONNECTION_STRING          = "POSTGRES_CONNECTION_STRING"
-	LOCAL_POSTGRES_CONNECTION_STRING    = "LOCAL_POSTGRES_CONNECTION_STRING"
+	MAESTRO_URL                           = "MAESTRO_URL"
+	MAESTRO_MAX_RESULTS_LIMIT             = "MAESTRO_MAX_RESULTS_LIMIT"
+	PROMETHEUS_SERVER_TYPE                = "SERVER_TYPE"
+	PROMETHEUS_URL                        = "PROMETHEUS_URL"
+	MIMIR_URL                             = "MIMIR_URL"
+	ALERT_MANAGER_URL                     = "ALERT_MANAGER_URL"
+	ENVIRONMENT                           = "ENVIRONMENT"
+	LOG_LEVEL                             = "LOG_LEVEL"
+	AWS_PROFILE                           = "AWS_PROFILE"
+	AWS_REGION                            = "AWS_REGION"
+	SLACK_AUTH_TOKEN                      = "SLACK_AUTH_TOKEN"
+	SLACK_UPGRADE_NOTIFICATIONS_CHANNEL   = "SLACK_UPGRADE_NOTIFICATIONS_CHANNEL"
+	SLACK_ST_RESIZE_NOTIFICATIONS_CHANNEL = "SLACK_ST_RESIZE_NOTIFICATIONS_CHANNEL"
+	GRAFANA_TOKEN                         = "GRAFANA_TOKEN"
+	POSTGRES_CONNECTION_STRING            = "POSTGRES_CONNECTION_STRING"
+	LOCAL_POSTGRES_CONNECTION_STRING      = "LOCAL_POSTGRES_CONNECTION_STRING"
 
 	// env vars default
 	PROMETHEUS_SERVER_TYPE_DEFAULT     = FEDERATION
@@ -65,6 +68,8 @@ const (
 	ALERT_MANAGER_URL_DEFAULT          = "http://prometheus-federation-prod.armis.internal:9093"
 	MIMIR_URL_DEFAULT                  = "http://mimir-gateway.operations.k8s.armis.com:80/prometheus"
 	POSTGRES_CONNECTION_STRING_DEFAULT = "postgresql://postgres:mysecretpassword@localhost:5432/postgres?sslmode=disable"
+	MAESTRO_URL_DEFAULT                = "https://maestro-operations.operations.k8s.armis.com/api/v1/"
+	MAESTRO_MAX_RESULTS_LIMIT_DEFAULT  = 20
 
 	// misc
 	ASG_REQUIRED_LABEL            = "k8s_armis_com"

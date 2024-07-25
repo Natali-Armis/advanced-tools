@@ -3,6 +3,7 @@ package vars
 import (
 	"fmt"
 	"os"
+	"strconv"
 
 	"github.com/rs/zerolog/log"
 )
@@ -13,19 +14,22 @@ var (
 	PrometheusUrl        string
 	MimirUrl             string
 	AlertManagerUrl      string
+	MaestroUrl           string
 	LogLevel             string
 	AwsProfile           string
 	AwsRegion            string
 
-	PostgresConnectionString         string
-	GrafanaToken                     string
-	SlackAuthToken                   string
-	SlackUpgradeNotificationsChannel string
+	PostgresConnectionString          string
+	GrafanaToken                      string
+	SlackAuthToken                    string
+	SlackUpgradeNotificationsChannel  string
+	SlackSTResizeNotificationsChannel string
 
 	ClusterToRegionMapper        map[string]string
 	AlertsToSilenceDuringUpgrade []string
 	AlertsTeamsToNotSilence      []string
 	AwsInstancesCodes            map[int32]string
+	MaestroMaxResultsLimit       int
 
 	SingleTenantTargets []string
 	PrometheusServers   map[string]map[string]string
@@ -138,6 +142,11 @@ func init() {
 		log.Fatal().Msgf("environment variable %v must be defined", SLACK_UPGRADE_NOTIFICATIONS_CHANNEL)
 	}
 	log.Debug().Msgf("config: %v [%v]", SLACK_UPGRADE_NOTIFICATIONS_CHANNEL, SlackUpgradeNotificationsChannel)
+	SlackSTResizeNotificationsChannel = os.Getenv(SLACK_ST_RESIZE_NOTIFICATIONS_CHANNEL)
+	if len(SlackSTResizeNotificationsChannel) == 0 {
+		log.Fatal().Msgf("environment variable %v must be defined", SLACK_ST_RESIZE_NOTIFICATIONS_CHANNEL)
+	}
+	log.Debug().Msgf("config: %v [%v]", SLACK_ST_RESIZE_NOTIFICATIONS_CHANNEL, SlackSTResizeNotificationsChannel)
 	SingleTenantTargets = []string{
 		"nestle",
 		"lowes",
@@ -150,4 +159,21 @@ func init() {
 		"tesla",
 		"helix",
 	}
+	MaestroUrl = os.Getenv(MAESTRO_URL)
+	if len(MaestroUrl) == 0 {
+		MaestroUrl = MAESTRO_URL_DEFAULT
+	}
+	log.Debug().Msgf("config: %v [%v]", MAESTRO_URL, MaestroUrl)
+	MaestroMaxResultsLimitStr := os.Getenv(MAESTRO_MAX_RESULTS_LIMIT)
+	if len(MaestroMaxResultsLimitStr) == 0 {
+		MaestroMaxResultsLimit = MAESTRO_MAX_RESULTS_LIMIT_DEFAULT
+	} else {
+		var err error
+		MaestroMaxResultsLimit, err = strconv.Atoi(MaestroMaxResultsLimitStr)
+		if err != nil {
+			log.Warn().Msgf("config: could not convert %v value [%v] to integer %v", MAESTRO_MAX_RESULTS_LIMIT, MaestroMaxResultsLimitStr, err.Error())
+			MaestroMaxResultsLimit = MAESTRO_MAX_RESULTS_LIMIT_DEFAULT
+		}
+	}
+	log.Debug().Msgf("config: %v [%v]", MAESTRO_MAX_RESULTS_LIMIT, MaestroMaxResultsLimit)
 }
