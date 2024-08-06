@@ -1,19 +1,24 @@
 {
     "armis_activity_client_query_time_count": [],
+    "armis_activity_client_query_time_created": [],
     "armis_activity_client_query_time_sum": [],
+    "armis_alert_processor_number_of_events_handled_created": [],
     "armis_alert_processor_number_of_events_handled_total": [
         "Alert Processor Metrics",
         "Alert Processor Metrics Copy",
         "Device Identification Source Processor Metrics"
     ],
     "armis_alert_service_alert_field_update_commands_handling_time_count": [],
+    "armis_alert_service_alert_field_update_commands_handling_time_created": [],
     "armis_alert_service_alert_field_update_commands_handling_time_sum": [],
     "armis_alert_service_delete_device_time_count": [],
+    "armis_alert_service_delete_device_time_created": [],
     "armis_alert_service_delete_device_time_sum": [],
     "armis_alert_service_get_existing_alert_using_alert_fields_time_count": [
         "Alert Processor Metrics",
         "Alert Processor Metrics Copy"
     ],
+    "armis_alert_service_get_existing_alert_using_alert_fields_time_created": [],
     "armis_alert_service_get_existing_alert_using_alert_fields_time_sum": [
         "Alert Processor Metrics",
         "Alert Processor Metrics Copy"
@@ -22,6 +27,7 @@
         "Alert Processor Metrics",
         "Alert Processor Metrics Copy"
     ],
+    "armis_alert_service_saving_new_alert_time_created": [],
     "armis_alert_service_saving_new_alert_time_sum": [
         "Alert Processor Metrics",
         "Alert Processor Metrics Copy"
@@ -30,6 +36,7 @@
         "Alert Processor Metrics",
         "Alert Processor Metrics Copy"
     ],
+    "armis_alert_service_update_existing_alert_time_created": [],
     "armis_alert_service_update_existing_alert_time_sum": [
         "Alert Processor Metrics",
         "Alert Processor Metrics Copy"
@@ -39,6 +46,7 @@
         "Alert Processor Metrics Copy",
         "Device Identification Source Processor Metrics"
     ],
+    "armis_alert_service_upsert_commands_handling_time_created": [],
     "armis_alert_service_upsert_commands_handling_time_sum": [
         "Alert Processor Metrics",
         "Alert Processor Metrics Copy",
@@ -47,15 +55,18 @@
     "armis_arp_data_recorder_arp_record_collector_delay_seconds_count": [
         "ARP Delay Dashboard"
     ],
+    "armis_arp_data_recorder_arp_record_collector_delay_seconds_created": [],
     "armis_arp_data_recorder_arp_record_collector_delay_seconds_hist_bucket": [
         "ARP Delay Dashboard"
     ],
     "armis_arp_data_recorder_arp_record_collector_delay_seconds_hist_count": [],
+    "armis_arp_data_recorder_arp_record_collector_delay_seconds_hist_created": [],
     "armis_arp_data_recorder_arp_record_collector_delay_seconds_hist_sum": [],
     "armis_arp_data_recorder_arp_record_collector_delay_seconds_sum": [
         "ARP Delay Dashboard"
     ],
     "armis_arp_data_recorder_arp_records_in_msg_sent_to_s3_topic": [],
+    "armis_arp_data_recorder_forwarder_messages_sent_created": [],
     "armis_arp_data_recorder_forwarder_messages_sent_total": [
         "ARP Data Recorder Dashboard",
         "ARP Essential Updates Rate"
@@ -63,6 +74,7 @@
     "armis_arp_data_recorder_send_time_count": [
         "ARP Data Recorder Dashboard"
     ],
+    "armis_arp_data_recorder_send_time_created": [],
     "armis_arp_data_recorder_send_time_sum": [
         "ARP Data Recorder Dashboard"
     ],
@@ -70,51 +82,67 @@
         "ARP Proxy Playground",
         "Yaakov Temp Dashboard"
     ],
+    "armis_arp_proxy_delete_devices_fetched_macs_to_delete_created": [],
     "armis_arp_proxy_delete_devices_fetched_macs_to_delete_total": [
         "ARP Proxy Tags and Deletions"
     ],
+    "armis_arp_proxy_deleted_devices_created": [],
     "armis_arp_proxy_deleted_devices_total": [
         "ARP Proxy Tags and Deletions"
     ],
+    "armis_arp_proxy_detected_arp_proxies_created": [],
     "armis_arp_proxy_detected_arp_proxies_total": [
         "Yaakov Temp Dashboard"
     ],
     "armis_arp_proxy_device_deletion_processing_time_count": [
         "ARP Proxy Tags and Deletions"
     ],
+    "armis_arp_proxy_device_deletion_processing_time_created": [],
     "armis_arp_proxy_device_deletion_processing_time_sum": [
         "ARP Proxy Tags and Deletions"
     ],
     "armis_arp_proxy_process_detection_time_count": [
         "ARP Proxy Playground"
     ],
+    "armis_arp_proxy_process_detection_time_created": [],
     "armis_arp_proxy_process_detection_time_sum": [],
+    "armis_arp_proxy_processed_records_created": [],
     "armis_arp_proxy_processed_records_total": [],
     "armis_arp_proxy_processor_fetch_from_db_time_count": [
         "ARP Proxy Tags and Deletions"
     ],
+    "armis_arp_proxy_processor_fetch_from_db_time_created": [],
     "armis_arp_proxy_processor_fetch_from_db_time_sum": [
         "ARP Proxy Tags and Deletions"
     ],
+    "armis_arp_proxy_properties_updated_devices_created": [],
     "armis_arp_proxy_properties_updated_devices_total": [],
+    "armis_arp_proxy_property_updates_failures_created": [],
     "armis_arp_proxy_property_updates_failures_total": [],
     "armis_arp_proxy_send_arp_proxy_tags_processing_time_count": [
         "ARP Proxy Tags and Deletions"
     ],
+    "armis_arp_proxy_send_arp_proxy_tags_processing_time_created": [],
     "armis_arp_proxy_send_arp_proxy_tags_processing_time_sum": [
         "ARP Proxy Tags and Deletions"
     ],
     "armis_arp_table_clear_old_arps_time_count": [],
+    "armis_arp_table_clear_old_arps_time_created": [],
     "armis_arp_table_clear_old_arps_time_sum": [],
+    "armis_arp_table_client_number_of_sent_arp_events_created": [],
     "armis_arp_table_client_number_of_sent_arp_events_total": [],
+    "armis_arp_table_expired_arp_records_access_attempts_created": [],
     "armis_arp_table_expired_arp_records_access_attempts_total": [],
+    "armis_arp_table_expired_arp_records_with_same_hint_mac_resolved_created": [],
     "armis_arp_table_expired_arp_records_with_same_hint_mac_resolved_total": [],
     "armis_arp_table_insert_arp_record_event_time_count": [],
+    "armis_arp_table_insert_arp_record_event_time_created": [],
     "armis_arp_table_insert_arp_record_event_time_sum": [],
     "armis_arp_table_latest_acquisition_timestamp": [],
     "armis_arp_table_number_of_ignored_macs_in_table": [
         "Arp Management Service Dashboard Copy"
     ],
+    "armis_arp_table_number_of_ip_mac_insertions_created": [],
     "armis_arp_table_number_of_ip_mac_insertions_total": [
         "Arp Management Service Dashboard Copy"
     ],
@@ -122,7 +150,9 @@
         "Arp Management Service Dashboard Copy",
         "ARP Management ST"
     ],
+    "armis_arp_table_resolver_agreement_logic_decision_created": [],
     "armis_arp_table_resolver_agreement_logic_decision_total": [],
+    "armis_arp_table_resolver_comparison_created": [],
     "armis_arp_table_resolver_comparison_ips_per_type": [
         "ARP Agreement Dashboard"
     ],
@@ -130,13 +160,16 @@
         "ARP Agreement Dashboard"
     ],
     "armis_arp_table_resolver_find_record_in_range_time_count": [],
+    "armis_arp_table_resolver_find_record_in_range_time_created": [],
     "armis_arp_table_resolver_find_record_in_range_time_sum": [],
+    "armis_arp_table_resolver_lookup_decision_created": [],
     "armis_arp_table_resolver_lookup_decision_total": [
         "ARP Agreement Dashboard"
     ],
     "armis_arp_table_resolver_resolve_stage_time_count": [
         "ARP Agreement Dashboard"
     ],
+    "armis_arp_table_resolver_resolve_stage_time_created": [],
     "armis_arp_table_resolver_resolve_stage_time_sum": [
         "ARP Agreement Dashboard",
         "IP Sessions Ops - New"
@@ -145,80 +178,85 @@
         "ARP Management ST",
         "Monitor IBM Infoblox"
     ],
+    "armis_arp_utils_mac_resolving_time_summary_created": [],
     "armis_arp_utils_mac_resolving_time_summary_sum": [
         "ARP Management ST",
         "Monitor IBM Infoblox"
     ],
+    "armis_aruba_central_missing_ap_name_and_mac_get_clients_created": [],
     "armis_aruba_central_missing_ap_name_and_mac_get_clients_total": [],
+    "armis_aruba_central_missing_ap_name_and_mac_get_rogue_aps_created": [],
     "armis_aruba_central_missing_ap_name_and_mac_get_rogue_aps_total": [],
+    "armis_asd_db_session_counter_created": [],
     "armis_asd_db_session_counter_total": [],
     "armis_asd_db_session_time_seconds_count": [],
+    "armis_asd_db_session_time_seconds_created": [],
     "armis_asd_db_session_time_seconds_sum": [],
     "armis_asd_pool_stats": [],
     "armis_asd_sa_compiled_cache_max_size": [],
     "armis_asd_sa_compiled_cache_size": [],
-    "armis_authenticated_requests_counter_total": [
-        "Meraki Integration",
-        "Meraki Integration2",
-        "Meraki Integration_playground"
-    ],
+    "armis_authentication_attempt_handler_brute_force_activities_created": [],
     "armis_authentication_attempt_handler_brute_force_activities_total": [],
-    "armis_aws_processor_etl_device_deleted_total": [],
-    "armis_aws_processor_etl_device_updates_total": [],
-    "armis_aws_processor_etl_pull_failure_total": [],
-    "armis_azure_processor_etl_device_deleted_total": [],
-    "armis_azure_processor_etl_device_updates_total": [],
-    "armis_azure_processor_etl_pull_failure_total": [],
+    "armis_bacnet_cpt_created": [],
+    "armis_bacnet_cpt_total": [
+        "BACnet Research"
+    ],
     "armis_boundary_processor_summary_count": [],
+    "armis_boundary_processor_summary_created": [],
     "armis_boundary_processor_summary_sum": [],
+    "armis_cache_utils_cache_value_type_mismatch_created": [],
     "armis_cache_utils_cache_value_type_mismatch_total": [],
+    "armis_calls_to_get_identifier_for_volatile_device_created": [],
     "armis_calls_to_get_identifier_for_volatile_device_total": [
         "ARP Management ST"
     ],
+    "armis_capabilities_client_invalid_addons_created": [],
     "armis_capabilities_client_invalid_addons_total": [],
+    "armis_cdp_checksum_error_count_created": [],
     "armis_cdp_checksum_error_count_total": [],
-    "armis_check_connectivity_client_wrapper_request_time_count": [],
-    "armis_check_connectivity_client_wrapper_request_time_sum": [],
-    "armis_check_connectivity_manager_check_connection_time_count": [],
-    "armis_check_connectivity_manager_check_connection_time_sum": [],
+    "armis_cip_unknown_class_and_service_created": [],
+    "armis_cip_unknown_class_and_service_total": [],
+    "armis_cip_unknown_route_path_segment_type_created": [],
+    "armis_cip_unknown_route_path_segment_type_total": [],
+    "armis_cisco_invalid_arp_parsing_created": [],
     "armis_cisco_invalid_arp_parsing_total": [],
+    "armis_cisco_invalid_device_tracking_parsing_created": [],
     "armis_cisco_invalid_device_tracking_parsing_total": [],
+    "armis_cisco_invalid_ip_source_parsing_created": [],
     "armis_cisco_invalid_ip_source_parsing_total": [],
+    "armis_cisco_invalid_mac_address_parsing_created": [],
     "armis_cisco_invalid_mac_address_parsing_total": [],
     "armis_cisco_wlc_aps_cap_did_not_arrive": [],
+    "armis_common_managers_alert_manager_email_count_created": [],
     "armis_common_managers_alert_manager_email_count_total": [],
-    "armis_compliance_view_processor_time_measurement_count": [],
-    "armis_compliance_view_processor_time_measurement_sum": [],
     "armis_config_processor_diff_between_sent_config_timestamp_to_docker_compose_run": [],
+    "armis_config_processor_docker_failed_to_start_exception_created": [],
     "armis_config_processor_docker_failed_to_start_exception_total": [],
-    "armis_config_processor_integration_restarting_containers_total": [],
     "armis_config_processor_processed_config_timestamp": [],
     "armis_config_processor_stopped_restarting_containers_policy_total": [],
     "armis_config_processor_total_number_of_managed_containers_total": [],
-    "armis_crowdstrike_client_count_vulnerabilities_by_status_total": [],
+    "armis_crowdstrike_client_failed_to_get_device_by_id_created": [],
     "armis_crowdstrike_client_failed_to_get_device_by_id_total": [],
-    "armis_custom_actions_missing_integration_template_info": [],
     "armis_data_export_service_active_data_export_jobs": [
         "Data Export Service"
     ],
     "armis_data_export_service_data_export_job_stage_duration_count": [
         "Data Export Service"
     ],
+    "armis_data_export_service_data_export_job_stage_duration_created": [],
     "armis_data_export_service_data_export_job_stage_duration_sum": [
         "Data Export Service"
     ],
-    "armis_data_export_service_done_data_export_jobs_total": [
-        "Data Export Service"
-    ],
+    "armis_data_export_service_total_uploaded_entities_created": [],
     "armis_data_export_service_total_uploaded_entities_total": [
         "Data Export Service"
     ],
-    "armis_db_branches_gap_value": [],
     "armis_db_link_termination_service_active_termination_jobs_count": [],
     "armis_db_network_service_active_disassociation_jobs_count": [],
     "armis_db_network_service_active_networks_count": [],
     "armis_db_okta_auth_console_last_login_extract": [],
     "armis_db_pipeline_activity_processor_activities_site_ids_enrichment_time_count": [],
+    "armis_db_pipeline_activity_processor_activities_site_ids_enrichment_time_created": [],
     "armis_db_pipeline_activity_processor_activities_site_ids_enrichment_time_sum": [],
     "armis_db_pool_checked_out_sessions": [],
     "armis_db_pool_max_overflow_size": [],
@@ -226,6 +264,7 @@
     "armis_db_sa_compiled_cache_max_size": [],
     "armis_db_sa_compiled_cache_size": [],
     "armis_db_sensors_value": [],
+    "armis_db_session_counter_created": [],
     "armis_db_session_counter_total": [],
     "armis_db_session_error_counter": [
         "Database Health",
@@ -239,12 +278,14 @@
         "Database Health WIP",
         "homedepot normalized reads and writes"
     ],
+    "armis_db_session_lock_time_seconds_created": [],
     "armis_db_session_lock_time_seconds_sum": [
         "Database Health",
         "Database Health new 1",
         "Database Health WIP",
         "homedepot normalized reads and writes"
     ],
+    "armis_db_session_nested_counter_created": [],
     "armis_db_session_nested_counter_total": [],
     "armis_db_session_table_access_error_counter_total": [
         "Per Table Metrics"
@@ -254,6 +295,7 @@
         "Ip-sessions-query-service",
         "S2 query-service"
     ],
+    "armis_db_session_time_seconds_created": [],
     "armis_db_session_time_seconds_sum": [
         "activity-api-service",
         "Ip-sessions-query-service",
@@ -269,66 +311,78 @@
         "ST Postgres 15 upgrade"
     ],
     "armis_db_time_to_connect_count": [],
+    "armis_db_time_to_connect_created": [],
     "armis_db_time_to_connect_sum": [],
     "armis_db_user_api_last_login_extract": [],
     "armis_db_user_console_last_login_extract": [],
+    "armis_delayed_kafka_messages_batch_not_ready_created": [],
     "armis_delayed_kafka_messages_batch_not_ready_total": [],
+    "armis_delayed_kafka_messages_yielded_early_created": [],
     "armis_delayed_kafka_messages_yielded_early_total": [],
-    "armis_demo_seed_path_total_time_count": [],
-    "armis_demo_seed_path_total_time_sum": [],
     "armis_device_api_client_number_of_ids_in_a_single_request": [],
+    "armis_device_api_service_no_mac_network_interfaces_created": [],
     "armis_device_api_service_no_mac_network_interfaces_total": [
         "Device Rest API service",
         "Device Rest API service"
     ],
+    "armis_device_api_service_non_unique_network_interfaces_created": [],
+    "armis_device_api_service_non_unique_network_interfaces_total": [],
     "armis_device_business_impact_retro_processor_sync_aql_changes_handling_time_count": [],
+    "armis_device_business_impact_retro_processor_sync_aql_changes_handling_time_created": [],
     "armis_device_business_impact_retro_processor_sync_aql_changes_handling_time_sum": [],
-    "armis_device_business_impact_retro_processor_update_business_impact_handling_time_count": [
-        "Business Impact"
-    ],
-    "armis_device_business_impact_retro_processor_update_business_impact_handling_time_sum": [
-        "Business Impact"
-    ],
+    "armis_device_detection_user_agent_detector_os_mismatches_created": [],
     "armis_device_detection_user_agent_detector_os_mismatches_total": [],
+    "armis_device_detection_user_agent_detector_os_renames_created": [],
     "armis_device_detection_user_agent_detector_os_renames_total": [],
+    "armis_device_identification_source_events_handled_created": [],
     "armis_device_identification_source_events_handled_total": [
         "session_data_analysis_service deprecation"
     ],
     "armis_device_identification_source_events_handling_time_count": [],
+    "armis_device_identification_source_events_handling_time_created": [],
     "armis_device_identification_source_events_handling_time_sum": [],
+    "armis_device_identification_source_number_of_deleted_rows_created": [],
     "armis_device_identification_source_number_of_deleted_rows_total": [],
+    "armis_device_identification_source_number_of_filtered_messages_created": [],
     "armis_device_identification_source_number_of_filtered_messages_total": [],
     "armis_device_reputation_risk_factor_stage_time_count": [],
+    "armis_device_reputation_risk_factor_stage_time_created": [],
     "armis_device_reputation_risk_factor_stage_time_sum": [],
+    "armis_device_tag_service_events_filtered_out_created": [],
     "armis_device_tag_service_events_filtered_out_total": [],
+    "armis_device_tag_service_events_handled_created": [],
     "armis_device_tag_service_events_handled_total": [
         "Device Tag Processor Metrics"
     ],
+    "armis_device_tag_service_number_of_missing_tag_created": [],
     "armis_device_tag_service_number_of_missing_tag_total": [
         "Device Tag Processor Metrics"
     ],
     "armis_device_tag_service_stage_duration_seconds_count": [],
+    "armis_device_tag_service_stage_duration_seconds_created": [],
     "armis_device_tag_service_stage_duration_seconds_sum": [],
     "armis_device_to_site_client_device_ids_request_length": [],
+    "armis_device_upsert_device_decision_result_created": [],
     "armis_device_upsert_device_decision_result_total": [
         "Composite Device"
     ],
+    "armis_device_upsert_device_decision_using_name_evidences_count_created": [],
     "armis_device_upsert_device_decision_using_name_evidences_count_total": [
         "Composite Device"
     ],
     "armis_device_upsert_stage_duration_seconds_count": [
         "Composite Device"
     ],
+    "armis_device_upsert_stage_duration_seconds_created": [],
     "armis_device_upsert_stage_duration_seconds_sum": [
         "Composite Device"
     ],
     "armis_diagnostics_failed_check": [],
-    "armis_docker_daemon_api_unresponsive_total": [
-        "Docker daemon"
-    ],
+    "armis_docker_events_created": [],
     "armis_docker_events_total": [
         "Circuit Breaker",
         "Collector Integrations Restarts",
+        "Containers and Pipeline Health",
         "Containers and Pipeline Health Old",
         "Data Export Service",
         "Docker Events",
@@ -340,16 +394,28 @@
         "Restarting services",
         "Single Tenant - Swapping containers",
         "Stabilization Status",
+        "Stabilization Status [WIP]",
         "Vulnerabilitis On-Call Debug"
     ],
+    "armis_ds_evidence_write_processor_create_evidence_messages_counter_created": [],
     "armis_ds_evidence_write_processor_create_evidence_messages_counter_total": [],
+    "armis_ds_evidence_write_processor_delete_evidence_messages_counter_created": [],
     "armis_ds_evidence_write_processor_delete_evidence_messages_counter_total": [],
+    "armis_ds_evidence_write_processor_duration_seconds_count": [],
+    "armis_ds_evidence_write_processor_duration_seconds_created": [],
+    "armis_ds_evidence_write_processor_duration_seconds_sum": [],
+    "armis_ds_evidence_write_processor_invalid_evidence_messages_counter_created": [],
     "armis_ds_evidence_write_processor_invalid_evidence_messages_counter_total": [],
+    "armis_eap_auth_fail_count_created": [],
     "armis_eap_auth_fail_count_total": [],
+    "armis_eap_session_count_by_method_type_created": [],
+    "armis_eap_session_count_by_method_type_total": [],
+    "armis_enforcement_action_integration_read_client_requests_created": [],
     "armis_enforcement_action_integration_read_client_requests_total": [],
     "armis_events_device_enrichment_creation_duration_seconds_count": [
         "IP Sessions Ops - Old"
     ],
+    "armis_events_device_enrichment_creation_duration_seconds_created": [],
     "armis_events_device_enrichment_creation_duration_seconds_sum": [
         "IP Sessions Ops - New",
         "IP Sessions Ops - Old"
@@ -357,6 +423,7 @@
     "armis_events_device_enrichment_duration_seconds_count": [
         "IP Sessions Ops - Old"
     ],
+    "armis_events_device_enrichment_duration_seconds_created": [],
     "armis_events_device_enrichment_duration_seconds_sum": [
         "IP Sessions Ops - New",
         "IP Sessions Ops - Old"
@@ -364,30 +431,34 @@
     "armis_events_device_enrichment_lookup_duration_seconds_count": [
         "IP Sessions Ops - Old"
     ],
+    "armis_events_device_enrichment_lookup_duration_seconds_created": [],
     "armis_events_device_enrichment_lookup_duration_seconds_sum": [
         "IP Sessions Ops - New",
         "IP Sessions Ops - Old"
     ],
+    "armis_events_device_enrichment_number_of_errors_creating_new_devices_created": [],
     "armis_events_device_enrichment_number_of_errors_creating_new_devices_total": [
         "New Network and Wifi Flows",
         "New Network and Wifi Flows copy"
     ],
+    "armis_events_device_enrichment_number_of_new_devices_created": [],
     "armis_events_device_enrichment_number_of_new_devices_total": [
         "New Network and Wifi Flows",
         "New Network and Wifi Flows copy"
     ],
+    "armis_events_received_by_network_infra_data_analysis_processor_created": [],
     "armis_events_received_by_network_infra_data_analysis_processor_total": [],
-    "armis_evidence_util_risks_dropped_total": [],
+    "armis_evidence_mapping_risks_dropped_created": [],
+    "armis_evidence_mapping_risks_dropped_total": [],
+    "armis_expanded_arp_record_overflow_counter_created": [],
     "armis_expanded_arp_record_overflow_counter_total": [],
-    "armis_external_api_request_count_total": [],
-    "armis_external_api_request_duration_seconds_count": [],
-    "armis_external_api_request_duration_seconds_sum": [],
     "armis_fe_api_access_token_error_total": [],
+    "armis_fe_aql_logger_count_created": [],
     "armis_fe_aql_logger_count_total": [],
+    "armis_fe_circular_roles_dependency_created": [],
     "armis_fe_circular_roles_dependency_total": [],
+    "armis_fe_circular_sensor_group_dependency_created": [],
     "armis_fe_circular_sensor_group_dependency_total": [],
-    "armis_fe_consolidation_read_duration_seconds_count": [],
-    "armis_fe_consolidation_read_duration_seconds_sum": [],
     "armis_fe_dashlets_process_duration_seconds_count": [
         "Query Cache"
     ],
@@ -395,6 +466,7 @@
         "Query Cache"
     ],
     "armis_fe_login_email_send_attempt_count_total": [],
+    "armis_fe_query_activity_user_entity_in_pg_created": [],
     "armis_fe_query_activity_user_entity_in_pg_total": [],
     "armis_fe_request_duration_seconds_count": [
         "Search"
@@ -405,20 +477,24 @@
     "armis_fe_request_entity_search_duration_seconds_count": [],
     "armis_fe_request_entity_search_duration_seconds_sum": [],
     "armis_feature_flag_cache_request_timestamp": [],
-    "armis_feature_flag_metadata_total": [],
+    "armis_feature_flag_error_invalid_value_total": [],
+    "armis_file_trigger_bad_commands_created": [],
     "armis_file_trigger_bad_commands_total": [
         "Forwarder Stats",
         "Forwarders Per Tenant",
         "Group's tenants migration"
     ],
     "armis_file_trigger_s3_download_duration_seconds_count": [],
+    "armis_file_trigger_s3_download_duration_seconds_created": [],
     "armis_file_trigger_s3_download_duration_seconds_sum": [
         "DS Evidences Dashboard"
     ],
-    "armis_fingerprints_processor_fingerprints_cache_size": [],
+    "armis_iam_db_password_request_concluded_created": [],
     "armis_iam_db_password_request_concluded_total": [],
     "armis_iam_db_password_request_duration_seconds_count": [],
+    "armis_iam_db_password_request_duration_seconds_created": [],
     "armis_iam_db_password_request_duration_seconds_sum": [],
+    "armis_iam_db_password_request_initiated_created": [],
     "armis_iam_db_password_request_initiated_total": [],
     "armis_idle_in_transaction_long_sessions_count": [],
     "armis_infra_crawler_batch_queue_size": [
@@ -431,21 +507,30 @@
     "armis_infra_crawler_crawl_duration_histogram_count": [
         "Mapper Ops"
     ],
+    "armis_infra_crawler_crawl_duration_histogram_created": [],
     "armis_infra_crawler_crawl_duration_histogram_sum": [],
+    "armis_infra_crawler_devices_attempted_to_crawl_created": [],
     "armis_infra_crawler_devices_attempted_to_crawl_total": [
         "Mapper Ops"
     ],
+    "armis_infra_crawler_devices_crawled_successfully_created": [],
     "armis_infra_crawler_devices_crawled_successfully_total": [],
+    "armis_infra_crawler_devices_failed_by_error_created": [],
     "armis_infra_crawler_devices_failed_by_error_total": [
         "Mapper Ops"
     ],
+    "armis_infra_crawler_exceptions_counter_created": [],
     "armis_infra_crawler_exceptions_counter_total": [
         "Mapper Ops"
     ],
     "armis_infra_crawler_failed_crawl_duration_histogram_bucket": [],
     "armis_infra_crawler_failed_crawl_duration_histogram_count": [],
+    "armis_infra_crawler_failed_crawl_duration_histogram_created": [],
     "armis_infra_crawler_failed_crawl_duration_histogram_sum": [],
+    "armis_infra_crawler_node_dropped_created": [],
     "armis_infra_crawler_node_dropped_total": [],
+    "armis_infra_crawler_num_of_invalid_neighbors_neighbors_filtered_created": [],
+    "armis_infra_crawler_num_of_invalid_neighbors_neighbors_filtered_total": [],
     "armis_infra_crawler_scheduler_cache_size": [
         "Mapper Ops"
     ],
@@ -471,6 +556,7 @@
     "armis_infra_crawler_service_get_devices_to_crawl_duration_count": [
         "Mapper Ops"
     ],
+    "armis_infra_crawler_service_get_devices_to_crawl_duration_created": [],
     "armis_infra_crawler_service_get_devices_to_crawl_duration_sum": [
         "Mapper Ops"
     ],
@@ -478,6 +564,7 @@
     "armis_infra_crawler_service_get_devices_to_crawl_query_batches_amount_count": [
         "Mapper Ops"
     ],
+    "armis_infra_crawler_service_get_devices_to_crawl_query_batches_amount_created": [],
     "armis_infra_crawler_service_get_devices_to_crawl_query_batches_amount_sum": [
         "Mapper Ops"
     ],
@@ -492,80 +579,108 @@
         "Mapper Ops",
         "Mapper Summary"
     ],
+    "armis_infra_crawler_service_passive_sniffed_created": [],
     "armis_infra_crawler_service_passive_sniffed_total": [],
     "armis_infra_crawler_service_sys_object_id_histogram": [],
     "armis_infra_crawler_service_update_cache_duration_count": [
         "Mapper Ops"
     ],
+    "armis_infra_crawler_service_update_cache_duration_created": [],
     "armis_infra_crawler_service_update_cache_duration_sum": [
         "Mapper Ops"
     ],
+    "armis_infra_crawler_skipped_already_crawled_created": [],
     "armis_infra_crawler_skipped_already_crawled_total": [],
+    "armis_infra_crawler_unexpected_exceptions_counter_created": [],
     "armis_infra_crawler_unexpected_exceptions_counter_total": [
         "Mapper Ops",
         "Mapper Summary"
     ],
+    "armis_infra_device_enrichment_excluded_node_identifier_created": [],
     "armis_infra_device_enrichment_excluded_node_identifier_total": [],
     "armis_infra_device_filter_out_vm_mac_records_duration_count": [],
+    "armis_infra_device_filter_out_vm_mac_records_duration_created": [],
     "armis_infra_device_filter_out_vm_mac_records_duration_sum": [],
+    "armis_infra_device_mapper_excluded_macs_created": [],
     "armis_infra_device_mapper_excluded_macs_total": [],
+    "armis_infra_device_mapper_invalid_macs_created": [],
     "armis_infra_device_mapper_invalid_macs_total": [],
+    "armis_infra_device_mapper_invalid_merge_aborted_created": [],
     "armis_infra_device_mapper_invalid_merge_aborted_total": [
         "Mapper Ops",
         "Mapper Summary"
     ],
+    "armis_infra_device_mapper_non_physical_macs_close_to_physical_macs_created": [],
     "armis_infra_device_mapper_non_physical_macs_close_to_physical_macs_total": [
         "Mapper Ops"
     ],
+    "armis_infra_device_processor_device_events_sent_created": [],
     "armis_infra_device_processor_device_events_sent_total": [
         "Infra Device Flow Metrics"
     ],
+    "armis_infra_device_processor_device_link_events_sent_created": [],
     "armis_infra_device_processor_device_link_events_sent_total": [
         "Infra Device Flow Metrics"
     ],
+    "armis_infra_device_processor_duplicate_rows_removed_created": [],
     "armis_infra_device_processor_duplicate_rows_removed_total": [],
+    "armis_infra_device_processor_filtered_nodes_created": [],
     "armis_infra_device_processor_filtered_nodes_total": [],
+    "armis_infra_device_processor_not_notified_to_the_view_created": [],
     "armis_infra_device_processor_not_notified_to_the_view_total": [],
     "armis_infra_device_processor_process_duration_count": [
         "Infra Device Flow Metrics"
     ],
+    "armis_infra_device_processor_process_duration_created": [],
     "armis_infra_device_processor_process_duration_sum": [
         "Infra Device Flow Metrics"
     ],
+    "armis_infra_device_scanner_devices_attempted_to_scan_created": [],
     "armis_infra_device_scanner_devices_attempted_to_scan_total": [],
     "armis_infra_device_scanner_devices_per_scan": [],
+    "armis_infra_device_scanner_devices_scanned_successfully_created": [],
     "armis_infra_device_scanner_devices_scanned_successfully_total": [],
     "armis_infra_device_scanner_histogram": [],
     "armis_infra_device_scanner_responding_devices_per_scan": [],
     "armis_infra_device_scanner_single_arp_duration_count": [],
+    "armis_infra_device_scanner_single_arp_duration_created": [],
     "armis_infra_device_scanner_single_arp_duration_sum": [],
     "armis_infra_device_scanner_unique_number_of_records": [
         "Crawler health",
         "Infra Crawler"
     ],
-    "armis_integration_lib_client_count": [],
-    "armis_integration_lib_client_sum": [],
     "armis_integration_lib_client_v2_count": [],
+    "armis_integration_lib_client_v2_created": [],
     "armis_integration_lib_client_v2_sum": [],
+    "armis_integration_registry_with_no_integrations_created": [],
     "armis_integration_registry_with_no_integrations_total": [],
-    "armis_integration_routes_check_connectivity_by_status_total": [],
     "armis_integrations_etl_job_number_of_success_load_entities_count": [],
+    "armis_integrations_etl_job_number_of_success_load_entities_created": [],
     "armis_integrations_etl_job_number_of_success_load_entities_sum": [],
+    "armis_integrations_file_data_store_call_count_created": [],
     "armis_integrations_file_data_store_call_count_total": [],
-    "armis_integrations_shared_file_data_store_call_count_total": [],
+    "armis_ip_entity_client_dropped_ip_seen_events_created": [],
     "armis_ip_entity_client_dropped_ip_seen_events_total": [
         "IP Entity Service"
     ],
+    "armis_ip_entity_client_sent_ip_seen_events_created": [],
     "armis_ip_entity_client_sent_ip_seen_events_total": [
         "IP Entity Service"
     ],
     "armis_ip_sessions_add_arp_activities_runtime_count": [],
+    "armis_ip_sessions_add_arp_activities_runtime_created": [],
     "armis_ip_sessions_add_arp_activities_runtime_sum": [
         "Benchmark Per Collector"
     ],
     "armis_ip_sessions_aggregate_full_runtime_count": [],
+    "armis_ip_sessions_aggregate_full_runtime_created": [],
     "armis_ip_sessions_aggregate_full_runtime_sum": [
         "Benchmark Per Collector"
+    ],
+    "armis_ip_sessions_aggregation_time": [
+        "IP Sessions Ops - Old",
+        "IP Sessions Ops Copy",
+        "Tenants datarate / packet loss"
     ],
     "armis_ip_sessions_aggregator_bi_directional_sessions_gauge": [
         "Span Data - 5min aggregations"
@@ -576,6 +691,7 @@
     "armis_ip_sessions_aggregator_uni_directional_sessions_gauge": [
         "Span Data - 5min aggregations"
     ],
+    "armis_ip_sessions_analyzer_exceptions_created": [],
     "armis_ip_sessions_analyzer_exceptions_total": [
         "DNS Analyzer",
         "Mapper stats 2",
@@ -607,24 +723,31 @@
     "armis_ip_sessions_batches_manager_processed_packets": [],
     "armis_ip_sessions_batches_manager_total_packets": [],
     "armis_ip_sessions_create_arp_records_from_round_ttl_runtime_count": [],
+    "armis_ip_sessions_create_arp_records_from_round_ttl_runtime_created": [],
     "armis_ip_sessions_create_arp_records_from_round_ttl_runtime_sum": [],
+    "armis_ip_sessions_dhcp_packets_sniffed_created": [],
     "armis_ip_sessions_dhcp_packets_sniffed_total": [
         "ARP Proxy Playground",
         "Arps \u0026 Volatiles"
     ],
+    "armis_ip_sessions_dot11_collector_packet_dropped_on_max_packets_reached_created": [],
     "armis_ip_sessions_dot11_collector_packet_dropped_on_max_packets_reached_total": [],
     "armis_ip_sessions_handle_accounting_results_runtime_count": [],
+    "armis_ip_sessions_handle_accounting_results_runtime_created": [],
     "armis_ip_sessions_handle_accounting_results_runtime_sum": [
         "Benchmark Per Collector"
     ],
     "armis_ip_sessions_handle_arp_runtime_count": [],
+    "armis_ip_sessions_handle_arp_runtime_created": [],
     "armis_ip_sessions_handle_arp_runtime_sum": [
         "Benchmark Per Collector"
     ],
     "armis_ip_sessions_handle_interface_runtime_count": [],
+    "armis_ip_sessions_handle_interface_runtime_created": [],
     "armis_ip_sessions_handle_interface_runtime_sum": [
         "Benchmark Per Collector"
     ],
+    "armis_ip_sessions_multicast_collector_packet_dropped_on_max_packets_reached_created": [],
     "armis_ip_sessions_multicast_collector_packet_dropped_on_max_packets_reached_total": [
         "IP Sessions Ops - New",
         "IP Sessions Ops - Old",
@@ -632,27 +755,47 @@
         "IP Sessions Ops Copy Dor opts",
         "Tenants datarate / packet loss"
     ],
+    "armis_ip_sessions_multicast_collector_packet_dropped_on_priority_created": [],
+    "armis_ip_sessions_multicast_collector_packet_dropped_on_priority_total": [],
+    "armis_ip_sessions_num_of_batches_dropped_created": [],
     "armis_ip_sessions_num_of_batches_dropped_total": [],
+    "armis_ip_sessions_num_of_batches_fast_mode_created": [],
     "armis_ip_sessions_num_of_batches_fast_mode_total": [],
+    "armis_ip_sessions_num_of_batches_normal_mode_created": [],
     "armis_ip_sessions_num_of_batches_normal_mode_total": [],
     "armis_ip_sessions_packet_analysis_runtime_count": [],
+    "armis_ip_sessions_packet_analysis_runtime_created": [],
     "armis_ip_sessions_packet_analysis_runtime_sum": [
         "Benchmark Per Collector",
         "Benchmark Summary"
+    ],
+    "armis_ip_sessions_packets_per_protocol_created": [
+        "Protocol Analyzers (Per Analyzer)"
     ],
     "armis_ip_sessions_packets_per_protocol_total": [
         "DNS Analyzer",
         "Protocol Analyzers (Per Analyzer)",
         "Protocol Analyzers (Per Tenant)"
     ],
+    "armis_ip_sessions_parsing_exceptions_created": [],
+    "armis_ip_sessions_parsing_exceptions_total": [],
     "armis_ip_sessions_postprocess_runtime_count": [],
+    "armis_ip_sessions_postprocess_runtime_created": [],
     "armis_ip_sessions_postprocess_runtime_sum": [
         "Benchmark Per Collector"
     ],
     "armis_ip_sessions_prepare_yield_runtime_count": [],
+    "armis_ip_sessions_prepare_yield_runtime_created": [],
     "armis_ip_sessions_prepare_yield_runtime_sum": [
         "Benchmark Per Collector"
     ],
+    "armis_ip_sessions_processing_rate": [
+        "IP Sessions Ops - New",
+        "IP Sessions Ops - Old",
+        "IP Sessions Ops Copy",
+        "Tenants datarate / packet loss"
+    ],
+    "armis_ip_sessions_runtime_per_analyzer_created": [],
     "armis_ip_sessions_runtime_per_analyzer_total": [
         "Benchmark Per Collector",
         "Benchmark Summary",
@@ -660,11 +803,14 @@
         "Protocol Analyzers (Per Analyzer)",
         "Protocol Analyzers (Per Tenant)"
     ],
+    "armis_ip_sessions_runtime_per_parsing_method_created": [],
     "armis_ip_sessions_runtime_per_parsing_method_total": [
         "Benchmark Per Collector",
         "Benchmark Summary",
         "Protocol Analyzers (Per Tenant)"
     ],
+    "armis_ip_sessions_sent_network_devices_created": [],
+    "armis_ip_sessions_sent_network_devices_seen_only_by_sessions_created": [],
     "armis_ip_sessions_sent_network_devices_seen_only_by_sessions_total": [
         "session_data_analysis_service deprecation"
     ],
@@ -678,6 +824,7 @@
         "session_data_analysis_service deprecation",
         "Tenants datarate / packet loss"
     ],
+    "armis_ip_sessions_sent_sessions_created": [],
     "armis_ip_sessions_sent_sessions_total": [
         "Benchmark Per Collector",
         "IP Sessions Ops - Old",
@@ -686,142 +833,173 @@
         "IP Sessions Ops playground",
         "Tenants datarate / packet loss"
     ],
+    "armis_ip_sessions_serialization_failed_devices_created": [],
+    "armis_ip_sessions_serialization_failed_devices_total": [],
     "armis_ip_sessions_sessions_bytes_per_worker": [],
-    "armis_ip_sessions_sessions_per_protocol_total": [],
+    "armis_ip_sessions_sessions_per_protocol_created": [],
+    "armis_ip_sessions_sessions_per_protocol_total": [
+        "Protocol Analyzers (Per Tenant)"
+    ],
+    "armis_ip_sessions_sniffed_arp_records_created": [],
     "armis_ip_sessions_sniffed_arp_records_total": [
         "Arps \u0026 Volatiles"
     ],
     "armis_ip_sessions_summarize_router_detection_runtime_count": [],
+    "armis_ip_sessions_summarize_router_detection_runtime_created": [],
     "armis_ip_sessions_summarize_router_detection_runtime_sum": [
         "Benchmark Per Collector"
     ],
     "armis_ip_sessions_summarize_stats_runtime_count": [],
+    "armis_ip_sessions_summarize_stats_runtime_created": [],
     "armis_ip_sessions_summarize_stats_runtime_sum": [
         "Benchmark Per Collector"
     ],
     "armis_ip_sessions_total_bytes_per_worker": [],
     "armis_ip_sessions_unicast_percentage": [],
+    "armis_ip_sessions_ventilator_dropped_work_created": [],
+    "armis_ip_sessions_ventilator_dropped_work_total": [
+        "Benchmark Per Collector",
+        "Benchmark Summary",
+        "IP Sessions Ops - New",
+        "IP Sessions Ops - Old",
+        "IP Sessions Ops Copy",
+        "IP Sessions Ops Copy Dor opts",
+        "IP Sessions Ops playground",
+        "Tenants datarate / packet loss"
+    ],
+    "armis_ip_sessions_ventilator_sniff_data_size_created": [],
     "armis_ip_sessions_ventilator_sniff_data_size_total": [],
+    "armis_ip_sessions_ventilator_taken_work_created": [],
     "armis_ip_sessions_ventilator_taken_work_total": [],
     "armis_ip_sessions_vlans": [
         "Span Data - 5min aggregations"
     ],
+    "armis_ipsession_client_errors_created": [],
     "armis_ipsession_client_errors_total": [],
     "armis_ipsession_client_query_time_count": [],
+    "armis_ipsession_client_query_time_created": [],
     "armis_ipsession_client_query_time_sum": [],
     "armis_kafka_list_of_message_size_histogram_bucket": [
         "Sefi playground"
     ],
     "armis_kafka_list_of_message_size_histogram_count": [],
+    "armis_kafka_list_of_message_size_histogram_created": [],
     "armis_kafka_list_of_message_size_histogram_sum": [],
     "armis_kafka_message_size_histogram_bucket": [
         "Single Tenant - Kafka Consumer / Producer Metrics",
         "Single Tenant - Kafka Consumer / Producer Metrics - Tatana's Copy"
     ],
     "armis_kafka_message_size_histogram_count": [],
+    "armis_kafka_message_size_histogram_created": [],
     "armis_kafka_message_size_histogram_sum": [],
     "armis_kafka_partitioned_trigger_num_of_workers": [],
     "armis_kafka_trigger_consumed_partitions_count": [],
+    "armis_kafka_trigger_consumed_partitions_created": [],
     "armis_kafka_trigger_consumed_partitions_sum": [],
     "armis_kafka_trigger_max_batch_size": [],
     "armis_last_analyze": [],
+    "armis_last_analyze_error_created": [],
     "armis_last_analyze_error_total": [],
     "armis_last_diagnostics_execution": [],
+    "armis_last_pg_partman_maintenance": [],
+    "armis_last_pg_partman_maintenance_error_created": [],
+    "armis_last_pg_partman_maintenance_error_total": [],
     "armis_logger_debug_mode": [],
+    "armis_logger_log_records_created": [],
     "armis_logger_log_records_total": [
         "Multi Tenant service Logs Stats"
     ],
-    "armis_meraki_access_switches_not_sent_total": [
-        "access_switch_processor"
-    ],
+    "armis_meraki_access_switches_to_send_created": [],
     "armis_meraki_access_switches_to_send_total": [
         "access_switch_processor"
     ],
-    "armis_meraki_api_call_counter_total": [
-        "Meraki Integration",
-        "Meraki Integration2",
-        "Meraki Integration_playground"
-    ],
-    "armis_meraki_aps_by_model_count": [],
-    "armis_meraki_client_refresh_runtime_seconds_count": [
-        "Meraki Integration",
-        "Meraki Integration2",
-        "Meraki Integration_playground"
-    ],
-    "armis_meraki_client_refresh_runtime_seconds_sum": [],
-    "armis_meraki_named_clients_total": [],
+    "armis_meraki_no_last_seen_created": [],
     "armis_meraki_no_last_seen_total": [],
+    "armis_meraki_packet_dump_count_403_errors_created": [],
     "armis_meraki_packet_dump_count_403_errors_total": [],
-    "armis_meraki_packet_dump_sniffed_clients_total": [],
     "armis_meraki_packet_dump_write_to_file_secs_count": [],
+    "armis_meraki_packet_dump_write_to_file_secs_created": [],
     "armis_meraki_packet_dump_write_to_file_secs_sum": [],
-    "armis_meraki_sniffed_data_size_summary_count": [
-        "Meraki Integration",
-        "Meraki Integration_playground"
-    ],
-    "armis_meraki_sniffed_data_size_summary_sum": [
-        "Meraki Integration",
-        "Meraki Integration_playground"
-    ],
+    "armis_meraki_unknown_bssid_calculation_created": [],
     "armis_meraki_unknown_bssid_calculation_total": [],
+    "armis_merge_device_command_filter_child_device_created": [],
+    "armis_merge_device_command_filter_child_device_total": [],
     "armis_merge_device_command_processing_time_count": [
         "Device Merge"
     ],
+    "armis_merge_device_command_processing_time_created": [],
     "armis_merge_device_command_processing_time_sum": [
         "Device Merge"
     ],
+    "armis_merge_device_composite_device_merge_block_created": [],
+    "armis_merge_device_composite_device_merge_block_total": [
+        "Composite Device"
+    ],
+    "armis_merge_device_device_merge_error_created": [],
     "armis_merge_device_device_merge_error_total": [
         "Device Merge",
         "Infra multiple identifiers stats"
     ],
+    "armis_merge_device_merge_event_msg_sent_counter_created": [],
     "armis_merge_device_merge_event_msg_sent_counter_total": [
         "Device Merge"
     ],
+    "armis_missing_infra_interface_operational_status_snmp_created": [],
     "armis_missing_infra_interface_operational_status_snmp_total": [],
+    "armis_missing_mac_table_record_status_snmp_created": [],
     "armis_missing_mac_table_record_status_snmp_total": [],
+    "armis_missing_overall_risk_score_counter_counter_created": [],
     "armis_missing_overall_risk_score_counter_counter_total": [],
     "armis_multi_tenant_proxy_auth_token_update_status": [],
+    "armis_network_data_analysis_processor_device_events_received_created": [],
     "armis_network_data_analysis_processor_device_events_received_total": [
         "session_data_analysis_service deprecation"
     ],
+    "armis_network_device_capabilities_dropped_network_activities_created": [],
+    "armis_network_device_capabilities_dropped_network_activities_total": [],
     "armis_network_infra_data_analysis_processor_events_handling_duration_seconds_count": [],
+    "armis_network_infra_data_analysis_processor_events_handling_duration_seconds_created": [],
     "armis_network_infra_data_analysis_processor_events_handling_duration_seconds_sum": [],
+    "armis_network_interfaces_client_dropped_cached_upserts_created": [],
     "armis_network_interfaces_client_dropped_cached_upserts_total": [],
+    "armis_network_interfaces_client_dropped_excluded_nics_created": [],
     "armis_network_interfaces_client_dropped_excluded_nics_total": [],
+    "armis_network_interfaces_client_failed_requests_created": [],
     "armis_network_interfaces_client_failed_requests_total": [],
+    "armis_network_interfaces_client_sent_requests_created": [],
     "armis_network_interfaces_client_sent_requests_total": [],
+    "armis_network_interfaces_client_sent_upserts_created": [],
     "armis_network_interfaces_client_sent_upserts_total": [],
+    "armis_network_interfaces_client_upsert_cache_misses_created": [],
     "armis_network_interfaces_client_upsert_cache_misses_total": [],
     "armis_network_interfaces_client_upsert_cache_size": [],
+    "armis_network_interfaces_client_upserts_removing_ips_created": [],
     "armis_network_interfaces_client_upserts_removing_ips_total": [],
     "armis_network_service_association_requests_handling_duration_seconds_count": [],
+    "armis_network_service_association_requests_handling_duration_seconds_created": [],
     "armis_network_service_association_requests_handling_duration_seconds_sum": [],
+    "armis_network_service_association_requests_received_created": [],
     "armis_network_service_association_requests_received_total": [
         "Network Service Metrics"
     ],
+    "armis_network_service_events_filtered_created": [],
     "armis_network_service_events_filtered_total": [],
     "armis_network_service_events_handling_duration_seconds_count": [],
+    "armis_network_service_events_handling_duration_seconds_created": [],
     "armis_network_service_events_handling_duration_seconds_sum": [],
+    "armis_network_service_events_received_created": [],
     "armis_network_service_events_received_total": [
         "Network Service Metrics"
     ],
-    "armis_network_service_events_stage_duration_seconds_count": [
-        "Network Service Metrics"
-    ],
-    "armis_network_service_events_stage_duration_seconds_sum": [
-        "Network Service Metrics"
-    ],
     "armis_network_service_session_duration_seconds_count": [],
+    "armis_network_service_session_duration_seconds_created": [],
     "armis_network_service_session_duration_seconds_sum": [],
+    "armis_node_on_integration_neighbors_chain_nodes_filtered_due_to_missing_field_created": [],
     "armis_node_on_integration_neighbors_chain_nodes_filtered_due_to_missing_field_total": [],
+    "armis_node_on_integration_neighbors_chain_nodes_written_to_db_created": [],
     "armis_node_on_integration_neighbors_chain_nodes_written_to_db_total": [],
     "armis_number_of_aqd_updates": [
         "Policy - General"
-    ],
-    "armis_open_meraki_dashboard_sessions": [
-        "Meraki Integration",
-        "Meraki Integration2",
-        "Meraki Integration_playground"
     ],
     "armis_openai_completion_tokens_count": [
         "OpenAI dashboard"
@@ -843,13 +1021,9 @@
     "armis_openai_total_tokens_sum": [
         "OpenAI dashboard"
     ],
+    "armis_packet_analyzer_mismatching_filter_cast_type_counter_created": [],
     "armis_packet_analyzer_mismatching_filter_cast_type_counter_total": [],
-    "armis_pg_cms_collector_last_seen_seconds": [
-        "Collectors View",
-        "missing collectors metrics",
-        "moshe"
-    ],
-    "armis_pg_multitenant_management_service_owner_creation_time": [],
+    "armis_pg_last_successful_snapshot_date": [],
     "armis_pg_statio_all_tables_heap_blks_read": [
         "Carl - Database Health",
         "Database Health",
@@ -876,17 +1050,37 @@
     "armis_pgsysconf_os_total_pages": [
         "Database Health"
     ],
+    "armis_pipeline_acl_enforcement_processor_addition_reqs_recv_created": [],
     "armis_pipeline_acl_enforcement_processor_addition_reqs_recv_total": [],
+    "armis_pipeline_acl_enforcement_processor_addition_reqs_sent_created": [],
     "armis_pipeline_acl_enforcement_processor_addition_reqs_sent_total": [],
+    "armis_pipeline_acl_enforcement_processor_removal_reqs_recv_created": [],
     "armis_pipeline_acl_enforcement_processor_removal_reqs_recv_total": [],
+    "armis_pipeline_acl_enforcement_processor_removal_reqs_sent_created": [],
     "armis_pipeline_acl_enforcement_processor_removal_reqs_sent_total": [],
     "armis_pipeline_acl_enforcement_service_enforced_devices_missing_from_db": [],
+    "armis_pipeline_acl_enforcement_service_invalid_status_transitions_created": [],
     "armis_pipeline_acl_enforcement_service_invalid_status_transitions_total": [],
+    "armis_pipeline_action_executor_invalid_subtype_counter_created": [],
     "armis_pipeline_action_executor_invalid_subtype_counter_total": [],
+    "armis_pipeline_action_executor_tags_created_created": [],
     "armis_pipeline_action_executor_tags_created_total": [],
+    "armis_pipeline_action_executor_tags_removed_created": [],
+    "armis_pipeline_action_executor_tags_removed_total": [],
+    "armis_pipeline_active_directory_devices_should_not_be_fetched_created": [],
+    "armis_pipeline_active_directory_devices_should_not_be_fetched_total": [],
+    "armis_pipeline_active_directory_fetched_computers_count_created": [],
+    "armis_pipeline_active_directory_fetched_computers_count_total": [],
+    "armis_pipeline_active_directory_fetched_users_count_created": [],
+    "armis_pipeline_active_directory_fetched_users_count_total": [],
+    "armis_pipeline_active_directory_users_should_not_be_fetched_created": [],
+    "armis_pipeline_active_directory_users_should_not_be_fetched_total": [],
+    "armis_pipeline_activities_with_unknown_activity_type_created": [],
     "armis_pipeline_activities_with_unknown_activity_type_total": [],
     "armis_pipeline_activity_cache_size": [],
+    "armis_pipeline_activity_collector_noise_exclusion_created": [],
     "armis_pipeline_activity_collector_noise_exclusion_total": [],
+    "armis_pipeline_activity_created_created": [],
     "armis_pipeline_activity_created_total": [
         "Activities Overview",
         "Activity online policy engine",
@@ -899,38 +1093,48 @@
         "Policy Engine",
         "Vulnerabilities Metrics"
     ],
+    "armis_pipeline_activity_dropped_created": [],
     "armis_pipeline_activity_dropped_total": [
         "Activities Overview",
         "Policy Engine",
         "Policy Engine"
     ],
+    "armis_pipeline_activity_enrichment_messages_created": [],
     "armis_pipeline_activity_enrichment_messages_total": [
         "Activity online policy engine"
     ],
     "armis_pipeline_activity_enrichment_processing_seconds_count": [
         "Activity online policy engine"
     ],
+    "armis_pipeline_activity_enrichment_processing_seconds_created": [],
     "armis_pipeline_activity_enrichment_processing_seconds_sum": [
         "Activity online policy engine"
     ],
+    "armis_pipeline_adaptor_custom_queries_nic_cache_hit_counter_created": [],
     "armis_pipeline_adaptor_custom_queries_nic_cache_hit_counter_total": [
         "IP Connections policy engine"
     ],
+    "armis_pipeline_adaptor_custom_queries_nic_cache_miss_counter_created": [],
     "armis_pipeline_adaptor_custom_queries_nic_cache_miss_counter_total": [
         "IP Connections policy engine"
     ],
+    "armis_pipeline_alert_created_created": [],
     "armis_pipeline_alert_created_total": [
         "Activity online policy engine",
         "Policy Engine",
         "Policy Engine",
         "Sent Emails"
     ],
+    "armis_pipeline_alerts_triggered_created": [],
     "armis_pipeline_alerts_triggered_total": [],
+    "armis_pipeline_api_create_devices_created": [],
     "armis_pipeline_api_create_devices_total": [],
-    "armis_pipeline_api_device_application_bulk_editor_error_results_total": [],
+    "armis_pipeline_api_device_application_bulk_editor_operations_created": [],
     "armis_pipeline_api_device_application_bulk_editor_operations_total": [],
     "armis_pipeline_api_device_application_bulk_editor_stage_duration_seconds_count": [],
+    "armis_pipeline_api_device_application_bulk_editor_stage_duration_seconds_created": [],
     "armis_pipeline_api_device_application_bulk_editor_stage_duration_seconds_sum": [],
+    "armis_pipeline_api_device_bulk_editor_already_exists_errors_created": [],
     "armis_pipeline_api_device_bulk_editor_already_exists_errors_total": [
         "Device Rest API service - yoav-test"
     ],
@@ -938,6 +1142,7 @@
         "Device Rest API service",
         "Device Rest API service"
     ],
+    "armis_pipeline_api_device_bulk_editor_device_bulk_size_created": [],
     "armis_pipeline_api_device_bulk_editor_device_bulk_size_sum": [
         "Device Rest API service",
         "Device Rest API service"
@@ -946,21 +1151,26 @@
         "Device Rest API service",
         "Device Rest API service"
     ],
+    "armis_pipeline_api_device_bulk_editor_device_operation_duration_seconds_created": [],
     "armis_pipeline_api_device_bulk_editor_device_operation_duration_seconds_sum": [
         "Device Rest API service",
         "Device Rest API service"
     ],
+    "armis_pipeline_api_device_bulk_editor_device_operation_results_created": [],
     "armis_pipeline_api_device_bulk_editor_device_operation_results_total": [
         "Device Rest API service",
         "Device Rest API service"
     ],
+    "armis_pipeline_api_device_bulk_editor_missing_identifier_counter_created": [],
     "armis_pipeline_api_device_bulk_editor_missing_identifier_counter_total": [],
     "armis_pipeline_api_device_bulk_editor_properties_per_device_observation_count": [],
+    "armis_pipeline_api_device_bulk_editor_properties_per_device_observation_created": [],
     "armis_pipeline_api_device_bulk_editor_properties_per_device_observation_sum": [],
     "armis_pipeline_api_device_bulk_editor_stage_duration_seconds_count": [
         "Device Rest API service",
         "Device Rest API service"
     ],
+    "armis_pipeline_api_device_bulk_editor_stage_duration_seconds_created": [],
     "armis_pipeline_api_device_bulk_editor_stage_duration_seconds_sum": [
         "Device Rest API service",
         "Device Rest API service"
@@ -969,6 +1179,7 @@
         "Device Rest API service",
         "Device Rest API service"
     ],
+    "armis_pipeline_api_device_create_service_activity_creation_seconds_created": [],
     "armis_pipeline_api_device_create_service_activity_creation_seconds_sum": [
         "Device Rest API service",
         "Device Rest API service"
@@ -977,12 +1188,15 @@
         "Device Rest API service",
         "Device Rest API service"
     ],
+    "armis_pipeline_api_device_dao_operation_duration_seconds_created": [],
     "armis_pipeline_api_device_dao_operation_duration_seconds_sum": [
         "Device Rest API service",
         "Device Rest API service"
     ],
     "armis_pipeline_api_device_identifier_bulk_editor_device_bulk_size_count": [],
+    "armis_pipeline_api_device_identifier_bulk_editor_device_bulk_size_created": [],
     "armis_pipeline_api_device_identifier_bulk_editor_device_bulk_size_sum": [],
+    "armis_pipeline_api_device_identifier_dao_insert_uniqueness_violation_errors_created": [],
     "armis_pipeline_api_device_identifier_dao_insert_uniqueness_violation_errors_total": [
         "Device Rest API service",
         "Device Rest API service",
@@ -993,6 +1207,7 @@
         "Device Rest API service",
         "Device Rest API service - yoav-test"
     ],
+    "armis_pipeline_api_device_identifier_dao_inserts_created": [],
     "armis_pipeline_api_device_identifier_dao_inserts_sum": [
         "Device Rest API service",
         "Device Rest API service",
@@ -1003,18 +1218,22 @@
         "Device Rest API service",
         "Device Rest API service - yoav-test"
     ],
+    "armis_pipeline_api_device_identifier_dao_stage_duration_seconds_created": [],
     "armis_pipeline_api_device_identifier_dao_stage_duration_seconds_sum": [
         "Device Rest API service",
         "Device Rest API service",
         "Device Rest API service - yoav-test"
     ],
+    "armis_pipeline_api_device_lib_device_property_v2_api_proxy_unknown_identification_entity_created": [],
     "armis_pipeline_api_device_lib_device_property_v2_api_proxy_unknown_identification_entity_total": [],
+    "armis_pipeline_api_device_lookup_device_hits_created": [],
     "armis_pipeline_api_device_lookup_device_hits_total": [],
     "armis_pipeline_api_device_lookup_device_identifier_table_duration_seconds_count": [
         "Device Rest API service",
         "Device Rest API service",
         "Device Rest API service - yoav-test"
     ],
+    "armis_pipeline_api_device_lookup_device_identifier_table_duration_seconds_created": [],
     "armis_pipeline_api_device_lookup_device_identifier_table_duration_seconds_sum": [
         "Device Rest API service",
         "Device Rest API service",
@@ -1025,128 +1244,157 @@
         "Device Rest API service",
         "Device Rest API service - yoav-test"
     ],
+    "armis_pipeline_api_device_lookup_device_table_duration_seconds_created": [],
     "armis_pipeline_api_device_lookup_device_table_duration_seconds_sum": [
         "Device Rest API service",
         "Device Rest API service",
         "Device Rest API service - yoav-test"
     ],
+    "armis_pipeline_api_device_lookup_excluded_ipv6_created": [],
     "armis_pipeline_api_device_lookup_excluded_ipv6_total": [
         "Device Rest API service",
         "Device Rest API service"
     ],
+    "armis_pipeline_api_device_lookup_excluded_macs_created": [],
     "armis_pipeline_api_device_lookup_excluded_macs_total": [],
+    "armis_pipeline_api_device_lookup_filter_count_created": [],
     "armis_pipeline_api_device_lookup_filter_count_total": [],
+    "armis_pipeline_api_device_lookup_invalid_mac_ipv4_identifier_created": [],
     "armis_pipeline_api_device_lookup_invalid_mac_ipv4_identifier_total": [],
+    "armis_pipeline_api_device_request_with_no_legal_identifiers_created": [],
     "armis_pipeline_api_device_request_with_no_legal_identifiers_total": [],
     "armis_pipeline_api_device_update_service_send_conflict_event_duration_seconds_count": [],
+    "armis_pipeline_api_device_update_service_send_conflict_event_duration_seconds_created": [],
     "armis_pipeline_api_device_update_service_send_conflict_event_duration_seconds_sum": [],
     "armis_pipeline_api_device_update_service_update_stage_duration_seconds_count": [],
+    "armis_pipeline_api_device_update_service_update_stage_duration_seconds_created": [],
     "armis_pipeline_api_device_update_service_update_stage_duration_seconds_sum": [],
+    "armis_pipeline_app_detection_created": [],
     "armis_pipeline_app_detection_total": [],
+    "armis_pipeline_application_normalization_retro_processor_messages_counter_created": [],
     "armis_pipeline_application_normalization_retro_processor_messages_counter_total": [],
     "armis_pipeline_arp_processor_calculate_ip_ranges_duration_seconds_count": [],
+    "armis_pipeline_arp_processor_calculate_ip_ranges_duration_seconds_created": [],
     "armis_pipeline_arp_processor_calculate_ip_ranges_duration_seconds_sum": [],
     "armis_pipeline_arp_processor_calculate_ip_ranges_length": [],
     "armis_pipeline_arp_table_arp_record_acquisition_timestamp_delay_seconds_count": [
         "ARP Delay Dashboard"
     ],
+    "armis_pipeline_arp_table_arp_record_acquisition_timestamp_delay_seconds_created": [],
     "armis_pipeline_arp_table_arp_record_acquisition_timestamp_delay_seconds_hist_bucket": [],
     "armis_pipeline_arp_table_arp_record_acquisition_timestamp_delay_seconds_hist_count": [],
+    "armis_pipeline_arp_table_arp_record_acquisition_timestamp_delay_seconds_hist_created": [],
     "armis_pipeline_arp_table_arp_record_acquisition_timestamp_delay_seconds_hist_sum": [],
     "armis_pipeline_arp_table_arp_record_acquisition_timestamp_delay_seconds_sum": [
         "ARP Delay Dashboard"
     ],
-    "armis_pipeline_arp_table_arp_record_delay_seconds_count": [
-        "ARP Delay Incident Dashboard"
-    ],
-    "armis_pipeline_arp_table_arp_record_delay_seconds_sum": [
-        "ARP Delay Incident Dashboard"
-    ],
+    "armis_pipeline_arp_table_big_timestamp_diff_created": [],
     "armis_pipeline_arp_table_big_timestamp_diff_total": [],
+    "armis_pipeline_arp_table_network_device_ip_changes_created": [],
     "armis_pipeline_arp_table_network_device_ip_changes_total": [],
+    "armis_pipeline_arp_table_network_device_zero_timestamp_created": [],
     "armis_pipeline_arp_table_network_device_zero_timestamp_total": [],
+    "armis_pipeline_arp_table_old_arp_records_created": [],
     "armis_pipeline_arp_table_old_arp_records_total": [],
+    "armis_pipeline_arp_table_resolved_excluded_macs_filtered_created": [],
     "armis_pipeline_arp_table_resolved_excluded_macs_filtered_total": [
         "Add excluded to ARP table operation"
     ],
+    "armis_pipeline_arp_table_user_arp_records_created": [],
     "armis_pipeline_arp_table_user_arp_records_total": [],
+    "armis_pipeline_arp_table_wrong_message_type_for_compacted_topic_key_created": [],
     "armis_pipeline_arp_table_wrong_message_type_for_compacted_topic_key_total": [],
+    "armis_pipeline_arp_table_wrong_tenant_id_in_compacted_topic_key_created": [],
     "armis_pipeline_arp_table_wrong_tenant_id_in_compacted_topic_key_total": [],
     "armis_pipeline_aruba_clearpass_enrichment_stage_time_count": [],
+    "armis_pipeline_aruba_clearpass_enrichment_stage_time_created": [],
     "armis_pipeline_aruba_clearpass_enrichment_stage_time_sum": [],
-    "armis_pipeline_aruba_switch_processor_fetch_mac_table_seconds_count": [
-        "Switch Processor"
-    ],
-    "armis_pipeline_aruba_switch_processor_fetch_mac_table_seconds_sum": [
-        "Switch Processor"
-    ],
-    "armis_pipeline_asset_inventory_integration_application_failure_count_total": [],
-    "armis_pipeline_asset_inventory_integration_upsert_account_results_count_total": [],
+    "armis_pipeline_asset_inventory_integration_upsert_results_count_created": [],
     "armis_pipeline_asset_inventory_integration_upsert_results_count_total": [
         "TenableIO integration"
     ],
+    "armis_pipeline_asset_inventory_integration_upsert_user_results_count_created": [],
     "armis_pipeline_asset_inventory_integration_upsert_user_results_count_total": [],
     "armis_pipeline_boundary_client_operation_duration_seconds_count": [],
+    "armis_pipeline_boundary_client_operation_duration_seconds_created": [],
     "armis_pipeline_boundary_client_operation_duration_seconds_sum": [],
-    "armis_pipeline_boundary_device_driven_retro_processor_duration_seconds_count": [
-        "Identification Metrics"
-    ],
-    "armis_pipeline_boundary_device_driven_retro_processor_duration_seconds_sum": [
-        "Identification Metrics"
-    ],
+    "armis_pipeline_boundary_device_driven_retro_service_device_ids_sent_created": [],
     "armis_pipeline_boundary_device_driven_retro_service_device_ids_sent_total": [],
-    "armis_pipeline_boundary_device_driven_retro_service_duration_seconds_count": [],
-    "armis_pipeline_boundary_device_driven_retro_service_duration_seconds_sum": [],
+    "armis_pipeline_boundary_enrichment_processor_device_view_cache_hit_counter_created": [],
     "armis_pipeline_boundary_enrichment_processor_device_view_cache_hit_counter_total": [
         "Boundary"
     ],
+    "armis_pipeline_boundary_enrichment_processor_device_view_cache_miss_counter_created": [],
     "armis_pipeline_boundary_enrichment_processor_device_view_cache_miss_counter_total": [
         "Boundary"
     ],
     "armis_pipeline_boundary_enrichment_processor_operation_duration_seconds_count": [],
+    "armis_pipeline_boundary_enrichment_processor_operation_duration_seconds_created": [],
     "armis_pipeline_boundary_enrichment_processor_operation_duration_seconds_sum": [],
     "armis_pipeline_boundary_matcher_event_runner_operation_duration_seconds_count": [],
+    "armis_pipeline_boundary_matcher_event_runner_operation_duration_seconds_created": [],
     "armis_pipeline_boundary_matcher_event_runner_operation_duration_seconds_sum": [],
     "armis_pipeline_boundary_matcher_operation_duration_seconds_count": [],
+    "armis_pipeline_boundary_matcher_operation_duration_seconds_created": [],
     "armis_pipeline_boundary_matcher_operation_duration_seconds_sum": [],
     "armis_pipeline_boundary_processor_operation_duration_seconds_count": [],
+    "armis_pipeline_boundary_processor_operation_duration_seconds_created": [],
     "armis_pipeline_boundary_processor_operation_duration_seconds_sum": [],
     "armis_pipeline_boundary_service_operation_duration_seconds_count": [],
+    "armis_pipeline_boundary_service_operation_duration_seconds_created": [],
     "armis_pipeline_boundary_service_operation_duration_seconds_sum": [],
+    "armis_pipeline_business_impact_enrichment_service_cache_counter_created": [],
     "armis_pipeline_business_impact_enrichment_service_cache_counter_total": [
         "Business Impact"
     ],
     "armis_pipeline_business_impact_enrichment_service_handling_stage_duration_seconds_count": [
         "Business Impact"
     ],
+    "armis_pipeline_business_impact_enrichment_service_handling_stage_duration_seconds_created": [],
     "armis_pipeline_business_impact_enrichment_service_handling_stage_duration_seconds_sum": [
         "Business Impact"
     ],
+    "armis_pipeline_cisco_ise_enrichment_events_created": [],
     "armis_pipeline_cisco_ise_enrichment_events_total": [],
+    "armis_pipeline_cisco_ise_enrichment_skipped_created": [],
     "armis_pipeline_cisco_ise_enrichment_skipped_total": [],
+    "armis_pipeline_cisco_ise_push_commands_created": [],
     "armis_pipeline_cisco_ise_push_commands_total": [
         "ISE Integration"
     ],
+    "armis_pipeline_cisco_ise_pxgrid_failed_get_sessions_created": [],
     "armis_pipeline_cisco_ise_pxgrid_failed_get_sessions_total": [],
+    "armis_pipeline_cisco_ise_pxgrid_publish_endpoints_created": [],
     "armis_pipeline_cisco_ise_pxgrid_publish_endpoints_total": [
         "ISE Integration"
     ],
+    "armis_pipeline_cisco_ise_pxgrid_session_arp_skipped_created": [],
     "armis_pipeline_cisco_ise_pxgrid_session_arp_skipped_total": [],
+    "armis_pipeline_cisco_ise_pxgrid_session_devices_skipped_created": [],
     "armis_pipeline_cisco_ise_pxgrid_session_devices_skipped_total": [],
+    "armis_pipeline_cisco_ise_pxgrid_session_users_skipper_created": [],
+    "armis_pipeline_cisco_ise_pxgrid_session_users_skipper_total": [],
+    "armis_pipeline_cisco_ise_pxgrid_session_users_with_address_sign_created": [],
+    "armis_pipeline_cisco_ise_pxgrid_session_users_with_address_sign_total": [],
+    "armis_pipeline_cisco_ise_pxgrid_sessions_created": [],
     "armis_pipeline_cisco_ise_pxgrid_sessions_total": [
         "ISE Integration"
     ],
-    "armis_pipeline_console_user_sync_failures_total": [],
-    "armis_pipeline_crowdstrike_processor_unknown_cve_status_total": [],
-    "armis_pipeline_cylance_protect_processor_stage_duration_seconds_count": [],
-    "armis_pipeline_cylance_protect_processor_stage_duration_seconds_sum": [],
+    "armis_pipeline_cisco_ise_pxgrid_transformed_users_created": [],
+    "armis_pipeline_cisco_ise_pxgrid_transformed_users_total": [],
     "armis_pipeline_dashlet_trend_dao_operation_duration_seconds_count": [],
+    "armis_pipeline_dashlet_trend_dao_operation_duration_seconds_created": [],
     "armis_pipeline_dashlet_trend_dao_operation_duration_seconds_sum": [],
+    "armis_pipeline_dashlet_trend_processor_failed_dashlets_created": [],
     "armis_pipeline_dashlet_trend_processor_failed_dashlets_total": [],
+    "armis_pipeline_dashlet_trend_processor_messages_counter_created": [],
     "armis_pipeline_dashlet_trend_processor_messages_counter_total": [],
     "armis_pipeline_dashlet_trend_processor_stage_duration_seconds_count": [],
+    "armis_pipeline_dashlet_trend_processor_stage_duration_seconds_created": [],
     "armis_pipeline_dashlet_trend_processor_stage_duration_seconds_sum": [],
+    "armis_pipeline_dashlet_trend_processor_total_dashlets_created": [],
     "armis_pipeline_dashlet_trend_processor_total_dashlets_total": [],
+    "armis_pipeline_delay_cache_get_or_set_operations_created": [],
     "armis_pipeline_delay_cache_get_or_set_operations_number_of_keys": [
         "Delay Volatiles"
     ],
@@ -1154,58 +1402,87 @@
         "Delay Volatiles"
     ],
     "armis_pipeline_delay_cache_local_cache_length": [],
+    "armis_pipeline_delay_cache_redis_get_or_set_failures_created": [],
     "armis_pipeline_delay_cache_redis_get_or_set_failures_total": [
         "Delay Volatiles"
     ],
+    "armis_pipeline_delay_cache_remove_operations_created": [],
     "armis_pipeline_delay_cache_remove_operations_total": [
         "Delay Volatiles"
     ],
     "armis_pipeline_delay_handler_get_and_delay_entities_time_count": [
         "Delay Volatiles"
     ],
+    "armis_pipeline_delay_handler_get_and_delay_entities_time_created": [],
     "armis_pipeline_delay_handler_get_and_delay_entities_time_sum": [
         "Delay Volatiles"
     ],
+    "armis_pipeline_device_activities_handler_old_arp_poison_activity_count_created": [],
     "armis_pipeline_device_activities_handler_old_arp_poison_activity_count_total": [],
+    "armis_pipeline_device_application_view_dao_counter_created": [],
     "armis_pipeline_device_application_view_dao_counter_total": [],
     "armis_pipeline_device_application_view_dao_operation_duration_seconds_count": [],
+    "armis_pipeline_device_application_view_dao_operation_duration_seconds_created": [],
     "armis_pipeline_device_application_view_dao_operation_duration_seconds_sum": [],
+    "armis_pipeline_device_application_view_processor_messages_counter_created": [],
     "armis_pipeline_device_application_view_processor_messages_counter_total": [],
     "armis_pipeline_device_application_view_service_stage_duration_seconds_count": [],
+    "armis_pipeline_device_application_view_service_stage_duration_seconds_created": [],
     "armis_pipeline_device_application_view_service_stage_duration_seconds_sum": [],
     "armis_pipeline_device_business_impact_retro_db_access_seconds_count": [],
+    "armis_pipeline_device_business_impact_retro_db_access_seconds_created": [],
     "armis_pipeline_device_business_impact_retro_db_access_seconds_sum": [],
     "armis_pipeline_device_business_impact_view_db_delete_duration_seconds_count": [],
+    "armis_pipeline_device_business_impact_view_db_delete_duration_seconds_created": [],
     "armis_pipeline_device_business_impact_view_db_delete_duration_seconds_sum": [],
     "armis_pipeline_device_business_impact_view_db_update_duration_seconds_count": [],
+    "armis_pipeline_device_business_impact_view_db_update_duration_seconds_created": [],
     "armis_pipeline_device_business_impact_view_db_update_duration_seconds_sum": [],
+    "armis_pipeline_device_business_impact_view_processor_events_counter_created": [],
     "armis_pipeline_device_business_impact_view_processor_events_counter_total": [],
+    "armis_pipeline_device_custom_property_client_invalid_display_name_counter_created": [],
     "armis_pipeline_device_custom_property_client_invalid_display_name_counter_total": [],
+    "armis_pipeline_device_custom_property_data_handler_unknown_task_id_created": [],
     "armis_pipeline_device_custom_property_data_handler_unknown_task_id_total": [],
+    "armis_pipeline_device_custom_property_view_counter_messages_created": [],
     "armis_pipeline_device_custom_property_view_counter_messages_total": [],
     "armis_pipeline_device_custom_property_view_process_duration_seconds_count": [],
+    "armis_pipeline_device_custom_property_view_process_duration_seconds_created": [],
     "armis_pipeline_device_custom_property_view_process_duration_seconds_sum": [],
+    "armis_pipeline_device_data_source_instance_view_service_hidden_user_data_source_created": [],
     "armis_pipeline_device_data_source_instance_view_service_hidden_user_data_source_total": [],
+    "armis_pipeline_device_data_source_instance_view_service_invalid_integrations_created": [],
     "armis_pipeline_device_data_source_instance_view_service_invalid_integrations_total": [],
     "armis_pipeline_device_data_source_instance_view_service_stage_duration_seconds_count": [],
+    "armis_pipeline_device_data_source_instance_view_service_stage_duration_seconds_created": [],
     "armis_pipeline_device_data_source_instance_view_service_stage_duration_seconds_sum": [],
+    "armis_pipeline_device_data_source_messages_created": [],
     "armis_pipeline_device_data_source_messages_total": [],
     "armis_pipeline_device_data_source_view_events_handling_time_seconds_count": [],
+    "armis_pipeline_device_data_source_view_events_handling_time_seconds_created": [],
     "armis_pipeline_device_data_source_view_events_handling_time_seconds_sum": [],
     "armis_pipeline_device_delete_handler_stage_duration_seconds_count": [],
+    "armis_pipeline_device_delete_handler_stage_duration_seconds_created": [],
     "armis_pipeline_device_delete_handler_stage_duration_seconds_sum": [],
+    "armis_pipeline_device_ds_instance_view_processor_messages_counter_created": [],
     "armis_pipeline_device_ds_instance_view_processor_messages_counter_total": [],
+    "armis_pipeline_device_identifier_state_processor_events_handled_created": [],
     "armis_pipeline_device_identifier_state_processor_events_handled_total": [],
     "armis_pipeline_device_identifier_state_processor_events_handling_time_count": [],
+    "armis_pipeline_device_identifier_state_processor_events_handling_time_created": [],
     "armis_pipeline_device_identifier_state_processor_events_handling_time_sum": [
         "Device Identifier State"
     ],
+    "armis_pipeline_device_identifier_state_processor_events_produced_created": [],
     "armis_pipeline_device_identifier_state_processor_events_produced_total": [],
+    "armis_pipeline_device_identifier_state_service_deleted_records_created": [],
     "armis_pipeline_device_identifier_state_service_deleted_records_total": [],
+    "armis_pipeline_device_identifier_state_service_missing_on_parent_identifiers_counter_created": [],
     "armis_pipeline_device_identifier_state_service_missing_on_parent_identifiers_counter_total": [],
     "armis_pipeline_device_identifier_state_service_stage_duration_seconds_count": [
         "Device Identifier State"
     ],
+    "armis_pipeline_device_identifier_state_service_stage_duration_seconds_created": [],
     "armis_pipeline_device_identifier_state_service_stage_duration_seconds_sum": [
         "Device Identifier State"
     ],
@@ -1213,31 +1490,44 @@
         "Vulnerabilities MT Migration - WIP",
         "Vulnerabilitis Services MT + ST"
     ],
+    "armis_pipeline_device_manager_fetch_devices_db_duration_seconds_created": [],
     "armis_pipeline_device_manager_fetch_devices_db_duration_seconds_sum": [
         "Vulnerabilitis Services MT + ST"
     ],
+    "armis_pipeline_device_manager_missing_device_ids_created": [],
     "armis_pipeline_device_manager_missing_device_ids_total": [],
     "armis_pipeline_device_merge_by_name_device_last_seen_rule_summary_count": [],
+    "armis_pipeline_device_merge_by_name_device_last_seen_rule_summary_created": [],
     "armis_pipeline_device_merge_by_name_device_last_seen_rule_summary_sum": [],
     "armis_pipeline_device_merge_by_name_merged_devices_rule_summary_count": [],
+    "armis_pipeline_device_merge_by_name_merged_devices_rule_summary_created": [],
     "armis_pipeline_device_merge_by_name_merged_devices_rule_summary_sum": [],
     "armis_pipeline_device_merge_by_name_volatile_device_rule_summary_count": [],
+    "armis_pipeline_device_merge_by_name_volatile_device_rule_summary_created": [],
     "armis_pipeline_device_merge_by_name_volatile_device_rule_summary_sum": [],
+    "armis_pipeline_device_name_view_dao_counter_created": [],
     "armis_pipeline_device_name_view_dao_counter_total": [],
     "armis_pipeline_device_name_view_dao_operation_duration_seconds_count": [],
+    "armis_pipeline_device_name_view_dao_operation_duration_seconds_created": [],
     "armis_pipeline_device_name_view_dao_operation_duration_seconds_sum": [],
+    "armis_pipeline_device_name_view_processor_messages_counter_created": [],
     "armis_pipeline_device_name_view_processor_messages_counter_total": [],
     "armis_pipeline_device_name_view_processor_stage_duration_seconds_count": [],
+    "armis_pipeline_device_name_view_processor_stage_duration_seconds_created": [],
     "armis_pipeline_device_name_view_processor_stage_duration_seconds_sum": [],
     "armis_pipeline_device_profile_based_policy_engine_policy_process_duration_seconds_count": [],
+    "armis_pipeline_device_profile_based_policy_engine_policy_process_duration_seconds_created": [],
     "armis_pipeline_device_profile_based_policy_engine_policy_process_duration_seconds_sum": [],
+    "armis_pipeline_device_profile_based_policy_engine_skipped_activities_created": [],
     "armis_pipeline_device_profile_based_policy_engine_skipped_activities_total": [],
     "armis_pipeline_device_profile_notifier_processor_duration_seconds_count": [
         "Device Profile Notifier"
     ],
+    "armis_pipeline_device_profile_notifier_processor_duration_seconds_created": [],
     "armis_pipeline_device_profile_notifier_processor_duration_seconds_sum": [
         "Device Profile Notifier"
     ],
+    "armis_pipeline_device_profile_retro_policy_error_created": [],
     "armis_pipeline_device_profile_retro_policy_error_total": [],
     "armis_pipeline_device_profile_scanner_device_ids_backlog": [
         "Device Profile Notifier"
@@ -1251,39 +1541,58 @@
     "armis_pipeline_device_profile_scanner_recent_device_ids_changed": [
         "Device Profile Notifier"
     ],
+    "armis_pipeline_device_property_v2_processor_deleted_rows_counter_created": [],
     "armis_pipeline_device_property_v2_processor_deleted_rows_counter_total": [],
+    "armis_pipeline_device_property_v2_processor_insert_rows_counter_created": [],
     "armis_pipeline_device_property_v2_processor_insert_rows_counter_total": [],
+    "armis_pipeline_device_property_v2_processor_invalid_commands_counter_created": [],
     "armis_pipeline_device_property_v2_processor_invalid_commands_counter_total": [],
+    "armis_pipeline_device_property_v2_processor_no_change_upsert_commands_counter_created": [],
     "armis_pipeline_device_property_v2_processor_no_change_upsert_commands_counter_total": [],
+    "armis_pipeline_device_property_v2_processor_outdated_upsert_commands_counter_created": [],
     "armis_pipeline_device_property_v2_processor_outdated_upsert_commands_counter_total": [],
+    "armis_pipeline_device_property_v2_processor_update_rows_counter_created": [],
     "armis_pipeline_device_property_v2_processor_update_rows_counter_total": [],
+    "armis_pipeline_device_property_view_counter_messages_created": [],
     "armis_pipeline_device_property_view_counter_messages_total": [],
+    "armis_pipeline_device_property_view_missing_property_uuids_created": [],
     "armis_pipeline_device_property_view_missing_property_uuids_total": [],
     "armis_pipeline_device_property_view_process_duration_seconds_count": [],
+    "armis_pipeline_device_property_view_process_duration_seconds_created": [],
     "armis_pipeline_device_property_view_process_duration_seconds_sum": [],
     "armis_pipeline_device_property_view_process_stage_duration_seconds_count": [],
+    "armis_pipeline_device_property_view_process_stage_duration_seconds_created": [],
     "armis_pipeline_device_property_view_process_stage_duration_seconds_sum": [],
+    "armis_pipeline_device_service_device_delete_forbidden_created": [],
     "armis_pipeline_device_service_device_delete_forbidden_total": [],
+    "armis_pipeline_device_skipped_last_seen_updates_created": [],
     "armis_pipeline_device_skipped_last_seen_updates_total": [
         "Skipped Device View Last Seen"
     ],
+    "armis_pipeline_device_view_changed_views_created": [],
     "armis_pipeline_device_view_changed_views_total": [
         "Views"
     ],
+    "armis_pipeline_device_view_deleted_messages_sent_created": [],
     "armis_pipeline_device_view_deleted_messages_sent_total": [],
     "armis_pipeline_device_view_events_handling_time_seconds_count": [
         "Topology Metrics",
         "Views"
     ],
+    "armis_pipeline_device_view_events_handling_time_seconds_created": [],
     "armis_pipeline_device_view_events_handling_time_seconds_sum": [
         "Views"
     ],
+    "armis_pipeline_device_view_ignored_for_no_change_created": [],
     "armis_pipeline_device_view_ignored_for_no_change_total": [
         "Views"
     ],
+    "armis_pipeline_device_view_ignored_old_changes_created": [],
     "armis_pipeline_device_view_ignored_old_changes_total": [
         "Views"
     ],
+    "armis_pipeline_device_view_messages_created": [],
+    "armis_pipeline_device_view_messages_sent_created": [],
     "armis_pipeline_device_view_messages_sent_total": [
         "Access Point View Dashboard - michal",
         "Views"
@@ -1295,31 +1604,48 @@
     "armis_pipeline_device_view_stage_time_seconds_count": [
         "Views"
     ],
+    "armis_pipeline_device_view_stage_time_seconds_created": [],
     "armis_pipeline_device_view_stage_time_seconds_sum": [
         "Views"
     ],
+    "armis_pipeline_device_view_synced_created": [],
     "armis_pipeline_device_view_synced_total": [],
+    "armis_pipeline_device_view_unmerged_device_created": [],
     "armis_pipeline_device_view_unmerged_device_total": [],
     "armis_pipeline_device_view_upsert_time_count": [
         "Views"
     ],
+    "armis_pipeline_device_view_upsert_time_created": [],
     "armis_pipeline_device_view_upsert_time_sum": [
         "Views"
     ],
     "armis_pipeline_distinct_field_values_view_events_handling_time_seconds_count": [],
+    "armis_pipeline_distinct_field_values_view_events_handling_time_seconds_created": [],
     "armis_pipeline_distinct_field_values_view_events_handling_time_seconds_sum": [],
+    "armis_pipeline_distinct_field_values_view_messages_counter_messages_created": [],
     "armis_pipeline_distinct_field_values_view_messages_counter_messages_total": [],
+    "armis_pipeline_duplicate_uuid_sent_created": [],
     "armis_pipeline_duplicate_uuid_sent_total": [],
+    "armis_pipeline_email_manager_mail_recipients_created": [],
     "armis_pipeline_email_manager_mail_recipients_total": [],
+    "armis_pipeline_email_manager_sent_blocked_or_empty_created": [],
     "armis_pipeline_email_manager_sent_blocked_or_empty_total": [],
+    "armis_pipeline_enforcement_processor_addition_reqs_recv_created": [],
     "armis_pipeline_enforcement_processor_addition_reqs_recv_total": [],
+    "armis_pipeline_enforcement_processor_addition_reqs_sent_created": [],
     "armis_pipeline_enforcement_processor_addition_reqs_sent_total": [],
+    "armis_pipeline_enforcement_processor_removal_reqs_recv_created": [],
     "armis_pipeline_enforcement_processor_removal_reqs_recv_total": [],
+    "armis_pipeline_enforcement_processor_removal_reqs_sent_created": [],
     "armis_pipeline_enforcement_processor_removal_reqs_sent_total": [],
     "armis_pipeline_enforcement_service_enforced_devices_missing_from_db": [],
+    "armis_pipeline_enforcement_service_enforcement_remove_from_errored_enforced_device_created": [],
     "armis_pipeline_enforcement_service_enforcement_remove_from_errored_enforced_device_total": [],
+    "armis_pipeline_enforcement_service_invalid_status_transitions_created": [],
     "armis_pipeline_enforcement_service_invalid_status_transitions_total": [],
+    "armis_pipeline_enforcement_service_unenforced_devices_removed_created": [],
     "armis_pipeline_enforcement_service_unenforced_devices_removed_total": [],
+    "armis_pipeline_enforcement_service_unenforced_network_interfaces_removed_created": [],
     "armis_pipeline_enforcement_service_unenforced_network_interfaces_removed_total": [],
     "armis_pipeline_entities_delay_handler_delayed_entities_amount": [
         "Delay Volatiles"
@@ -1327,79 +1653,102 @@
     "armis_pipeline_entities_delay_handler_entities_to_process_amount": [
         "Delay Volatiles"
     ],
+    "armis_pipeline_entities_delay_handler_volatile_entities_dropped_amount_created": [],
     "armis_pipeline_entities_delay_handler_volatile_entities_dropped_amount_total": [],
+    "armis_pipeline_entities_delay_handler_volatile_mac_without_identifier_amount_created": [],
     "armis_pipeline_entities_delay_handler_volatile_mac_without_identifier_amount_total": [],
+    "armis_pipeline_eseye_incoming_bad_sessions_counter_created": [],
     "armis_pipeline_eseye_incoming_bad_sessions_counter_total": [
         "Eseye Integration"
     ],
+    "armis_pipeline_eseye_incoming_malformed_requests_counter_created": [],
     "armis_pipeline_eseye_incoming_malformed_requests_counter_total": [
         "Eseye Integration"
     ],
+    "armis_pipeline_eseye_incoming_requests_counter_created": [],
     "armis_pipeline_eseye_incoming_requests_counter_total": [
         "Eseye Integration"
     ],
+    "armis_pipeline_event_policy_engine_policy_skipped_activities_created": [],
     "armis_pipeline_event_policy_engine_policy_skipped_activities_total": [],
+    "armis_pipeline_events_device_enrichment_cache_hits_created": [],
     "armis_pipeline_events_device_enrichment_cache_hits_total": [
         "IP Sessions Ops - New",
         "IP Sessions Ops - Old",
         "New Network and Wifi Flows",
         "New Network and Wifi Flows copy"
     ],
+    "armis_pipeline_events_device_enrichment_cache_misses_created": [],
     "armis_pipeline_events_device_enrichment_cache_misses_total": [
         "IP Sessions Ops - New",
         "IP Sessions Ops - Old",
         "New Network and Wifi Flows",
         "New Network and Wifi Flows copy"
     ],
+    "armis_pipeline_events_device_enrichment_suspended_identifier_cache_hits_created": [],
+    "armis_pipeline_events_device_enrichment_suspended_identifier_cache_hits_total": [],
+    "armis_pipeline_events_entered_enrichment_created": [],
     "armis_pipeline_events_entered_enrichment_total": [
         "New Network and Wifi Flows",
         "New Network and Wifi Flows copy"
     ],
+    "armis_pipeline_events_with_external_ip_filtered_out_created": [],
     "armis_pipeline_events_with_external_ip_filtered_out_total": [],
+    "armis_pipeline_events_with_invalid_timestamps_created": [],
+    "armis_pipeline_events_with_invalid_timestamps_sensor_created": [],
+    "armis_pipeline_events_with_invalid_timestamps_sensor_total": [],
+    "armis_pipeline_events_with_invalid_timestamps_total": [
+        "New Network and Wifi Flows",
+        "New Network and Wifi Flows copy"
+    ],
+    "armis_pipeline_forescout_enrichment_commands_count_created": [],
     "armis_pipeline_forescout_enrichment_commands_count_total": [],
+    "armis_pipeline_forescout_enrichment_events_count_created": [],
     "armis_pipeline_forescout_enrichment_events_count_total": [],
     "armis_pipeline_harmony_processor_delete_device_run_time_count": [],
+    "armis_pipeline_harmony_processor_delete_device_run_time_created": [],
     "armis_pipeline_harmony_processor_delete_device_run_time_sum": [],
-    "armis_pipeline_harmony_processor_linked_network_device_events_handling_stage_duration_seconds_count": [],
-    "armis_pipeline_harmony_processor_linked_network_device_events_handling_stage_duration_seconds_sum": [],
+    "armis_pipeline_harmony_processor_linked_network_device_events_missing_device_ids_created": [],
     "armis_pipeline_harmony_processor_linked_network_device_events_missing_device_ids_total": [],
+    "armis_pipeline_harmony_processor_linked_network_device_events_sent_created": [],
     "armis_pipeline_harmony_processor_linked_network_device_events_sent_total": [],
     "armis_pipeline_harmony_processor_merge_device_run_time_count": [],
+    "armis_pipeline_harmony_processor_merge_device_run_time_created": [],
     "armis_pipeline_harmony_processor_merge_device_run_time_sum": [],
-    "armis_pipeline_harmony_processor_network_device_events_handling_stage_duration_seconds_count": [],
-    "armis_pipeline_harmony_processor_network_device_events_handling_stage_duration_seconds_sum": [],
+    "armis_pipeline_harmony_processor_network_device_events_missing_device_id_created": [],
     "armis_pipeline_harmony_processor_network_device_events_missing_device_id_total": [],
+    "armis_pipeline_harmony_processor_network_device_events_sent_created": [],
     "armis_pipeline_harmony_processor_network_device_events_sent_total": [],
     "armis_pipeline_heartbeat_collector_timestamp": [],
     "armis_pipeline_hooks_notifier_bulk_update_events_undetected": [],
+    "armis_pipeline_hooks_notifier_property_changed_created": [],
     "armis_pipeline_hooks_notifier_property_changed_total": [
         "Skipped Device View Last Seen",
         "Views"
     ],
+    "armis_pipeline_infra_data_analysis_number_of_events_sent_created": [],
     "armis_pipeline_infra_data_analysis_number_of_events_sent_total": [],
+    "armis_pipeline_infra_data_analysis_number_of_properties_sent_created": [],
     "armis_pipeline_infra_data_analysis_number_of_properties_sent_total": [],
-    "armis_pipeline_integration_exception_total": [],
+    "armis_pipeline_integration_health_metrics_force_status_created": [],
     "armis_pipeline_integration_health_metrics_force_status_total": [],
-    "armis_pipeline_integration_health_metrics_get_sensor_group_id_time_count": [
-        "Integration Health Notifications",
-        "Integration Health Notifications"
-    ],
-    "armis_pipeline_integration_health_metrics_get_sensor_group_id_time_sum": [
-        "Integration Health Notifications",
-        "Integration Health Notifications"
-    ],
+    "armis_pipeline_integration_health_metrics_msg_without_state_or_status_category_v2_created": [],
     "armis_pipeline_integration_health_metrics_msg_without_state_or_status_category_v2_total": [],
     "armis_pipeline_integration_health_metrics_process_using_aggregators_time_count": [
         "Integration Health Notifications",
         "Integration Health Notifications"
     ],
+    "armis_pipeline_integration_health_metrics_process_using_aggregators_time_created": [],
     "armis_pipeline_integration_health_metrics_process_using_aggregators_time_sum": [
         "Integration Health Notifications",
         "Integration Health Notifications"
     ],
     "armis_pipeline_integration_health_metrics_processor_operation_time_count": [],
+    "armis_pipeline_integration_health_metrics_processor_operation_time_created": [],
     "armis_pipeline_integration_health_metrics_processor_operation_time_sum": [],
+    "armis_pipeline_integration_health_metrics_upsert_commands_created": [],
     "armis_pipeline_integration_health_metrics_upsert_commands_total": [],
+    "armis_pipeline_ip_connection_enrichment_messages_created": [],
     "armis_pipeline_ip_connection_enrichment_messages_total": [
         "hadar kaplan - Enrichments",
         "IP Connections policy engine",
@@ -1410,27 +1759,38 @@
         "IP Connections policy engine",
         "Sefi playground"
     ],
+    "armis_pipeline_ip_connection_enrichment_processing_seconds_created": [],
     "armis_pipeline_ip_connection_enrichment_processing_seconds_sum": [
         "hadar kaplan - Enrichments",
         "IP Connections policy engine",
         "Sefi playground"
     ],
+    "armis_pipeline_ip_connection_uncertain_client_server_messages_created": [],
     "armis_pipeline_ip_connection_uncertain_client_server_messages_total": [],
+    "armis_pipeline_ip_sessions_aggregation_msgs_malformed_ip_created": [],
     "armis_pipeline_ip_sessions_aggregation_msgs_malformed_ip_total": [],
+    "armis_pipeline_ip_sessions_aggregation_msgs_missing_device_id_created": [],
     "armis_pipeline_ip_sessions_aggregation_msgs_missing_device_id_total": [
         "GalT's real plaground"
     ],
+    "armis_pipeline_ip_sessions_processor_msgs_with_internal_ip_and_missing_device_id_created": [],
     "armis_pipeline_ip_sessions_processor_msgs_with_internal_ip_and_missing_device_id_total": [],
+    "armis_pipeline_ip_sessions_throttled_created": [],
     "armis_pipeline_ip_sessions_throttled_total": [
         "Ingestion layer",
         "Throttling"
     ],
     "armis_pipeline_jamf_processor_stage_duration_seconds_count": [],
+    "armis_pipeline_jamf_processor_stage_duration_seconds_created": [],
     "armis_pipeline_jamf_processor_stage_duration_seconds_sum": [],
+    "armis_pipeline_jamf_processor_transform_skipped_devices_created": [],
     "armis_pipeline_jamf_processor_transform_skipped_devices_total": [],
+    "armis_pipeline_kafka_commit_error_created": [],
     "armis_pipeline_kafka_commit_error_total": [],
     "armis_pipeline_kafka_compacted_trigger_initial_setup_time_total_count": [],
+    "armis_pipeline_kafka_compacted_trigger_initial_setup_time_total_created": [],
     "armis_pipeline_kafka_compacted_trigger_initial_setup_time_total_sum": [],
+    "armis_pipeline_kafka_consumer_explicit_messages_created": [],
     "armis_pipeline_kafka_consumer_explicit_messages_total": [],
     "armis_pipeline_kafka_consumer_total": [
         "access_switch_processor",
@@ -1463,6 +1823,7 @@
         "VMS Metrics",
         "Vulnerabilities - Lags - Cross Tenant",
         "Vulnerabilitis Services Debug Metrics",
+        "Vulnerabilitis Services Metrics - New",
         "Vulnerabilitis Services MT + ST"
     ],
     "armis_pipeline_kafka_last_timestamp": [
@@ -1488,13 +1849,16 @@
         "Topology Metrics temp playground",
         "Views"
     ],
+    "armis_pipeline_kafka_missing_distribution_created": [],
     "armis_pipeline_kafka_missing_distribution_total": [
         "Vulnerabilitis Services Debug Metrics"
     ],
     "armis_pipeline_kafka_poll_seconds_count": [],
+    "armis_pipeline_kafka_poll_seconds_created": [],
     "armis_pipeline_kafka_poll_seconds_sum": [
         "Session Processor Stress test"
     ],
+    "armis_pipeline_kafka_producer_errors_created": [],
     "armis_pipeline_kafka_producer_errors_total": [
         "Activities by Tenant",
         "Activities by Tenant",
@@ -1512,9 +1876,11 @@
         "Single Tenant - Kafka Consumer / Producer Metrics",
         "Single Tenant - Kafka Consumer / Producer Metrics - Tatana's Copy"
     ],
+    "armis_pipeline_kafka_producer_prepare_for_send_time_total_created": [],
     "armis_pipeline_kafka_producer_prepare_for_send_time_total_sum": [
         "Session Processor Stress test"
     ],
+    "armis_pipeline_kafka_producer_sent_messages_created": [],
     "armis_pipeline_kafka_producer_sent_messages_total": [
         "Alert Processor Metrics",
         "Alert Processor Metrics Copy",
@@ -1555,6 +1921,7 @@
         "Vulnerabilitis Services Debug Metrics",
         "Vulnerabilitis Services MT + ST"
     ],
+    "armis_pipeline_kafka_retry_commit_errors_created": [],
     "armis_pipeline_kafka_retry_commit_errors_total": [
         "Single Tenant - Kafka Consumer / Producer Metrics",
         "Single Tenant - Kafka Consumer / Producer Metrics - Tatana's Copy"
@@ -1566,31 +1933,41 @@
         "morning shift Copy Copy",
         "SLA / SLO dashboard Copy"
     ],
+    "armis_pipeline_link_termination_cache_hit_count_created": [],
     "armis_pipeline_link_termination_cache_hit_count_total": [],
+    "armis_pipeline_link_termination_events_sent_count_created": [],
     "armis_pipeline_link_termination_events_sent_count_total": [],
     "armis_pipeline_link_termination_scheduler_initialization_time_seconds_count": [],
+    "armis_pipeline_link_termination_scheduler_initialization_time_seconds_created": [],
     "armis_pipeline_link_termination_scheduler_initialization_time_seconds_sum": [],
+    "armis_pipeline_link_termination_scheduler_link_update_events_count_created": [],
     "armis_pipeline_link_termination_scheduler_link_update_events_count_total": [],
     "armis_pipeline_link_termination_scheduler_process_time_seconds_count": [],
+    "armis_pipeline_link_termination_scheduler_process_time_seconds_created": [],
     "armis_pipeline_link_termination_scheduler_process_time_seconds_sum": [],
     "armis_pipeline_link_termination_scheduler_validation_stage_time_seconds_count": [],
+    "armis_pipeline_link_termination_scheduler_validation_stage_time_seconds_created": [],
     "armis_pipeline_link_termination_scheduler_validation_stage_time_seconds_sum": [],
+    "armis_pipeline_linked_network_device_events_missing_device_ids_created": [],
     "armis_pipeline_linked_network_device_events_missing_device_ids_total": [
         "New Network and Wifi Flows copy"
     ],
+    "armis_pipeline_linked_network_device_events_sent_created": [],
     "armis_pipeline_linked_network_device_events_sent_total": [
         "IP Sessions Ops - New",
         "IP Sessions Ops - Old"
     ],
+    "armis_pipeline_mac_revocation_processor_deletion_messages_sent_to_compacted_topic_created": [],
     "armis_pipeline_mac_revocation_processor_deletion_messages_sent_to_compacted_topic_total": [],
     "armis_pipeline_mac_revocation_processor_macs_to_keys_length": [],
+    "armis_pipeline_mac_revocation_processor_unexpected_macs_counter_created": [],
     "armis_pipeline_mac_revocation_processor_unexpected_macs_counter_total": [],
-    "armis_pipeline_microsoft_defender_processor_ignored_applications_total": [],
-    "armis_pipeline_microsoft_defender_processor_stage_duration_seconds_count": [],
-    "armis_pipeline_microsoft_defender_processor_stage_duration_seconds_sum": [],
+    "armis_pipeline_microsoft_intune_processor_ignored_applications_created": [],
     "armis_pipeline_microsoft_intune_processor_ignored_applications_total": [],
     "armis_pipeline_microsoft_intune_processor_stage_duration_seconds_count": [],
+    "armis_pipeline_microsoft_intune_processor_stage_duration_seconds_created": [],
     "armis_pipeline_microsoft_intune_processor_stage_duration_seconds_sum": [],
+    "armis_pipeline_msg_distribution_large_filtered_messages_created": [],
     "armis_pipeline_msg_distribution_large_filtered_messages_total": [
         "Forwarder Stats",
         "Forwarders Per Tenant",
@@ -1599,12 +1976,17 @@
         "Mapper Ops",
         "Mapper Summary"
     ],
-    "armis_pipeline_netskope_processor_stage_duration_seconds_count": [],
-    "armis_pipeline_netskope_processor_stage_duration_seconds_sum": [],
+    "armis_pipeline_network_device_event_msg_distribution_split_network_devices_created": [],
     "armis_pipeline_network_device_event_msg_distribution_split_network_devices_total": [],
+    "armis_pipeline_network_device_events_excluded_source_skipped_throttle_created": [],
+    "armis_pipeline_network_device_events_excluded_source_skipped_throttle_total": [],
+    "armis_pipeline_network_device_events_for_device_creation_created": [],
+    "armis_pipeline_network_device_events_for_device_creation_total": [],
+    "armis_pipeline_network_device_events_missing_device_id_created": [],
     "armis_pipeline_network_device_events_missing_device_id_total": [
         "New Network and Wifi Flows copy"
     ],
+    "armis_pipeline_network_device_events_sent_created": [],
     "armis_pipeline_network_device_events_sent_total": [
         "Ingestion layer",
         "IP Sessions Ops - New",
@@ -1612,54 +1994,73 @@
         "Session Processor Network Device Events Throttling",
         "Throttling"
     ],
+    "armis_pipeline_network_device_events_throttled_created": [],
+    "armis_pipeline_network_device_events_throttled_total": [
+        "Ingestion layer",
+        "Throttling"
+    ],
     "armis_pipeline_network_equipment_to_site_dao_operation_duration_seconds_count": [],
+    "armis_pipeline_network_equipment_to_site_dao_operation_duration_seconds_created": [],
     "armis_pipeline_network_equipment_to_site_dao_operation_duration_seconds_sum": [],
+    "armis_pipeline_network_events_data_analysis_events_without_identification_source_created": [],
     "armis_pipeline_network_events_data_analysis_events_without_identification_source_total": [],
+    "armis_pipeline_network_events_data_analysis_filtered_events_with_missing_device_id_created": [],
     "armis_pipeline_network_events_data_analysis_filtered_events_with_missing_device_id_total": [],
+    "armis_pipeline_network_events_data_analysis_meraki_sourced_ethernet_typed_linked_device_events_filtered_created": [],
     "armis_pipeline_network_events_data_analysis_meraki_sourced_ethernet_typed_linked_device_events_filtered_total": [
         "access_switch_processor"
     ],
     "armis_pipeline_network_interface_view_received_cdc_event_batch_size_gauge": [],
+    "armis_pipeline_network_protocol_default_device_name_handler_names_sent_created": [],
     "armis_pipeline_network_protocol_default_device_name_handler_names_sent_total": [],
+    "armis_pipeline_nuvolo_alert_requests_created": [],
     "armis_pipeline_nuvolo_alert_requests_total": [],
+    "armis_pipeline_nuvolo_push_alerts_created": [],
     "armis_pipeline_nuvolo_push_alerts_total": [
         "Nuvolo",
         "Nuvolo API"
     ],
+    "armis_pipeline_nuvolo_push_devices_created": [],
     "armis_pipeline_nuvolo_push_devices_total": [
         "Nuvolo",
         "Nuvolo API"
     ],
+    "armis_pipeline_nuvolo_push_vulnerabilities_created": [],
     "armis_pipeline_nuvolo_push_vulnerabilities_total": [
         "Nuvolo",
         "Nuvolo API"
     ],
-    "armis_pipeline_okta_get_group_info_time_count": [],
-    "armis_pipeline_okta_get_group_info_time_sum": [],
+    "armis_pipeline_open_ports_external_client_and_server_created": [],
     "armis_pipeline_open_ports_external_client_and_server_total": [],
+    "armis_pipeline_open_ports_external_connection_activities_created_created": [],
     "armis_pipeline_open_ports_external_connection_activities_created_total": [
         "GalT's real plaground"
     ],
     "armis_pipeline_open_ports_ip_session_aggregations_iteration_duration_seconds_count": [],
+    "armis_pipeline_open_ports_ip_session_aggregations_iteration_duration_seconds_created": [],
     "armis_pipeline_open_ports_ip_session_aggregations_iteration_duration_seconds_sum": [],
+    "armis_pipeline_open_ports_open_ports_seen_created": [],
     "armis_pipeline_open_ports_open_ports_seen_total": [
         "GalT's real plaground"
     ],
     "armis_pipeline_open_ports_open_ports_upsert_duration_seconds_count": [],
+    "armis_pipeline_open_ports_open_ports_upsert_duration_seconds_created": [],
     "armis_pipeline_open_ports_open_ports_upsert_duration_seconds_sum": [],
+    "armis_pipeline_open_ports_restricted_ineternet_access_risk_factors_created_created": [],
     "armis_pipeline_open_ports_restricted_ineternet_access_risk_factors_created_total": [
         "GalT's real plaground"
     ],
+    "armis_pipeline_open_ports_restricted_internet_access_activities_created_created": [],
     "armis_pipeline_open_ports_restricted_internet_access_activities_created_total": [],
     "armis_pipeline_open_ports_risk_factors_and_activities_creation_duration_seconds_count": [],
+    "armis_pipeline_open_ports_risk_factors_and_activities_creation_duration_seconds_created": [],
     "armis_pipeline_open_ports_risk_factors_and_activities_creation_duration_seconds_sum": [],
+    "armis_pipeline_open_ports_unencrypted_traffic_risk_factors_created_created": [],
     "armis_pipeline_open_ports_unencrypted_traffic_risk_factors_created_total": [],
-    "armis_pipeline_panw_cortex_arp_table_size": [],
-    "armis_pipeline_panw_cortex_sessions_size": [],
-    "armis_pipeline_panw_cortex_unprocessed_size": [],
-    "armis_pipeline_policy_base_client_errors_counter_total": [],
     "armis_pipeline_policy_base_client_stage_duration_seconds_count": [],
+    "armis_pipeline_policy_base_client_stage_duration_seconds_created": [],
     "armis_pipeline_policy_base_client_stage_duration_seconds_sum": [],
+    "armis_pipeline_policy_engine_ignored_ip_session_policies_created": [],
     "armis_pipeline_policy_engine_ignored_ip_session_policies_total": [],
     "armis_pipeline_policy_engine_policy_process_duration_seconds_count": [
         "compare single policy",
@@ -1668,6 +2069,7 @@
         "Policy Engine",
         "Single Policy Analysis"
     ],
+    "armis_pipeline_policy_engine_policy_process_duration_seconds_created": [],
     "armis_pipeline_policy_engine_policy_process_duration_seconds_sum": [
         "compare single policy",
         "Lily's Board",
@@ -1676,6 +2078,7 @@
         "Single Policy Analysis"
     ],
     "armis_pipeline_preprocess_secs_count": [],
+    "armis_pipeline_preprocess_secs_created": [],
     "armis_pipeline_preprocess_secs_sum": [],
     "armis_pipeline_process_last_entry": [
         "Async RMQ rollout"
@@ -1689,6 +2092,7 @@
         "ARP Proxy Playground",
         "Aruba Clearpass",
         "Async RMQ rollout",
+        "Containers and Pipeline Health",
         "Containers and Pipeline Health Copy",
         "Containers and Pipeline Health Old",
         "Device IP Processor",
@@ -1716,6 +2120,7 @@
         "Views",
         "Vulnerabilities Metrics"
     ],
+    "armis_pipeline_process_secs_created": [],
     "armis_pipeline_process_secs_sum": [
         "AP Merge Test Temp",
         "ARP Management ST",
@@ -1744,63 +2149,114 @@
         "Vulnerabilities Metrics"
     ],
     "armis_pipeline_processing_network_events_data_analysis_service_handling_duration_seconds_count": [],
+    "armis_pipeline_processing_network_events_data_analysis_service_handling_duration_seconds_created": [],
     "armis_pipeline_processing_network_events_data_analysis_service_handling_duration_seconds_sum": [],
     "armis_pipeline_processing_network_events_data_analysis_service_stage_duration_seconds_count": [
         "DNS Analyzer"
     ],
+    "armis_pipeline_processing_network_events_data_analysis_service_stage_duration_seconds_created": [],
     "armis_pipeline_processing_network_events_data_analysis_service_stage_duration_seconds_sum": [
         "DNS Analyzer"
     ],
     "armis_pipeline_protocols_processor_auth_periodic_run_time_count": [],
+    "armis_pipeline_protocols_processor_auth_periodic_run_time_created": [],
     "armis_pipeline_protocols_processor_auth_periodic_run_time_sum": [],
     "armis_pipeline_protocols_processor_delete_device_run_time_count": [],
+    "armis_pipeline_protocols_processor_delete_device_run_time_created": [],
     "armis_pipeline_protocols_processor_delete_device_run_time_sum": [],
     "armis_pipeline_protocols_processor_merge_device_run_time_count": [],
+    "armis_pipeline_protocols_processor_merge_device_run_time_created": [],
     "armis_pipeline_protocols_processor_merge_device_run_time_sum": [],
     "armis_pipeline_protocols_processor_modbus_registers_batch_upsert_time_count": [],
+    "armis_pipeline_protocols_processor_modbus_registers_batch_upsert_time_created": [],
     "armis_pipeline_protocols_processor_modbus_registers_batch_upsert_time_sum": [],
     "armis_pipeline_protocols_processor_modbus_relevant_registers_batch_query_time_count": [],
+    "armis_pipeline_protocols_processor_modbus_relevant_registers_batch_query_time_created": [],
     "armis_pipeline_protocols_processor_modbus_relevant_registers_batch_query_time_sum": [],
     "armis_pipeline_protocols_processor_object_size": [],
+    "armis_pipeline_purdue_level_counter_messages_created": [],
     "armis_pipeline_purdue_level_counter_messages_total": [],
     "armis_pipeline_purdue_level_events_handling_time_seconds_count": [],
+    "armis_pipeline_purdue_level_events_handling_time_seconds_created": [],
     "armis_pipeline_purdue_level_events_handling_time_seconds_sum": [],
+    "armis_pipeline_qualys_client_cve_info_errors_created": [],
     "armis_pipeline_qualys_client_cve_info_errors_total": [],
+    "armis_pipeline_qualys_processor_cve_fetched_per_cycle_created": [],
     "armis_pipeline_qualys_processor_cve_fetched_per_cycle_total": [
         "Qualys"
     ],
+    "armis_pipeline_qualys_processor_fetched_devices_created": [],
     "armis_pipeline_qualys_processor_fetched_devices_total": [
         "Vulnerabilities Integrations"
     ],
+    "armis_pipeline_qualys_processor_ignored_devices_created": [],
     "armis_pipeline_qualys_processor_ignored_devices_total": [
         "Vulnerabilities Integrations"
     ],
+    "armis_pipeline_qualys_processor_initiated_scans_created": [],
     "armis_pipeline_qualys_processor_initiated_scans_total": [],
+    "armis_pipeline_qualys_processor_load_vulnerabilities_with_no_last_seen_created": [
+        "Qualys"
+    ],
     "armis_pipeline_qualys_processor_load_vulnerabilities_with_no_last_seen_total": [],
+    "armis_pipeline_qualys_processor_qvs_aggregator_flush_reason_created": [],
     "armis_pipeline_qualys_processor_qvs_aggregator_flush_reason_total": [
         "Qualys"
     ],
+    "armis_pipeline_qualys_processor_users_sent_created": [],
     "armis_pipeline_qualys_processor_users_sent_total": [],
+    "armis_pipeline_qualys_processor_users_skipped_created": [],
     "armis_pipeline_qualys_processor_users_skipped_total": [],
+    "armis_pipeline_qualys_processor_vulnerabilities_updates_skipped_created": [],
     "armis_pipeline_qualys_processor_vulnerabilities_updates_skipped_total": [],
+    "armis_pipeline_qualys_qid_cache_hits_created": [],
     "armis_pipeline_qualys_qid_cache_hits_total": [],
+    "armis_pipeline_qualys_qid_cache_misses_created": [],
     "armis_pipeline_qualys_qid_cache_misses_total": [],
     "armis_pipeline_qualys_qid_cache_time_to_fetch_count": [],
+    "armis_pipeline_qualys_qid_cache_time_to_fetch_created": [],
     "armis_pipeline_qualys_qid_cache_time_to_fetch_sum": [],
+    "armis_pipeline_rabbit_mq_channel_dropped_message_elements_created": [],
+    "armis_pipeline_rabbit_mq_channel_dropped_message_elements_total": [
+        "IP Sessions Rates"
+    ],
+    "armis_pipeline_rabbit_mq_throttling_messages_created": [],
+    "armis_pipeline_rabbit_mq_throttling_messages_dropped_created": [],
+    "armis_pipeline_rabbit_mq_throttling_messages_dropped_total": [
+        "Ingestion layer",
+        "Throttling",
+        "Throttling Dashboard"
+    ],
+    "armis_pipeline_rabbit_mq_throttling_messages_total": [
+        "ARP Kafka Usage Copy",
+        "Ingestion layer",
+        "Throttling",
+        "Throttling Dashboard"
+    ],
+    "armis_pipeline_rabbit_mq_throttling_received_message_elements_created": [],
     "armis_pipeline_rabbit_mq_throttling_received_message_elements_total": [
         "IP Sessions Rates"
     ],
+    "armis_pipeline_rmq_acks_created": [],
     "armis_pipeline_rmq_acks_total": [],
+    "armis_pipeline_rmq_empty_messages_created": [],
     "armis_pipeline_rmq_empty_messages_total": [],
-    "armis_pipeline_rmq_full_consume_queue_name": [],
+    "armis_pipeline_rmq_full_consume_queue_name": [
+        "Containers and Pipeline Health"
+    ],
+    "armis_pipeline_rmq_heartbeat_loop_errors_created": [],
     "armis_pipeline_rmq_heartbeat_loop_errors_total": [],
     "armis_pipeline_rmq_periodic_process_data_events_all_connections_count": [],
+    "armis_pipeline_rmq_periodic_process_data_events_all_connections_created": [],
     "armis_pipeline_rmq_periodic_process_data_events_all_connections_sum": [],
     "armis_pipeline_rmq_publish_bytes_count": [
+        "Containers and Pipeline Health",
         "Containers and Pipeline Health Copy",
         "Containers and Pipeline Health Old"
     ],
+    "armis_pipeline_rmq_publish_bytes_created": [],
     "armis_pipeline_rmq_publish_bytes_sum": [
+        "Containers and Pipeline Health",
         "Containers and Pipeline Health Copy",
         "Containers and Pipeline Health Old"
     ],
@@ -1814,8 +2270,11 @@
         "SIEM integration",
         "Wifi Scan Processor"
     ],
+    "armis_pipeline_rmq_read_total_created": [],
     "armis_pipeline_rmq_read_total_sum": [],
+    "armis_pipeline_rmq_receive_loop_crash_created": [],
     "armis_pipeline_rmq_receive_loop_crash_total": [],
+    "armis_pipeline_rmq_send_loop_crash_created": [],
     "armis_pipeline_rmq_send_loop_crash_total": [],
     "armis_pipeline_rmq_send_loop_run_status": [],
     "armis_pipeline_rmq_send_queue_size": [
@@ -1831,9 +2290,12 @@
         "Switch Processor",
         "Wifi Scan Processor"
     ],
+    "armis_pipeline_rmq_write_total_created": [],
     "armis_pipeline_rmq_write_total_sum": [],
     "armis_pipeline_rpc_channel_publish_duration_seconds_count": [],
+    "armis_pipeline_rpc_channel_publish_duration_seconds_created": [],
     "armis_pipeline_rpc_channel_publish_duration_seconds_sum": [],
+    "armis_pipeline_runner_messages_created": [],
     "armis_pipeline_runner_messages_total": [
         "Access Point View Dashboard - michal",
         "agam's NIC FE stress",
@@ -1847,71 +2309,81 @@
         "Topology Metrics temp playground",
         "Views"
     ],
+    "armis_pipeline_scan_results_processor_device_scanned_info_changed_events_sent_created": [],
     "armis_pipeline_scan_results_processor_device_scanned_info_changed_events_sent_total": [],
-    "armis_pipeline_scan_results_processor_scanned_info_handler_stage_duration_seconds_count": [],
-    "armis_pipeline_scan_results_processor_scanned_info_handler_stage_duration_seconds_sum": [],
-    "armis_pipeline_scanner_network_device_events_handling_stage_duration_seconds_count": [],
-    "armis_pipeline_scanner_network_device_events_handling_stage_duration_seconds_sum": [],
+    "armis_pipeline_scanner_network_device_events_missing_device_id_created": [],
     "armis_pipeline_scanner_network_device_events_missing_device_id_total": [],
+    "armis_pipeline_scanner_network_device_events_sent_created": [],
     "armis_pipeline_scanner_network_device_events_sent_total": [],
     "armis_pipeline_scanner_scan_request_process_time_count": [],
+    "armis_pipeline_scanner_scan_request_process_time_created": [],
     "armis_pipeline_scanner_scan_request_process_time_sum": [],
     "armis_pipeline_scanner_scan_results_process_time_count": [],
+    "armis_pipeline_scanner_scan_results_process_time_created": [],
     "armis_pipeline_scanner_scan_results_process_time_sum": [],
+    "armis_pipeline_scans_collector_max_restart_created": [],
     "armis_pipeline_scans_collector_max_restart_total": [],
+    "armis_pipeline_scans_collector_not_found_for_device_created": [],
     "armis_pipeline_scans_collector_not_found_for_device_total": [
         "Scanner Ops"
     ],
     "armis_pipeline_scans_external_schedule_update_time_count": [],
+    "armis_pipeline_scans_external_schedule_update_time_created": [],
     "armis_pipeline_scans_external_schedule_update_time_sum": [],
+    "armis_pipeline_scans_request_assigned_to_arbitrary_collector_created": [],
     "armis_pipeline_scans_request_assigned_to_arbitrary_collector_total": [],
-    "armis_pipeline_scans_schedule_devices_aql_update_time_count": [],
-    "armis_pipeline_scans_schedule_devices_aql_update_time_sum": [],
-    "armis_pipeline_scans_scheduler_devices_added_to_scans_total": [
-        "Scanner Ops"
-    ],
-    "armis_pipeline_scans_scheduler_send_scan_request_time_count": [],
-    "armis_pipeline_scans_scheduler_send_scan_request_time_sum": [],
     "armis_pipeline_security_score_card_num_devices": [
         "Security Scorecard"
     ],
-    "armis_pipeline_seemplicity_operation_count_total": [],
+    "armis_pipeline_sensor_enrichment_events_per_sensor_type_created": [],
     "armis_pipeline_sensor_enrichment_events_per_sensor_type_total": [],
-    "armis_pipeline_sensor_enrichment_events_without_integration_id_total": [
-        "SensorData without integration_id"
-    ],
-    "armis_pipeline_sensor_enrichment_failed_sensor_creations_total": [],
+    "armis_pipeline_sensor_processor_device_event_has_no_timestamp_created": [],
     "armis_pipeline_sensor_processor_device_event_has_no_timestamp_total": [],
+    "armis_pipeline_sensor_processor_events_filtered_created": [],
     "armis_pipeline_sensor_processor_events_filtered_total": [],
+    "armis_pipeline_sensor_processor_events_received_created": [],
     "armis_pipeline_sensor_processor_events_received_total": [
         "New Network and Wifi Flows",
         "New Network and Wifi Flows copy",
         "Sensor Processor",
         "session_data_analysis_service deprecation"
     ],
+    "armis_pipeline_sensor_processor_events_throttled_created": [],
     "armis_pipeline_sensor_processor_events_throttled_total": [],
     "armis_pipeline_sensor_processor_list_of_device_events_size_histogram_bucket": [],
     "armis_pipeline_sensor_processor_list_of_device_events_size_histogram_count": [],
+    "armis_pipeline_sensor_processor_list_of_device_events_size_histogram_created": [],
     "armis_pipeline_sensor_processor_list_of_device_events_size_histogram_sum": [],
+    "armis_pipeline_sensor_seen_events_without_integration_id_counter_created": [],
     "armis_pipeline_sensor_seen_events_without_integration_id_counter_total": [],
+    "armis_pipeline_sensor_service_cache_hit_count_created": [],
     "armis_pipeline_sensor_service_cache_hit_count_total": [
         "New Network and Wifi Flows",
         "New Network and Wifi Flows copy"
     ],
+    "armis_pipeline_sensor_service_cache_miss_count_created": [],
     "armis_pipeline_sensor_service_cache_miss_count_total": [
         "New Network and Wifi Flows",
         "New Network and Wifi Flows copy"
     ],
+    "armis_pipeline_sensor_service_sensors_created_count_created": [],
     "armis_pipeline_sensor_service_sensors_created_count_total": [],
+    "armis_pipeline_sensor_service_sensors_updated_count_created": [],
     "armis_pipeline_sensor_service_sensors_updated_count_total": [],
+    "armis_pipeline_sensor_view_changed_created": [],
     "armis_pipeline_sensor_view_changed_total": [],
+    "armis_pipeline_sensor_view_filtered_created": [],
     "armis_pipeline_sensor_view_filtered_total": [],
+    "armis_pipeline_sent_email_created": [],
     "armis_pipeline_sent_email_total": [],
+    "armis_pipeline_serialized_messages_with_any_wrapper_created": [],
     "armis_pipeline_serialized_messages_with_any_wrapper_total": [],
+    "armis_pipeline_session_aggregations_missing_device_id_counter_created": [],
     "armis_pipeline_session_aggregations_missing_device_id_counter_total": [
         "GalT's real plaground",
         "New Network and Wifi Flows copy"
     ],
+    "armis_pipeline_session_events_received_created": [],
     "armis_pipeline_session_events_received_total": [
         "ARP Management ST",
         "Ingestion layer",
@@ -1922,6 +2394,7 @@
         "Monitor IBM Infoblox",
         "session_data_analysis_service deprecation"
     ],
+    "armis_pipeline_session_events_sent_created": [],
     "armis_pipeline_session_events_sent_total": [
         "GalT's real plaground",
         "IP Sessions Ops - New",
@@ -1931,14 +2404,17 @@
     ],
     "armis_pipeline_session_list_of_events_size_histogram_bucket": [],
     "armis_pipeline_session_list_of_events_size_histogram_count": [],
+    "armis_pipeline_session_list_of_events_size_histogram_created": [],
     "armis_pipeline_session_list_of_events_size_histogram_sum": [],
     "armis_pipeline_session_processor_device_vs_parent_timestamp_diff_histogram_bucket": [],
     "armis_pipeline_session_processor_device_vs_parent_timestamp_diff_histogram_count": [],
+    "armis_pipeline_session_processor_device_vs_parent_timestamp_diff_histogram_created": [],
     "armis_pipeline_session_processor_device_vs_parent_timestamp_diff_histogram_sum": [],
     "armis_pipeline_session_processor_ip_sessions_aggregation_handling_stage_duration_seconds_count": [
         "IP Sessions Ops - New",
         "IP Sessions Ops - Old"
     ],
+    "armis_pipeline_session_processor_ip_sessions_aggregation_handling_stage_duration_seconds_created": [],
     "armis_pipeline_session_processor_ip_sessions_aggregation_handling_stage_duration_seconds_sum": [
         "IP Sessions Ops - New",
         "IP Sessions Ops - Old"
@@ -1947,10 +2423,12 @@
         "IP Sessions Ops - New",
         "IP Sessions Ops - Old"
     ],
+    "armis_pipeline_session_processor_linked_network_device_events_handling_stage_duration_seconds_created": [],
     "armis_pipeline_session_processor_linked_network_device_events_handling_stage_duration_seconds_sum": [
         "IP Sessions Ops - New",
         "IP Sessions Ops - Old"
     ],
+    "armis_pipeline_session_processor_messages_by_source_and_type_created": [],
     "armis_pipeline_session_processor_messages_by_source_and_type_total": [
         "IP Sessions Ops - New",
         "IP Sessions Ops - Old"
@@ -1959,6 +2437,7 @@
         "IP Sessions Ops - New",
         "IP Sessions Ops - Old"
     ],
+    "armis_pipeline_session_processor_network_device_events_handling_stage_duration_seconds_created": [],
     "armis_pipeline_session_processor_network_device_events_handling_stage_duration_seconds_sum": [
         "IP Sessions Ops - New",
         "IP Sessions Ops - Old"
@@ -1966,101 +2445,127 @@
     "armis_pipeline_session_processor_process_delay_messages_duration_seconds_count": [
         "Delay Volatiles"
     ],
+    "armis_pipeline_session_processor_process_delay_messages_duration_seconds_created": [],
     "armis_pipeline_session_processor_process_delay_messages_duration_seconds_sum": [
         "Delay Volatiles"
     ],
     "armis_pipeline_session_processor_process_network_device_updated_event_messages_duration_seconds_count": [],
+    "armis_pipeline_session_processor_process_network_device_updated_event_messages_duration_seconds_created": [],
     "armis_pipeline_session_processor_process_network_device_updated_event_messages_duration_seconds_sum": [],
     "armis_pipeline_session_processor_remove_resolvable_ips_from_delay_handler_duration_seconds_count": [],
+    "armis_pipeline_session_processor_remove_resolvable_ips_from_delay_handler_duration_seconds_created": [],
     "armis_pipeline_session_processor_remove_resolvable_ips_from_delay_handler_duration_seconds_sum": [],
     "armis_pipeline_session_processor_update_integrations_dict_time_count": [],
+    "armis_pipeline_session_processor_update_integrations_dict_time_created": [],
     "armis_pipeline_session_processor_update_integrations_dict_time_sum": [],
     "armis_pipeline_session_processor_update_internal_ip_ranges_duration_seconds_count": [],
+    "armis_pipeline_session_processor_update_internal_ip_ranges_duration_seconds_created": [],
     "armis_pipeline_session_processor_update_internal_ip_ranges_duration_seconds_sum": [],
+    "armis_pipeline_site_enrichment_cache_hit_counter_created": [],
     "armis_pipeline_site_enrichment_cache_hit_counter_total": [
         "Identification Sites"
     ],
+    "armis_pipeline_site_enrichment_service_cache_miss_counter_created": [],
     "armis_pipeline_site_enrichment_service_cache_miss_counter_total": [
         "Identification Sites"
     ],
     "armis_pipeline_site_enrichment_service_handling_stage_duration_seconds_count": [
         "Identification Sites"
     ],
+    "armis_pipeline_site_enrichment_service_handling_stage_duration_seconds_created": [],
     "armis_pipeline_site_enrichment_service_handling_stage_duration_seconds_sum": [
         "Identification Sites"
     ],
+    "armis_pipeline_skipped_non_changing_access_point_connections_notification_created": [],
     "armis_pipeline_skipped_non_changing_access_point_connections_notification_total": [
         "access_point_mt_service",
         "access_point_processor",
         "access_point_service",
         "sefi MT playground"
     ],
+    "armis_pipeline_skipped_non_changing_access_switch_notification_created": [],
     "armis_pipeline_skipped_non_changing_access_switch_notification_total": [
         "access_switch_processor"
     ],
+    "armis_pipeline_skipped_non_changing_device_seen_by_switch_notification_created": [],
     "armis_pipeline_skipped_non_changing_device_seen_by_switch_notification_total": [
         "device_to_switch_processor"
     ],
+    "armis_pipeline_snort_processor_failed_device_ids_matching_counter_created": [],
     "armis_pipeline_snort_processor_failed_device_ids_matching_counter_total": [],
+    "armis_pipeline_ssid_persistence_created": [],
     "armis_pipeline_ssid_persistence_total": [],
     "armis_pipeline_status_auto_change_external_providers_stage_duration_seconds_count": [],
+    "armis_pipeline_status_auto_change_external_providers_stage_duration_seconds_created": [],
     "armis_pipeline_status_auto_change_external_providers_stage_duration_seconds_sum": [],
     "armis_pipeline_switch_processor_mac_table_duration_seconds_count": [
         "Switch Processor"
     ],
+    "armis_pipeline_switch_processor_mac_table_duration_seconds_created": [],
     "armis_pipeline_switch_processor_mac_table_duration_seconds_sum": [
         "Switch Processor"
     ],
+    "armis_pipeline_switch_processor_port_operation_general_error_counter_created": [],
     "armis_pipeline_switch_processor_port_operation_general_error_counter_total": [],
-    "armis_pipeline_switch_processor_switch_commands_stage_duration_seconds_count": [],
-    "armis_pipeline_switch_processor_switch_commands_stage_duration_seconds_sum": [],
-    "armis_pipeline_tanium_comply_processor_stage_duration_seconds_count": [],
-    "armis_pipeline_tanium_comply_processor_stage_duration_seconds_sum": [],
-    "armis_pipeline_tanium_interact_processor_stage_duration_seconds_count": [],
-    "armis_pipeline_tanium_interact_processor_stage_duration_seconds_sum": [],
     "armis_pipeline_threat_engine_delete_device_duration_seconds_count": [],
+    "armis_pipeline_threat_engine_delete_device_duration_seconds_created": [],
     "armis_pipeline_threat_engine_delete_device_duration_seconds_sum": [],
+    "armis_pipeline_threat_engine_events_received_created": [],
     "armis_pipeline_threat_engine_events_received_total": [
         "Threat Engine Metrics WIP"
     ],
     "armis_pipeline_threat_engine_stage_duration_seconds_count": [
         "Threat Engine Metrics WIP"
     ],
+    "armis_pipeline_threat_engine_stage_duration_seconds_created": [],
     "armis_pipeline_threat_engine_stage_duration_seconds_sum": [
         "Threat Engine Metrics WIP"
     ],
+    "armis_pipeline_ticket_view_service_invalid_cdc_operations_created": [],
     "armis_pipeline_ticket_view_service_invalid_cdc_operations_total": [],
     "armis_pipeline_topology_activity_creation_duration_seconds_count": [
         "Topology Metrics Copy-mor",
         "Topology Metrics temp playground"
     ],
+    "armis_pipeline_topology_activity_creation_duration_seconds_created": [],
     "armis_pipeline_topology_activity_creation_duration_seconds_sum": [
         "Topology Metrics Copy-mor",
         "Topology Metrics temp playground"
     ],
     "armis_pipeline_topology_device_field_update_command_handling_duration_seconds_count": [],
+    "armis_pipeline_topology_device_field_update_command_handling_duration_seconds_created": [],
     "armis_pipeline_topology_device_field_update_command_handling_duration_seconds_sum": [],
     "armis_pipeline_topology_device_link_service_base_editor_stage_duration_seconds_count": [],
+    "armis_pipeline_topology_device_link_service_base_editor_stage_duration_seconds_created": [],
     "armis_pipeline_topology_device_link_service_base_editor_stage_duration_seconds_sum": [],
+    "armis_pipeline_topology_device_link_service_dropped_messages_created": [],
     "armis_pipeline_topology_device_link_service_dropped_messages_total": [],
     "armis_pipeline_topology_device_link_service_editor_duration_seconds_count": [
         "Topology Metrics Copy-mor",
         "Topology Metrics temp playground"
     ],
+    "armis_pipeline_topology_device_link_service_editor_duration_seconds_created": [],
     "armis_pipeline_topology_device_link_service_editor_duration_seconds_sum": [
         "Topology Metrics Copy-mor",
         "Topology Metrics temp playground"
     ],
+    "armis_pipeline_topology_device_link_service_links_not_found_created": [],
     "armis_pipeline_topology_device_link_service_links_not_found_total": [],
+    "armis_pipeline_topology_device_link_service_links_without_id_created": [],
     "armis_pipeline_topology_device_link_service_links_without_id_total": [],
     "armis_pipeline_topology_device_link_service_stage_duration_seconds_count": [],
+    "armis_pipeline_topology_device_link_service_stage_duration_seconds_created": [],
     "armis_pipeline_topology_device_link_service_stage_duration_seconds_sum": [],
     "armis_pipeline_topology_device_link_service_vpn_editor_stage_duration_seconds_count": [],
+    "armis_pipeline_topology_device_link_service_vpn_editor_stage_duration_seconds_created": [],
     "armis_pipeline_topology_device_link_service_vpn_editor_stage_duration_seconds_sum": [],
     "armis_pipeline_topology_device_link_service_wifi_editor_stage_duration_seconds_count": [],
+    "armis_pipeline_topology_device_link_service_wifi_editor_stage_duration_seconds_created": [],
     "armis_pipeline_topology_device_link_service_wifi_editor_stage_duration_seconds_sum": [],
     "armis_pipeline_topology_device_link_terminated_service_stage_duration_seconds_count": [],
+    "armis_pipeline_topology_device_link_terminated_service_stage_duration_seconds_created": [],
     "armis_pipeline_topology_device_link_terminated_service_stage_duration_seconds_sum": [],
+    "armis_pipeline_topology_device_service_device_events_missing_sensor_id_count_created": [],
     "armis_pipeline_topology_device_service_device_events_missing_sensor_id_count_total": [
         "Sefi playground"
     ],
@@ -2068,6 +2573,7 @@
         "Sefi playground",
         "Topology Metrics temp playground"
     ],
+    "armis_pipeline_topology_device_service_device_events_stage_duration_seconds_created": [],
     "armis_pipeline_topology_device_service_device_events_stage_duration_seconds_sum": [
         "Sefi playground",
         "Topology Metrics temp playground"
@@ -2075,47 +2581,60 @@
     "armis_pipeline_topology_device_service_device_processed_sending_users_to_client_duration_seconds_count": [
         "Sefi playground"
     ],
+    "armis_pipeline_topology_device_service_device_processed_sending_users_to_client_duration_seconds_created": [],
     "armis_pipeline_topology_device_service_device_processed_sending_users_to_client_duration_seconds_sum": [
         "Sefi playground"
     ],
+    "armis_pipeline_topology_device_service_device_profile_handled_count_created": [],
     "armis_pipeline_topology_device_service_device_profile_handled_count_total": [],
+    "armis_pipeline_topology_device_service_device_profile_handled_failed_count_created": [],
     "armis_pipeline_topology_device_service_device_profile_handled_failed_count_total": [],
     "armis_pipeline_topology_device_service_device_seen_events_stage_duration_seconds_count": [],
+    "armis_pipeline_topology_device_service_device_seen_events_stage_duration_seconds_created": [],
     "armis_pipeline_topology_device_service_device_seen_events_stage_duration_seconds_sum": [],
+    "armis_pipeline_topology_device_service_evidence_changed_profile_fields_count_created": [],
     "armis_pipeline_topology_device_service_evidence_changed_profile_fields_count_total": [],
+    "armis_pipeline_topology_device_service_evidence_duplicates_count_created": [],
     "armis_pipeline_topology_device_service_evidence_duplicates_count_total": [],
     "armis_pipeline_topology_device_service_handle_device_profile_seconds_count": [],
+    "armis_pipeline_topology_device_service_handle_device_profile_seconds_created": [],
     "armis_pipeline_topology_device_service_handle_device_profile_seconds_sum": [],
     "armis_pipeline_topology_device_service_network_editor_current_unapproved_dhcp_servers": [],
     "armis_pipeline_topology_device_service_network_editor_detected_nats_count": [],
     "armis_pipeline_topology_device_service_network_editor_handle_activities_stage_duration_seconds_count": [
         "Topology Metrics temp playground"
     ],
+    "armis_pipeline_topology_device_service_network_editor_handle_activities_stage_duration_seconds_created": [],
     "armis_pipeline_topology_device_service_network_editor_handle_activities_stage_duration_seconds_sum": [
         "Topology Metrics temp playground"
     ],
     "armis_pipeline_topology_device_service_network_editor_handle_app_level_requests_stage_duration_seconds_count": [
         "Topology Metrics temp playground"
     ],
+    "armis_pipeline_topology_device_service_network_editor_handle_app_level_requests_stage_duration_seconds_created": [],
     "armis_pipeline_topology_device_service_network_editor_handle_app_level_requests_stage_duration_seconds_sum": [
         "Topology Metrics temp playground"
     ],
     "armis_pipeline_topology_device_service_network_editor_handle_network_activities_stage_duration_seconds_count": [
         "Topology Metrics temp playground"
     ],
+    "armis_pipeline_topology_device_service_network_editor_handle_network_activities_stage_duration_seconds_created": [],
     "armis_pipeline_topology_device_service_network_editor_handle_network_activities_stage_duration_seconds_sum": [
         "Topology Metrics temp playground"
     ],
     "armis_pipeline_topology_device_service_persist_device_profile_seconds_count": [],
+    "armis_pipeline_topology_device_service_persist_device_profile_seconds_created": [],
     "armis_pipeline_topology_device_service_persist_device_profile_seconds_sum": [],
     "armis_pipeline_topology_events_handling_duration_seconds_count": [
         "Topology Metrics Copy-mor",
         "Topology Metrics temp playground"
     ],
+    "armis_pipeline_topology_events_handling_duration_seconds_created": [],
     "armis_pipeline_topology_events_handling_duration_seconds_sum": [
         "Topology Metrics Copy-mor",
         "Topology Metrics temp playground"
     ],
+    "armis_pipeline_topology_events_received_created": [],
     "armis_pipeline_topology_events_received_total": [
         "AP Merge Test Temp",
         "General - Armis metrics",
@@ -2130,157 +2649,140 @@
         "Topology Metrics temp playground"
     ],
     "armis_pipeline_topology_evidence_events_handling_duration_seconds_count": [],
+    "armis_pipeline_topology_evidence_events_handling_duration_seconds_created": [],
     "armis_pipeline_topology_evidence_events_handling_duration_seconds_sum": [],
     "armis_pipeline_topology_session_duration_seconds_count": [],
+    "armis_pipeline_topology_session_duration_seconds_created": [],
     "armis_pipeline_topology_session_duration_seconds_sum": [],
-    "armis_pipeline_trigger_processor_circuit_breaker_count_total": [
-        "Circuit Breaker"
-    ],
-    "armis_pipeline_trigger_processor_circuit_breaker_ended_time_seconds": [],
-    "armis_pipeline_trigger_processor_circuit_breaker_started_time_seconds": [],
-    "armis_pipeline_trigger_processor_in_backpressure": [
-        "Containers and Pipeline Health Old"
-    ],
     "armis_pipeline_trigger_processor_in_circuit_breaker": [
-        "Circuit Breaker"
+        "Circuit Breaker",
+        "Containers and Pipeline Health"
     ],
-    "armis_pipeline_user_account_view_dao_counter_total": [],
-    "armis_pipeline_user_account_view_dao_operation_duration_seconds_count": [],
-    "armis_pipeline_user_account_view_dao_operation_duration_seconds_sum": [],
-    "armis_pipeline_user_account_view_processor_messages_counter_total": [
-        "User Metrics Temp"
-    ],
-    "armis_pipeline_user_account_view_processor_stage_duration_seconds_count": [
-        "User Metrics Temp"
-    ],
-    "armis_pipeline_user_account_view_processor_stage_duration_seconds_sum": [
-        "User Metrics Temp"
-    ],
+    "armis_pipeline_unknown_data_source_messages_created": [],
+    "armis_pipeline_unknown_data_source_messages_total": [],
+    "armis_pipeline_user_agent_detection_created": [],
     "armis_pipeline_user_agent_detection_total": [],
+    "armis_pipeline_user_agent_processor_detection_updates_created": [],
     "armis_pipeline_user_agent_processor_detection_updates_total": [],
     "armis_pipeline_user_agent_processor_stage_duration_seconds_count": [],
+    "armis_pipeline_user_agent_processor_stage_duration_seconds_created": [],
     "armis_pipeline_user_agent_processor_stage_duration_seconds_sum": [],
+    "armis_pipeline_user_agent_processor_user_agents_deleted_created": [],
     "armis_pipeline_user_agent_processor_user_agents_deleted_total": [],
+    "armis_pipeline_user_agent_processor_user_agents_uploaded_created": [],
     "armis_pipeline_user_agent_processor_user_agents_uploaded_total": [],
+    "armis_pipeline_user_property_view_counter_messages_created": [],
     "armis_pipeline_user_property_view_counter_messages_total": [],
     "armis_pipeline_user_property_view_process_duration_seconds_count": [],
+    "armis_pipeline_user_property_view_process_duration_seconds_created": [],
     "armis_pipeline_user_property_view_process_duration_seconds_sum": [],
     "armis_pipeline_useragent_php_processing_time_count": [],
+    "armis_pipeline_useragent_php_processing_time_created": [],
     "armis_pipeline_useragent_php_processing_time_sum": [],
+    "armis_pipeline_view_full_sync_sent_created": [],
     "armis_pipeline_view_full_sync_sent_total": [],
-    "armis_pipeline_vulnerabilities_association_priority_changes_counter_total": [],
-    "armis_pipeline_vulnerabilities_association_priority_query_duration_seconds_count": [],
-    "armis_pipeline_vulnerabilities_association_priority_query_duration_seconds_sum": [],
-    "armis_pipeline_vulnerabilities_association_priority_session_duration_seconds_count": [],
-    "armis_pipeline_vulnerabilities_association_priority_session_duration_seconds_sum": [],
     "armis_pipeline_vulnerabilities_association_priority_update_stage_duration_seconds_count": [],
+    "armis_pipeline_vulnerabilities_association_priority_update_stage_duration_seconds_created": [],
     "armis_pipeline_vulnerabilities_association_priority_update_stage_duration_seconds_sum": [],
+    "armis_pipeline_vulnerabilities_association_ticket_changes_counter_created": [],
     "armis_pipeline_vulnerabilities_association_ticket_changes_counter_total": [],
     "armis_pipeline_vulnerabilities_cve_update_service_stage_time_duration_seconds_count": [],
+    "armis_pipeline_vulnerabilities_cve_update_service_stage_time_duration_seconds_created": [],
     "armis_pipeline_vulnerabilities_cve_update_service_stage_time_duration_seconds_sum": [],
     "armis_pipeline_vulnerabilities_db_stage_duration_seconds_count": [
         "Vulnerabilities - Lags - Cross Tenant",
         "Vulnerabilities MT Migration - WIP",
         "Vulnerabilitis Services MT + ST"
     ],
+    "armis_pipeline_vulnerabilities_db_stage_duration_seconds_created": [],
     "armis_pipeline_vulnerabilities_db_stage_duration_seconds_sum": [
         "Vulnerabilities - Lags - Cross Tenant",
         "Vulnerabilitis Services MT + ST"
     ],
+    "armis_pipeline_vulnerabilities_enrichment_processor_events_received_created": [],
     "armis_pipeline_vulnerabilities_enrichment_processor_events_received_total": [
         "kafka compression test",
         "Vulnerabilities - Lags - Cross Tenant",
         "Vulnerabilitis Services MT + ST"
     ],
+    "armis_pipeline_vulnerabilities_enrichment_processor_fail_device_properties_request_counter_created": [],
     "armis_pipeline_vulnerabilities_enrichment_processor_fail_device_properties_request_counter_total": [],
     "armis_pipeline_vulnerabilities_enrichment_processor_stage_duration_seconds_count": [
         "Vulnerabilities - Lags - Cross Tenant",
         "Vulnerabilitis Services MT + ST"
     ],
+    "armis_pipeline_vulnerabilities_enrichment_processor_stage_duration_seconds_created": [],
     "armis_pipeline_vulnerabilities_enrichment_processor_stage_duration_seconds_sum": [
         "Vulnerabilities - Lags - Cross Tenant",
         "Vulnerabilitis Services MT + ST"
     ],
-    "armis_pipeline_vulnerabilities_failed_cve_enrichment_data_requests_counter_total": [],
-    "armis_pipeline_vulnerabilities_failed_cve_priority_requests_counter_total": [],
-    "armis_pipeline_vulnerabilities_failed_cve_requests_counter_total": [],
-    "armis_pipeline_vulnerabilities_failed_cve_threats_metadata_requests_counter_total": [],
-    "armis_pipeline_vulnerabilities_get_cves_duration_seconds_count": [],
-    "armis_pipeline_vulnerabilities_get_cves_duration_seconds_sum": [],
+    "armis_pipeline_vulnerabilities_merged_device_service_associations_changes_counter_created": [],
     "armis_pipeline_vulnerabilities_merged_device_service_associations_changes_counter_total": [],
+    "armis_pipeline_vulnerabilities_merged_device_service_child_devices_in_event_created": [],
     "armis_pipeline_vulnerabilities_merged_device_service_child_devices_in_event_total": [],
     "armis_pipeline_vulnerabilities_merged_device_service_query_duration_seconds_count": [],
+    "armis_pipeline_vulnerabilities_merged_device_service_query_duration_seconds_created": [],
     "armis_pipeline_vulnerabilities_merged_device_service_query_duration_seconds_sum": [],
     "armis_pipeline_vulnerabilities_merged_device_service_stage_duration_seconds_count": [],
+    "armis_pipeline_vulnerabilities_merged_device_service_stage_duration_seconds_created": [],
     "armis_pipeline_vulnerabilities_merged_device_service_stage_duration_seconds_sum": [],
-    "armis_pipeline_vulnerabilities_policy_analysis_processor_event_received_total": [],
-    "armis_pipeline_vulnerabilities_policy_analysis_processor_sent_events_total": [],
-    "armis_pipeline_vulnerabilities_policy_analysis_processor_stage_duration_seconds_count": [],
-    "armis_pipeline_vulnerabilities_policy_analysis_processor_stage_duration_seconds_sum": [],
+    "armis_pipeline_vulnerabilities_policy_enrich_processor_event_received_created": [],
     "armis_pipeline_vulnerabilities_policy_enrich_processor_event_received_total": [],
-    "armis_pipeline_vulnerabilities_policy_enrich_processor_external_providers_stage_duration_seconds_count": [],
-    "armis_pipeline_vulnerabilities_policy_enrich_processor_external_providers_stage_duration_seconds_sum": [],
-    "armis_pipeline_vulnerabilities_policy_enrich_processor_hash_cache_hit_miss_total": [],
     "armis_pipeline_vulnerabilities_policy_enrich_processor_hash_cache_used_size": [],
+    "armis_pipeline_vulnerabilities_policy_enrich_processor_redundant_events_dropped_created": [],
     "armis_pipeline_vulnerabilities_policy_enrich_processor_redundant_events_dropped_total": [],
-    "armis_pipeline_vulnerabilities_policy_enrich_processor_sent_events_total": [],
     "armis_pipeline_vulnerabilities_policy_enrich_processor_stage_duration_seconds_count": [],
+    "armis_pipeline_vulnerabilities_policy_enrich_processor_stage_duration_seconds_created": [],
     "armis_pipeline_vulnerabilities_policy_enrich_processor_stage_duration_seconds_sum": [],
-    "armis_pipeline_vulnerabilities_policy_processors_session_time_count": [],
-    "armis_pipeline_vulnerabilities_policy_processors_session_time_sum": [],
+    "armis_pipeline_vulnerabilities_policy_retro_processor_sent_events_created": [],
     "armis_pipeline_vulnerabilities_policy_retro_processor_sent_events_total": [],
-    "armis_pipeline_vulnerabilities_policy_retro_processor_stage_duration_seconds_count": [],
-    "armis_pipeline_vulnerabilities_policy_retro_processor_stage_duration_seconds_sum": [],
+    "armis_pipeline_vulnerabilities_processor_v2_events_received_created": [],
     "armis_pipeline_vulnerabilities_processor_v2_events_received_total": [],
     "armis_pipeline_vulnerabilities_processor_v2_stage_duration_seconds_count": [],
+    "armis_pipeline_vulnerabilities_processor_v2_stage_duration_seconds_created": [],
     "armis_pipeline_vulnerabilities_processor_v2_stage_duration_seconds_sum": [],
-    "armis_pipeline_vulnerabilities_search_cve_enrichment_data_duration_seconds_count": [],
-    "armis_pipeline_vulnerabilities_search_cve_enrichment_data_duration_seconds_sum": [],
-    "armis_pipeline_vulnerabilities_search_cve_priority_duration_seconds_count": [],
-    "armis_pipeline_vulnerabilities_search_cve_priority_duration_seconds_sum": [],
-    "armis_pipeline_vulnerabilities_search_cve_threats_metadata_duration_seconds_count": [],
-    "armis_pipeline_vulnerabilities_search_cve_threats_metadata_duration_seconds_sum": [],
     "armis_pipeline_vulnerabilities_service_external_providers_stage_duration_seconds_count": [
         "Vulnerabilities - Lags - Cross Tenant",
         "Vulnerabilitis Services MT + ST"
     ],
+    "armis_pipeline_vulnerabilities_service_external_providers_stage_duration_seconds_created": [],
     "armis_pipeline_vulnerabilities_service_external_providers_stage_duration_seconds_sum": [
         "Vulnerabilities - Lags - Cross Tenant",
         "Vulnerabilitis Services MT + ST"
     ],
-    "armis_pipeline_vulnerabilities_side_effects_processor_stage_duration_seconds_count": [],
-    "armis_pipeline_vulnerabilities_side_effects_processor_stage_duration_seconds_sum": [],
+    "armis_pipeline_vulnerabilities_side_effects_processor_stage_duration_seconds_count": [
+        "Vulnerabilitis Services Metrics - New"
+    ],
+    "armis_pipeline_vulnerabilities_side_effects_processor_stage_duration_seconds_created": [],
+    "armis_pipeline_vulnerabilities_side_effects_processor_stage_duration_seconds_sum": [
+        "Vulnerabilitis Services Metrics - New"
+    ],
+    "armis_pipeline_vulnerabilities_update_commands_drop_counter_created": [],
     "armis_pipeline_vulnerabilities_update_commands_drop_counter_total": [],
-    "armis_pipeline_vulnerabilities_view_entity_operations_total": [],
-    "armis_pipeline_vulnerabilities_view_errors_total": [
-        "Vulnerabilitis View Enablement"
+    "armis_pipeline_vulnerabilities_view_entity_operations_created": [],
+    "armis_pipeline_vulnerabilities_view_entity_operations_total": [
+        "Vulnerabilitis Services Metrics - New"
     ],
+    "armis_pipeline_vulnerabilities_view_events_processed_created": [],
     "armis_pipeline_vulnerabilities_view_events_processed_total": [],
-    "armis_pipeline_vulnerabilities_view_processor_event_received_total": [],
-    "armis_pipeline_vulnerabilities_view_processor_stage_duration_seconds_count": [],
-    "armis_pipeline_vulnerabilities_view_processor_stage_duration_seconds_sum": [],
-    "armis_pipeline_vulnerabilities_view_stage_time_seconds_count": [],
-    "armis_pipeline_vulnerabilities_view_stage_time_seconds_sum": [],
+    "armis_pipeline_vulnerabilities_view_processor_event_received_created": [],
+    "armis_pipeline_vulnerabilities_view_processor_event_received_total": [
+        "Vulnerabilitis Services Metrics - New"
+    ],
+    "armis_pipeline_vulnerabilities_view_stage_time_seconds_count": [
+        "Vulnerabilitis Services Metrics - New"
+    ],
+    "armis_pipeline_vulnerabilities_view_stage_time_seconds_created": [],
+    "armis_pipeline_vulnerabilities_view_stage_time_seconds_sum": [
+        "Vulnerabilitis Services Metrics - New"
+    ],
     "armis_pipeline_waiting_for_integration": [],
-    "armis_pipeline_wifi_data_analysis_number_of_events_sent_total": [
-        "New Network and Wifi Flows",
-        "Topology Metrics"
-    ],
-    "armis_pipeline_wifi_device_enrichment_identifier_type_total": [],
-    "armis_pipeline_wifi_scan_converter_received_events_total": [],
+    "armis_pipeline_wifi_scan_number_of_events_with_network_properties_created": [],
     "armis_pipeline_wifi_scan_number_of_events_with_network_properties_total": [],
-    "armis_pipeline_wifi_scan_processor_messages_total": [
-        "Ingestion layer",
-        "Meraki Integration",
-        "Meraki Integration2",
-        "Meraki Integration_playground",
-        "Wifi Scan Processor"
-    ],
-    "armis_pipeline_workspace_one_processor_stage_duration_seconds_count": [],
-    "armis_pipeline_workspace_one_processor_stage_duration_seconds_sum": [],
     "armis_policy_api_client_process_time_count": [
         "Policies MT"
     ],
+    "armis_policy_api_client_process_time_created": [],
     "armis_policy_api_client_process_time_sum": [
         "Policies MT"
     ],
@@ -2300,6 +2802,7 @@
         "Database Health WIP",
         "homedepot normalized reads and writes"
     ],
+    "armis_postgres_reports_longest_session_in_seconds_session_length": [],
     "armis_postgres_settings_statement_timeout_seconds": [
         "Database Health"
     ],
@@ -2321,121 +2824,115 @@
     "armis_postgres_unused_indexes_count": [
         "Database Health"
     ],
+    "armis_query_cache_number_of_cache_warmer_tasks_created": [],
     "armis_query_cache_number_of_cache_warmer_tasks_total": [],
+    "armis_query_cache_number_of_executed_queries_created": [],
     "armis_query_cache_number_of_executed_queries_total": [],
     "armis_query_cache_number_of_read_keys": [
         "Query Cache"
     ],
+    "armis_query_client_error_count_created": [],
     "armis_query_client_error_count_total": [
         "Query Services Dashboard",
         "S2 query-service"
     ],
     "armis_query_client_post_process_time_count": [],
+    "armis_query_client_post_process_time_created": [],
     "armis_query_client_post_process_time_sum": [],
     "armis_query_client_process_time_count": [
         "Query Services Dashboard",
         "S2 query-service"
     ],
+    "armis_query_client_process_time_created": [],
     "armis_query_client_process_time_sum": [
         "Ip-sessions-offline-query-service",
         "Query Services Dashboard",
         "S2 query-service"
     ],
+    "armis_query_result_cache_stats_created": [],
     "armis_query_result_cache_stats_total": [
         "Query Cache"
     ],
+    "armis_redis_key_grouping_operation_counter_created": [],
     "armis_redis_key_grouping_operation_counter_total": [
         "Redis stats"
     ],
-    "armis_report_invalid_column_total": [],
+    "armis_reports_engine_number_of_executions_created": [],
     "armis_reports_engine_number_of_executions_total": [],
     "armis_reports_engine_process_time_count": [
         "Reports Engine"
     ],
+    "armis_reports_engine_process_time_created": [],
     "armis_reports_engine_process_time_sum": [
         "Reports Engine"
     ],
     "armis_reputation_risk_factors_retro_processor_stage_duration_seconds_count": [],
+    "armis_reputation_risk_factors_retro_processor_stage_duration_seconds_created": [],
     "armis_reputation_risk_factors_retro_processor_stage_duration_seconds_sum": [],
+    "armis_request_for_risk_type_not_in_mapping_counter_created": [],
     "armis_request_for_risk_type_not_in_mapping_counter_total": [],
+    "armis_requests_retry_count_created": [],
     "armis_requests_retry_count_total": [
         "Containers and Pipeline Health Old"
     ],
+    "armis_retro_db_utils_insert_counter_created": [],
     "armis_retro_db_utils_insert_counter_total": [],
     "armis_retro_db_utils_session_time_count": [],
+    "armis_retro_db_utils_session_time_created": [],
     "armis_retro_db_utils_session_time_sum": [],
+    "armis_retro_manager_get_counter_created": [],
     "armis_retro_manager_get_counter_total": [],
     "armis_retro_manager_stage_time_count": [],
+    "armis_retro_manager_stage_time_created": [],
     "armis_retro_manager_stage_time_sum": [],
+    "armis_retro_reputation_rf_processor_retro_rules_dropped_events_counter_created": [],
     "armis_retro_reputation_rf_processor_retro_rules_dropped_events_counter_total": [],
+    "armis_retro_reputation_risk_factor_check_counter_created": [],
     "armis_retro_reputation_risk_factor_check_counter_total": [],
+    "armis_retro_reputation_risk_factor_devices_sent_for_redetect_created": [],
     "armis_retro_reputation_risk_factor_devices_sent_for_redetect_total": [
         "Risk Factor Processors"
     ],
     "armis_retro_reputation_risk_factor_handle_periodic_trigger_seconds_count": [
         "Risk Factor Processors"
     ],
+    "armis_retro_reputation_risk_factor_handle_periodic_trigger_seconds_created": [],
     "armis_retro_reputation_risk_factor_handle_periodic_trigger_seconds_sum": [
         "Risk Factor Processors"
     ],
     "armis_retro_reputation_risk_factor_handle_run_redetect_seconds_count": [
         "Risk Factor Processors"
     ],
+    "armis_retro_reputation_risk_factor_handle_run_redetect_seconds_created": [],
     "armis_retro_reputation_risk_factor_handle_run_redetect_seconds_sum": [
         "Risk Factor Processors"
     ],
     "armis_retro_reputation_risk_factor_last_rule_id_checked": [
         "Risk Factor Processors"
     ],
-    "armis_retro_reputation_risk_factor_number_of_devices_sent_to_recompute_total": [
-        "Risk Factor Processors"
-    ],
+    "armis_risk_api_batching_client_failed_requests_created": [],
     "armis_risk_api_batching_client_failed_requests_total": [],
-    "armis_risk_factor_command_handling_duration_seconds_count": [],
-    "armis_risk_factor_command_handling_duration_seconds_sum": [],
-    "armis_risk_factor_commands_filtered_total": [],
-    "armis_risk_factor_commands_received_total": [],
-    "armis_risk_factor_commands_session_duration_seconds_count": [],
-    "armis_risk_factor_commands_session_duration_seconds_sum": [],
-    "armis_risk_factor_events_filtered_by_capability_total": [],
-    "armis_risk_factor_events_filtered_total": [],
-    "armis_risk_factor_events_handling_duration_seconds_count": [],
-    "armis_risk_factor_events_handling_duration_seconds_sum": [],
-    "armis_risk_factor_events_received_total": [],
-    "armis_risk_factor_status_update_command_handling_duration_seconds_count": [],
-    "armis_risk_factor_status_update_command_handling_duration_seconds_sum": [],
-    "armis_risk_factor_status_update_commands_received_total": [],
-    "armis_risk_factor_tanium_compliance_findings_event_received_total": [],
-    "armis_risk_factor_tanium_compliance_findings_handling_duration_seconds_count": [],
-    "armis_risk_factor_tanium_compliance_findings_handling_duration_seconds_sum": [],
-    "armis_risk_factor_transaction_commands_received_total": [],
-    "armis_risk_factor_transactions_handling_duration_seconds_count": [],
-    "armis_risk_factor_transactions_handling_duration_seconds_sum": [],
-    "armis_risk_factor_transactions_session_duration_seconds_count": [],
-    "armis_risk_factor_transactions_session_duration_seconds_sum": [],
-    "armis_risk_factor_updates_session_duration_seconds_count": [],
-    "armis_risk_factor_updates_session_duration_seconds_sum": [],
+    "armis_risk_factor_view_old_timestamp_skipped_updates_created": [],
     "armis_risk_factor_view_old_timestamp_skipped_updates_total": [],
     "armis_risk_factor_view_session_duration_seconds_count": [],
+    "armis_risk_factor_view_session_duration_seconds_created": [],
     "armis_risk_factor_view_session_duration_seconds_sum": [],
+    "armis_risk_level_missing_mt_risk_level_counter_created": [],
     "armis_risk_level_missing_mt_risk_level_counter_total": [],
+    "armis_risks_capabilities_dropped_created": [],
     "armis_risks_capabilities_dropped_total": [],
-    "armis_s3_client_process_time_count": [],
-    "armis_s3_client_process_time_sum": [],
+    "armis_scanner_device_from_scans_created": [],
     "armis_scanner_device_from_scans_total": [
         "Scanner Ops"
     ],
-    "armis_scanner_failed_scans_total": [
-        "Scanner Ops"
-    ],
+    "armis_scanner_hanging_scans_created": [],
     "armis_scanner_hanging_scans_total": [],
-    "armis_scanner_successful_scans_total": [
-        "Scanner Ops"
-    ],
+    "armis_sdk_api_client_status_code_created": [],
     "armis_sdk_api_client_status_code_total": [
         "Device Rest API service - yoav-test",
         "Integrations Dashboard"
     ],
+    "armis_sdk_bulk_operation_response_created": [],
     "armis_sdk_bulk_operation_response_total": [
         "Device Rest API service - yoav-test",
         "External Vulnerabilities API+SDK",
@@ -2447,20 +2944,27 @@
         "External Vulnerabilities API+SDK",
         "Integrations Dashboard"
     ],
+    "armis_sdk_bulk_requests_sizes_by_operation_type_created": [],
     "armis_sdk_bulk_requests_sizes_by_operation_type_sum": [
         "Device Rest API service - yoav-test",
         "Integrations Dashboard"
+    ],
+    "armis_sdk_session_connection_error_created": [],
+    "armis_sdk_session_connection_error_total": [
+        "Device Rest API service - yoav-test"
     ],
     "armis_sdk_session_seconds_count": [
         "Device Rest API service - yoav-test",
         "Ingestion layer",
         "Integrations Dashboard"
     ],
+    "armis_sdk_session_seconds_created": [],
     "armis_sdk_session_seconds_sum": [
         "Device Rest API service - yoav-test",
         "Integrations Dashboard"
     ],
     "armis_search_sensors_time_count": [],
+    "armis_search_sensors_time_created": [],
     "armis_search_sensors_time_sum": [],
     "armis_secure_http_client_http_request_count": [
         "access_point_mt_service",
@@ -2472,6 +2976,7 @@
         "sefi MT playground",
         "Views"
     ],
+    "armis_secure_http_client_http_request_created": [],
     "armis_secure_http_client_http_request_sum": [
         "access_point_mt_service",
         "Elina - Temp",
@@ -2480,12 +2985,14 @@
         "sefi MT playground",
         "Views"
     ],
+    "armis_secure_http_client_request_errors_created": [],
     "armis_secure_http_client_request_errors_total": [
         "Elina - Temp",
         "Feature Flags",
         "Network API Service",
         "Network Interfaces API Service"
     ],
+    "armis_sensor_config_sent_messages_created": [],
     "armis_sensor_config_sent_messages_total": [],
     "armis_sensor_live_packet_parser_bytes_parsing_rate": [
         "IP Sessions Ops - Old",
@@ -2493,26 +3000,31 @@
         "Tenants datarate / packet loss"
     ],
     "armis_sensor_orchestrator_get_integrations_configs_stage_duration_seconds_count": [],
+    "armis_sensor_orchestrator_get_integrations_configs_stage_duration_seconds_created": [],
     "armis_sensor_orchestrator_get_integrations_configs_stage_duration_seconds_sum": [],
+    "armis_sensor_orchestrator_rpc_service_appliance_to_sensor_id_misses_created": [],
     "armis_sensor_orchestrator_rpc_service_appliance_to_sensor_id_misses_total": [],
     "armis_sensor_orchestrator_rpc_service_stage_time_count": [],
+    "armis_sensor_orchestrator_rpc_service_stage_time_created": [],
     "armis_sensor_orchestrator_rpc_service_stage_time_sum": [],
     "armis_sensor_router_detector_detected_routers_cache_size": [],
-    "armis_sensor_rpc_timeout_counter_total": [],
-    "armis_sensor_ssh_manager_decode_line_by_line_total": [],
+    "armis_sensor_ssh_manager_retry_attempts_created": [],
     "armis_sensor_ssh_manager_retry_attempts_total": [],
+    "armis_sensor_wlc_aps_created": [],
     "armis_sensor_wlc_aps_total": [
         "Meraki Integration",
         "Meraki Integration2",
         "Meraki Integration_playground"
     ],
+    "armis_sensor_wlc_clients_created": [],
+    "armis_sensor_wlc_clients_focused_networks_trigger_created": [],
     "armis_sensor_wlc_clients_focused_networks_trigger_total": [],
     "armis_sensor_wlc_clients_total": [
         "Meraki Integration",
         "Meraki Integration2",
         "Meraki Integration_playground"
     ],
-    "armis_sensor_wlc_unprivileged_command_call_total": [],
+    "armis_sent_risk_factor_commands_created": [],
     "armis_sent_risk_factor_commands_total": [
         "Risk Factor MT Debug Metrics"
     ],
@@ -2521,44 +3033,57 @@
         "identification kafka-to-kafka",
         "NIC service"
     ],
+    "armis_service_data_process_secs_created": [],
     "armis_service_data_process_secs_sum": [
         "Confluent Load Test",
         "identification kafka-to-kafka",
         "NIC service"
     ],
     "armis_service_kafka_producer_batch_duration_seconds_count": [],
+    "armis_service_kafka_producer_batch_duration_seconds_created": [],
     "armis_service_kafka_producer_batch_duration_seconds_sum": [],
     "armis_service_kafka_producer_batch_message_duration_seconds_count": [],
+    "armis_service_kafka_producer_batch_message_duration_seconds_created": [],
     "armis_service_kafka_producer_batch_message_duration_seconds_sum": [],
     "armis_service_kafka_producer_batch_messages_size_count": [
         "Confluent Workshop"
     ],
+    "armis_service_kafka_producer_batch_messages_size_created": [],
     "armis_service_kafka_producer_batch_messages_size_sum": [
         "Confluent Workshop"
     ],
     "armis_service_kafka_producer_batch_size_count": [],
+    "armis_service_kafka_producer_batch_size_created": [],
     "armis_service_kafka_producer_batch_size_sum": [],
     "armis_service_kafka_producer_parse_from_string_any_msg_duration_seconds_count": [],
+    "armis_service_kafka_producer_parse_from_string_any_msg_duration_seconds_created": [],
     "armis_service_kafka_producer_parse_from_string_any_msg_duration_seconds_sum": [],
-    "armis_service_kafka_to_kafka_invalid_messages_total": [],
     "armis_service_kafka_to_kafka_process_time_count": [],
+    "armis_service_kafka_to_kafka_process_time_created": [],
     "armis_service_kafka_to_kafka_process_time_sum": [],
     "armis_service_processor_init_time_count": [],
+    "armis_service_processor_init_time_created": [],
     "armis_service_processor_init_time_sum": [],
     "armis_service_processor_setup_time_count": [],
+    "armis_service_processor_setup_time_created": [],
     "armis_service_processor_setup_time_sum": [],
     "armis_service_trigger_setup_time_count": [],
+    "armis_service_trigger_setup_time_created": [],
     "armis_service_trigger_setup_time_sum": [],
     "armis_services_arp_lib_arp_table_compacted_topic_key_deserialization_duration_seconds_count": [],
+    "armis_services_arp_lib_arp_table_compacted_topic_key_deserialization_duration_seconds_created": [],
     "armis_services_arp_lib_arp_table_compacted_topic_key_deserialization_duration_seconds_sum": [],
     "armis_services_arp_lib_arp_table_compacted_topic_key_serialization_duration_seconds_count": [],
+    "armis_services_arp_lib_arp_table_compacted_topic_key_serialization_duration_seconds_created": [],
     "armis_services_arp_lib_arp_table_compacted_topic_key_serialization_duration_seconds_sum": [],
     "armis_services_cache_call_duration_seconds_count": [
         "Identification Pipeline - Kafka Metrics"
     ],
+    "armis_services_cache_call_duration_seconds_created": [],
     "armis_services_cache_call_duration_seconds_sum": [
         "Identification Pipeline - Kafka Metrics"
     ],
+    "armis_services_cache_statistics_created": [],
     "armis_services_cache_statistics_total": [
         "ARP Agreement Dashboard",
         "Identification Pipeline - Kafka Metrics",
@@ -2571,37 +3096,55 @@
         "Network Strings ST Cache"
     ],
     "armis_services_device_mac_exclusion_client_process_library_data_duration_seconds_count": [],
+    "armis_services_device_mac_exclusion_client_process_library_data_duration_seconds_created": [],
     "armis_services_device_mac_exclusion_client_process_library_data_duration_seconds_sum": [],
     "armis_services_device_mac_exclusion_client_processed_library_data_size_count": [],
+    "armis_services_device_mac_exclusion_client_processed_library_data_size_created": [],
     "armis_services_device_mac_exclusion_client_processed_library_data_size_sum": [],
     "armis_services_device_mac_exclusion_client_query_duration_seconds_count": [],
+    "armis_services_device_mac_exclusion_client_query_duration_seconds_created": [],
     "armis_services_device_mac_exclusion_client_query_duration_seconds_sum": [],
     "armis_services_device_merge_names_async_client_exclusion_check_duration_seconds_count": [
         "Device Merge by Name",
         "Device Merge by Name - Old"
     ],
+    "armis_services_device_merge_names_async_client_exclusion_check_duration_seconds_created": [],
     "armis_services_device_merge_names_async_client_exclusion_check_duration_seconds_sum": [
         "Device Merge by Name",
         "Device Merge by Name - Old"
     ],
     "armis_services_device_merge_names_async_client_library_data_size_count": [],
+    "armis_services_device_merge_names_async_client_library_data_size_created": [],
     "armis_services_device_merge_names_async_client_library_data_size_sum": [],
     "armis_services_device_merge_names_async_client_parse_library_data_duration_seconds_count": [],
+    "armis_services_device_merge_names_async_client_parse_library_data_duration_seconds_created": [],
     "armis_services_device_merge_names_async_client_parse_library_data_duration_seconds_sum": [],
+    "armis_services_device_property_pipeline_configuration_client_missing_keys_created": [],
     "armis_services_device_property_pipeline_configuration_client_missing_keys_total": [],
+    "armis_services_device_property_pipeline_configuration_client_missing_object_keys_created": [],
     "armis_services_device_property_pipeline_configuration_client_missing_object_keys_total": [],
+    "armis_services_device_property_st_provider_empty_filter_count_created": [],
     "armis_services_device_property_st_provider_empty_filter_count_total": [],
+    "armis_services_device_property_st_provider_high_number_of_search_arguments_counter_created": [],
     "armis_services_device_property_st_provider_high_number_of_search_arguments_counter_total": [],
     "armis_services_device_property_st_provider_stage_time_count": [],
+    "armis_services_device_property_st_provider_stage_time_created": [],
     "armis_services_device_property_st_provider_stage_time_sum": [],
+    "armis_services_evidence_source_client_source_weight_not_found_created": [],
     "armis_services_evidence_source_client_source_weight_not_found_total": [],
     "armis_services_full_sync_service_batch_handle_time_count": [],
+    "armis_services_full_sync_service_batch_handle_time_created": [],
     "armis_services_full_sync_service_batch_handle_time_sum": [],
     "armis_services_full_sync_service_stage_time_count": [],
+    "armis_services_full_sync_service_stage_time_created": [],
     "armis_services_full_sync_service_stage_time_sum": [],
     "armis_services_k2k_forwarder_topic_subscription": [],
+    "armis_services_kafka_confluent_producer_empty_key_created": [],
     "armis_services_kafka_confluent_producer_empty_key_total": [],
+    "armis_services_kafka_consumer_any_wrapper_messages_created": [],
     "armis_services_kafka_consumer_any_wrapper_messages_total": [],
+    "armis_services_kafka_consumer_created": [],
+    "armis_services_kafka_consumer_errors_created": [],
     "armis_services_kafka_consumer_errors_total": [],
     "armis_services_kafka_consumer_partitions": [
         "Confluent Load Test",
@@ -2619,6 +3162,7 @@
         "Vulnerabilitis MT Kafka Alignment"
     ],
     "armis_services_kafka_consumer_poll_messages_count": [],
+    "armis_services_kafka_consumer_poll_messages_created": [],
     "armis_services_kafka_consumer_poll_messages_sum": [],
     "armis_services_kafka_consumer_total": [
         "access_point_mt_service",
@@ -2648,6 +3192,7 @@
         "Identification Pipeline - Kafka Metrics",
         "IP Entity Service",
         "kafka cluster migration (Shimon's)",
+        "Kafka To Kafka",
         "KEDA - Kafka Service Autoscaling",
         "Microsoft DHCP",
         "Network Acquisition Components Health Dashboard",
@@ -2672,15 +3217,18 @@
         "gal testing - correlate lag to node cpu",
         "SLA / SLO dashboard Copy"
     ],
+    "armis_services_kafka_missing_distribution_created": [],
     "armis_services_kafka_missing_distribution_total": [],
     "armis_services_kafka_poll_seconds_count": [
         "Enable Compression - Multi Tenant - Kafka Consumer / Producer Metrics",
         "Identification Pipeline - Kafka Metrics"
     ],
+    "armis_services_kafka_poll_seconds_created": [],
     "armis_services_kafka_poll_seconds_sum": [
         "Enable Compression - Multi Tenant - Kafka Consumer / Producer Metrics",
         "Identification Pipeline - Kafka Metrics"
     ],
+    "armis_services_kafka_producer_created": [],
     "armis_services_kafka_producer_total": [
         "access_point_mt_service",
         "Arp Management Service Dashboard Copy",
@@ -2703,6 +3251,7 @@
         "identification kafka-to-kafka",
         "Identification Pipeline - Kafka Metrics",
         "kafka cluster migration (Shimon's)",
+        "Kafka To Kafka",
         "Microsoft DHCP",
         "Network Acquisition Components Health Dashboard",
         "Network Interfaces Manuf Retro",
@@ -2720,6 +3269,7 @@
     "armis_services_kafka_rebalance_sleep_seconds_count": [
         "Environment Health Dashboard"
     ],
+    "armis_services_kafka_rebalance_sleep_seconds_created": [],
     "armis_services_kafka_rebalance_sleep_seconds_sum": [],
     "armis_services_kafka_topic_lag": [
         "Confluent Load Test",
@@ -2727,10 +3277,12 @@
         "MT - Device IP Service Copy",
         "SLA / SLO dashboard Copy"
     ],
+    "armis_services_kafka_trigger_empty_poll_resp_created": [],
     "armis_services_kafka_trigger_empty_poll_resp_total": [],
     "armis_services_kafka_trigger_poll_resp_stats_count": [
         "KEDA - Kafka Service Autoscaling"
     ],
+    "armis_services_kafka_trigger_poll_resp_stats_created": [],
     "armis_services_kafka_trigger_poll_resp_stats_sum": [
         "KEDA - Kafka Service Autoscaling"
     ],
@@ -2746,6 +3298,7 @@
         "User Event Processor",
         "User Manager Processor"
     ],
+    "armis_services_kafka_trigger_times_created": [],
     "armis_services_kafka_trigger_times_sum": [
         "Data Processor Template",
         "Device Identifier Manager",
@@ -2760,91 +3313,110 @@
     "armis_services_kb_async_base_client_load_library_data_duration_seconds_count": [
         "Identification Pipeline - Kafka Metrics"
     ],
+    "armis_services_kb_async_base_client_load_library_data_duration_seconds_created": [],
     "armis_services_kb_async_base_client_load_library_data_duration_seconds_sum": [
         "Identification Pipeline - Kafka Metrics"
     ],
-    "armis_services_kb_async_base_client_load_library_data_errors_total": [],
+    "armis_services_kb_async_json_client_load_library_data_errors_created": [],
     "armis_services_kb_async_json_client_load_library_data_errors_total": [],
     "armis_services_kb_base_client_load_library_data_duration_seconds_count": [
         "KB Base Client"
     ],
+    "armis_services_kb_base_client_load_library_data_duration_seconds_created": [],
     "armis_services_kb_base_client_load_library_data_duration_seconds_sum": [
         "KB Base Client"
     ],
+    "armis_services_kb_base_client_load_library_data_errors_created": [],
     "armis_services_kb_base_client_load_library_data_errors_total": [
         "KB Base Client"
     ],
     "armis_services_kb_client_common_duration_seconds_count": [],
+    "armis_services_kb_client_common_duration_seconds_created": [],
     "armis_services_kb_client_common_duration_seconds_sum": [],
+    "armis_services_kb_client_load_library_startup_errors_created": [],
     "armis_services_kb_client_load_library_startup_errors_total": [],
-    "armis_services_processor_processing_retry_count_total": [
-        "Confluent Load Test",
-        "Event Driven Policy Engine - MT",
-        "identification kafka-to-kafka",
-        "Task Based IP Connection Policy Engine"
-    ],
     "armis_services_processor_processing_time_count": [
         "Confluent Load Test",
         "identification kafka-to-kafka"
     ],
+    "armis_services_processor_processing_time_created": [],
     "armis_services_processor_processing_time_sum": [
         "Confluent Load Test",
         "identification kafka-to-kafka"
     ],
     "armis_services_proto_lib_deserialize_msg_pb_by_type_time_sec_count": [],
+    "armis_services_proto_lib_deserialize_msg_pb_by_type_time_sec_created": [],
     "armis_services_proto_lib_deserialize_msg_pb_by_type_time_sec_sum": [],
+    "armis_services_redis_cache_pickling_type_mismatch_created": [],
     "armis_services_redis_cache_pickling_type_mismatch_total": [],
+    "armis_session_processor_produced_ip_session_aggregation_msgs_counter_created": [],
     "armis_session_processor_produced_ip_session_aggregation_msgs_counter_total": [
         "Ingestion layer",
         "IP Sessions Ops - New",
         "IP Sessions Ops - Old",
         "Throttling"
     ],
+    "armis_siem_integration_dropped_alerts_created": [],
     "armis_siem_integration_dropped_alerts_total": [],
-    "armis_siem_integration_errors_total": [
-        "SIEM integration"
-    ],
+    "armis_siem_integration_formatted_messages_created": [],
     "armis_siem_integration_formatted_messages_total": [
         "SIEM integration"
     ],
     "armis_siem_integration_get_device_id_to_user_name_duration_count": [
         "SIEM integration"
     ],
+    "armis_siem_integration_get_device_id_to_user_name_duration_created": [],
     "armis_siem_integration_get_device_id_to_user_name_duration_sum": [
         "SIEM integration"
     ],
     "armis_siem_integration_get_device_to_site_and_site_info_using_sites_apis_duration_count": [],
+    "armis_siem_integration_get_device_to_site_and_site_info_using_sites_apis_duration_created": [],
     "armis_siem_integration_get_device_to_site_and_site_info_using_sites_apis_duration_sum": [],
     "armis_siem_integration_get_formatted_fields_duration_count": [
         "SIEM integration"
     ],
+    "armis_siem_integration_get_formatted_fields_duration_created": [],
     "armis_siem_integration_get_formatted_fields_duration_sum": [
         "SIEM integration"
     ],
+    "armis_siem_integration_received_messages_to_server_created": [],
     "armis_siem_integration_received_messages_to_server_total": [],
+    "armis_siem_integration_sent_messages_to_server_created": [],
     "armis_siem_integration_sent_messages_to_server_total": [
         "SIEM integration"
     ],
+    "armis_siem_processor_crash_created": [],
     "armis_siem_processor_crash_total": [],
+    "armis_simple_kafka_trigger_transformed_messages_count_created": [],
     "armis_simple_kafka_trigger_transformed_messages_count_total": [],
-    "armis_single_tenant_feature_flag_async_client_getter_error_counter_total": [
-        "Feature Flags"
-    ],
     "armis_single_tenant_kafka_consumer_partitions": [],
+    "armis_smb_analyzer_unidirectional_sessions_created": [],
     "armis_smb_analyzer_unidirectional_sessions_total": [
         "Yaakov's Main Dashboard"
     ],
+    "armis_smbv1_share_access_usage_services_created": [],
+    "armis_smbv1_share_access_usage_services_total": [
+        "SMB Share Access Activities"
+    ],
+    "armis_smbv2_share_access_usage_services_created": [],
     "armis_smbv2_share_access_usage_services_total": [
         "SMB Share Access Activities"
     ],
+    "armis_sniff_data_port_scan_ip_exceed_limit_counter_created": [],
     "armis_sniff_data_port_scan_ip_exceed_limit_counter_total": [],
+    "armis_sniff_data_port_scan_port_exceed_limit_counter_created": [],
     "armis_sniff_data_port_scan_port_exceed_limit_counter_total": [],
+    "armis_sniff_unanswered_work_requests_created": [],
     "armis_sniff_unanswered_work_requests_total": [],
+    "armis_snmp_client_invalid_mac_table_token_counter_created": [],
     "armis_snmp_client_invalid_mac_table_token_counter_total": [],
     "armis_snmp_client_multiple_chassis_or_stack_rows_summary_count": [],
+    "armis_snmp_client_multiple_chassis_or_stack_rows_summary_created": [],
     "armis_snmp_client_multiple_chassis_or_stack_rows_summary_sum": [],
     "armis_snmp_client_multiple_model_and_serial_matches_summary_count": [],
+    "armis_snmp_client_multiple_model_and_serial_matches_summary_created": [],
     "armis_snmp_client_multiple_model_and_serial_matches_summary_sum": [],
+    "armis_snmp_client_non_cisco_mac_address_records_with_non_numeric_vlan_id_created": [],
     "armis_snmp_client_non_cisco_mac_address_records_with_non_numeric_vlan_id_total": [],
     "armis_snort_alerts_per_second": [
         "IP Sessions Ops - New",
@@ -2864,23 +3436,34 @@
     "armis_snort_packets_per_second": [],
     "armis_span_visibility_client_failed_requests_total": [],
     "armis_span_visibility_client_sent_requests_total": [],
+    "armis_splunk_http_response_code_counter_created": [],
+    "armis_splunk_http_response_code_counter_total": [],
+    "armis_ssh_clients_multiple_interfaces_for_mac_record_created": [],
     "armis_ssh_clients_multiple_interfaces_for_mac_record_total": [],
     "armis_ssid_persistance_detection_duration_seconds_count": [],
+    "armis_ssid_persistance_detection_duration_seconds_created": [],
     "armis_ssid_persistance_detection_duration_seconds_sum": [],
     "armis_ssid_persistance_session_duration_seconds_count": [],
+    "armis_ssid_persistance_session_duration_seconds_created": [],
     "armis_ssid_persistance_session_duration_seconds_sum": [],
     "armis_ssl_analyzer_application_level_request_calculation_time_count": [],
+    "armis_ssl_analyzer_application_level_request_calculation_time_created": [],
     "armis_ssl_analyzer_application_level_request_calculation_time_sum": [],
+    "armis_ssl_analyzer_hidden_server_name_discarded_created": [],
     "armis_ssl_analyzer_hidden_server_name_discarded_total": [
         "Yaakov's Main Dashboard"
     ],
+    "armis_ssl_analyzer_tanium_server_name_format_discarded_created": [],
     "armis_ssl_analyzer_tanium_server_name_format_discarded_total": [],
+    "armis_switch_snmp_client_cdp_neighbors_different_management_and_interface_ips_created": [],
     "armis_switch_snmp_client_cdp_neighbors_different_management_and_interface_ips_total": [],
+    "armis_switch_snmp_client_cdp_neighbors_only_mgmt_ip_created": [],
     "armis_switch_snmp_client_cdp_neighbors_only_mgmt_ip_total": [],
-    "armis_sync_policies_errors_total": [],
+    "armis_switch_snmp_client_lldp_capabilities_process_error_counter_created": [],
+    "armis_switch_snmp_client_lldp_capabilities_process_error_counter_total": [],
     "armis_system_log_api_client_process_time_count": [],
+    "armis_system_log_api_client_process_time_created": [],
     "armis_system_log_api_client_process_time_sum": [],
-    "armis_system_log_api_client_send_failures_total": [],
     "armis_table_size_aggregations_index_bytes": [],
     "armis_table_size_aggregations_row_estimate": [],
     "armis_table_size_aggregations_table_bytes": [],
@@ -2935,23 +3518,21 @@
         "homedepot normalized reads and writes",
         "RDS databases overview"
     ],
-    "armis_tanium_comply_compliance_findings_counter_total": [],
-    "armis_tanium_comply_dropped_risks_counter_total": [],
-    "armis_tanium_comply_incoming_compliance_findings_counter_total": [],
-    "armis_tanium_comply_unmapped_descriptions_counter_total": [],
     "armis_time_based_uuid_generation_seconds_count": [],
+    "armis_time_based_uuid_generation_seconds_created": [],
     "armis_time_based_uuid_generation_seconds_sum": [],
-    "armis_too_many_open_ports_seen_total": [],
-    "armis_unhandled_tanium_comply_attribute_total": [],
     "armis_ventilator_sniff_stats_if_dropped_packets": [
         "IP Sessions Ops - New",
         "IP Sessions Ops - Old",
         "IP Sessions Ops Copy",
         "Tenants datarate / packet loss"
     ],
+    "armis_ventilator_sniff_stats_if_duplicate_packets_created": [],
     "armis_ventilator_sniff_stats_if_duplicate_packets_total": [],
+    "armis_ventilator_sniff_stats_if_duplicate_unexpected_behavior_packets_created": [],
     "armis_ventilator_sniff_stats_if_duplicate_unexpected_behavior_packets_total": [],
     "armis_ventilator_sniff_stats_interface_bytes_rx": [],
+    "armis_ventilator_sniff_stats_multicast_collector_packet_dropped_on_max_packets_reached_created": [],
     "armis_ventilator_sniff_stats_multicast_collector_packet_dropped_on_max_packets_reached_total": [],
     "armis_ventilator_sniff_stats_os_dropped_packets": [
         "IP Sessions Ops - New",
@@ -2968,123 +3549,172 @@
         "IP Sessions Ops Copy Dor opts",
         "Tenants datarate / packet loss"
     ],
+    "armis_ventilator_sniff_stats_total_bytes_processed_created": [],
     "armis_ventilator_sniff_stats_total_bytes_processed_total": [],
+    "armis_ventilator_sniff_stats_total_packets_processed_created": [],
     "armis_ventilator_sniff_stats_total_packets_processed_total": [],
+    "armis_ventilator_sniff_stats_total_tunneled_packets_processed_created": [],
     "armis_ventilator_sniff_stats_total_tunneled_packets_processed_total": [],
     "armis_volume_attribute_limit": [
         "Database Health"
     ],
-    "armis_vulnerabilities_aggregations_service_db_session_duration_seconds_count": [],
-    "armis_vulnerabilities_aggregations_service_db_session_duration_seconds_sum": [],
-    "armis_vulnerabilities_aggregations_view_changes_counter_total": [],
-    "armis_vulnerabilities_aggregations_view_db_session_duration_seconds_count": [],
-    "armis_vulnerabilities_aggregations_view_db_session_duration_seconds_sum": [],
+    "armis_vulnerabilities_associations_compacted_view_changes_counter_created": [],
     "armis_vulnerabilities_associations_compacted_view_changes_counter_total": [],
-    "armis_vulnerabilities_associations_compacted_view_db_session_seconds_count": [],
-    "armis_vulnerabilities_associations_compacted_view_db_session_seconds_sum": [],
+    "armis_vulnerabilities_associations_compacted_view_db_session_seconds_count": [
+        "Vulnerabilitis Services Metrics - New"
+    ],
+    "armis_vulnerabilities_associations_compacted_view_db_session_seconds_created": [],
+    "armis_vulnerabilities_associations_compacted_view_db_session_seconds_sum": [
+        "Vulnerabilitis Services Metrics - New"
+    ],
     "armis_vulnerabilities_associations_delete_query_seconds_count": [],
+    "armis_vulnerabilities_associations_delete_query_seconds_created": [],
     "armis_vulnerabilities_associations_delete_query_seconds_sum": [],
     "armis_vulnerabilities_associations_insert_seconds_count": [],
+    "armis_vulnerabilities_associations_insert_seconds_created": [],
     "armis_vulnerabilities_associations_insert_seconds_sum": [],
     "armis_vulnerabilities_associations_select_query_seconds_count": [],
+    "armis_vulnerabilities_associations_select_query_seconds_created": [],
     "armis_vulnerabilities_associations_select_query_seconds_sum": [],
     "armis_vulnerabilities_associations_update_seconds_count": [],
+    "armis_vulnerabilities_associations_update_seconds_created": [],
     "armis_vulnerabilities_associations_update_seconds_sum": [],
     "armis_vulnerabilities_associations_update_ticket_seconds_count": [],
+    "armis_vulnerabilities_associations_update_ticket_seconds_created": [],
     "armis_vulnerabilities_associations_update_ticket_seconds_sum": [],
+    "armis_vulnerabilities_change_notifier_events_counter_created": [],
     "armis_vulnerabilities_change_notifier_events_counter_total": [],
+    "armis_vulnerabilities_cve_device_associations_counter_created": [],
     "armis_vulnerabilities_cve_device_associations_counter_total": [],
+    "armis_vulnerabilities_cve_entity_compacted_view_changes_counter_created": [],
     "armis_vulnerabilities_cve_entity_compacted_view_changes_counter_total": [],
-    "armis_vulnerabilities_cve_entity_compacted_view_db_session_seconds_count": [],
-    "armis_vulnerabilities_cve_entity_compacted_view_db_session_seconds_sum": [],
+    "armis_vulnerabilities_cve_entity_compacted_view_db_session_seconds_count": [
+        "Vulnerabilitis Services Metrics - New"
+    ],
+    "armis_vulnerabilities_cve_entity_compacted_view_db_session_seconds_created": [],
+    "armis_vulnerabilities_cve_entity_compacted_view_db_session_seconds_sum": [
+        "Vulnerabilitis Services Metrics - New"
+    ],
+    "armis_vulnerabilities_cve_external_info_view_changes_counter_created": [],
+    "armis_vulnerabilities_cve_external_info_view_changes_counter_total": [],
+    "armis_vulnerabilities_cve_external_info_view_db_session_seconds_count": [],
+    "armis_vulnerabilities_cve_external_info_view_db_session_seconds_created": [],
+    "armis_vulnerabilities_cve_external_info_view_db_session_seconds_sum": [],
+    "armis_vulnerabilities_cve_threat_vector_compacted_view_changes_counter_created": [],
     "armis_vulnerabilities_cve_threat_vector_compacted_view_changes_counter_total": [],
-    "armis_vulnerabilities_cve_threat_vector_compacted_view_db_session_seconds_count": [],
-    "armis_vulnerabilities_cve_threat_vector_compacted_view_db_session_seconds_sum": [],
+    "armis_vulnerabilities_cve_threat_vector_compacted_view_db_session_seconds_count": [
+        "Vulnerabilitis Services Metrics - New"
+    ],
+    "armis_vulnerabilities_cve_threat_vector_compacted_view_db_session_seconds_created": [],
+    "armis_vulnerabilities_cve_threat_vector_compacted_view_db_session_seconds_sum": [
+        "Vulnerabilitis Services Metrics - New"
+    ],
+    "armis_vulnerabilities_cve_threat_vector_view_changes_counter_created": [],
     "armis_vulnerabilities_cve_threat_vector_view_changes_counter_total": [],
     "armis_vulnerabilities_cve_threat_vector_view_db_session_duration_seconds_count": [],
+    "armis_vulnerabilities_cve_threat_vector_view_db_session_duration_seconds_created": [],
     "armis_vulnerabilities_cve_threat_vector_view_db_session_duration_seconds_sum": [],
     "armis_vulnerabilities_matcher_cve_insert_query_seconds_count": [],
+    "armis_vulnerabilities_matcher_cve_insert_query_seconds_created": [],
     "armis_vulnerabilities_matcher_cve_insert_query_seconds_sum": [],
     "armis_vulnerabilities_matcher_cve_select_uids_query_seconds_count": [],
+    "armis_vulnerabilities_matcher_cve_select_uids_query_seconds_created": [],
     "armis_vulnerabilities_matcher_cve_select_uids_query_seconds_sum": [],
     "armis_vulnerabilities_matcher_cve_update_query_seconds_count": [],
+    "armis_vulnerabilities_matcher_cve_update_query_seconds_created": [],
     "armis_vulnerabilities_matcher_cve_update_query_seconds_sum": [],
+    "armis_vulnerabilities_matcher_new_cves_counter_created": [],
     "armis_vulnerabilities_matcher_new_cves_counter_total": [],
+    "armis_vulnerabilities_matcher_updated_cves_counter_created": [],
     "armis_vulnerabilities_matcher_updated_cves_counter_total": [],
     "armis_vulnerabilities_persist_filter_armis_appliances_stage_time_count": [],
+    "armis_vulnerabilities_persist_filter_armis_appliances_stage_time_created": [],
     "armis_vulnerabilities_persist_filter_armis_appliances_stage_time_sum": [],
     "armis_vulnerabilities_persist_send_side_effects_commands_time_count": [],
+    "armis_vulnerabilities_persist_send_side_effects_commands_time_created": [],
     "armis_vulnerabilities_persist_send_side_effects_commands_time_sum": [],
+    "armis_vulnerabilities_persist_side_effects_commands_counter_created": [],
     "armis_vulnerabilities_persist_side_effects_commands_counter_total": [
         "kafka compression test"
     ],
+    "armis_vulnerabilities_persist_vuln_match_sync_commands_counter_created": [],
     "armis_vulnerabilities_persist_vuln_match_sync_commands_counter_total": [],
+    "armis_vulnerabilities_retro_processor_number_of_device_candidates_for_match_created": [],
     "armis_vulnerabilities_retro_processor_number_of_device_candidates_for_match_total": [],
+    "armis_vulnerabilities_retro_processor_number_of_devices_for_match_created": [],
     "armis_vulnerabilities_retro_processor_number_of_devices_for_match_total": [],
-    "armis_vulnerabilities_retro_processor_number_of_retro_match_rules_received_total": [],
-    "armis_vulnerabilities_retro_processor_session_duration_seconds_count": [
-        "Vulnerabilities MT Migration - WIP"
-    ],
-    "armis_vulnerabilities_retro_processor_session_duration_seconds_sum": [],
     "armis_vulnerabilities_retro_processor_stage_duration_seconds_count": [],
+    "armis_vulnerabilities_retro_processor_stage_duration_seconds_created": [],
     "armis_vulnerabilities_retro_processor_stage_duration_seconds_sum": [],
-    "armis_vulnerabilities_score_and_associations_query_seconds_count": [],
-    "armis_vulnerabilities_score_and_associations_query_seconds_sum": [],
+    "armis_vulnerabilities_score_and_associations_query_seconds_count": [
+        "Vulnerabilitis Services Metrics - New"
+    ],
+    "armis_vulnerabilities_score_and_associations_query_seconds_created": [],
+    "armis_vulnerabilities_score_and_associations_query_seconds_sum": [
+        "Vulnerabilitis Services Metrics - New"
+    ],
+    "armis_vulnerabilities_score_risk_factor_deleted_counter_created": [],
     "armis_vulnerabilities_score_risk_factor_deleted_counter_total": [],
+    "armis_vulnerabilities_score_risk_factor_unchanged_counter_created": [],
     "armis_vulnerabilities_score_risk_factor_unchanged_counter_total": [],
+    "armis_vulnerabilities_score_risk_factor_updated_counter_created": [],
     "armis_vulnerabilities_score_risk_factor_updated_counter_total": [],
+    "armis_vulnerabilities_service_large_match_requests_counter_created": [],
     "armis_vulnerabilities_service_large_match_requests_counter_total": [
         "Vulnerabilities MT Migration - WIP"
     ],
+    "armis_vulnerabilities_service_match_requests_counter_created": [],
     "armis_vulnerabilities_service_match_requests_counter_total": [
         "VMS Metrics",
         "VMS Metrics Copy",
         "Vulnerabilities MT Migration - WIP",
         "Vulnerabilitis Services MT + ST"
     ],
+    "armis_vulnerabilities_service_missing_device_ids_for_matching_errors_counter_created": [],
     "armis_vulnerabilities_service_missing_device_ids_for_matching_errors_counter_total": [],
     "armis_vulnerabilities_update_cve_threats_metadata_duration_seconds_count": [],
+    "armis_vulnerabilities_update_cve_threats_metadata_duration_seconds_created": [],
     "armis_vulnerabilities_update_cve_threats_metadata_duration_seconds_sum": [],
+    "armis_vulnerabilities_updated_cve_device_associations_counter_created": [],
     "armis_vulnerabilities_updated_cve_device_associations_counter_total": [],
-    "armis_wifi_data_analysis_device_events_handled_total": [
-        "Ingestion layer",
-        "New Network and Wifi Flows",
-        "Topology Metrics"
-    ],
-    "armis_wlc_command_yield_time_seconds_bucket": [],
-    "armis_wlc_command_yield_time_seconds_count": [
-        "Meraki Integration",
-        "Meraki Integration2",
-        "Meraki Integration_playground"
-    ],
-    "armis_wlc_command_yield_time_seconds_sum": [],
     "armis_wlc_query_duration_seconds_count": [],
+    "armis_wlc_query_duration_seconds_created": [],
     "armis_wlc_query_duration_seconds_sum": [],
+    "armis_zabbix_compressed_messages_created": [],
     "armis_zabbix_compressed_messages_total": [],
+    "armis_zabbix_invalid_protocol_created": [],
     "armis_zabbix_invalid_protocol_total": [],
+    "armis_zabbix_unsupported_protocol_created": [],
     "armis_zabbix_unsupported_protocol_total": [],
     "fe_edition_armis_pipeline_vulnerabilities_failed_cve_priority_requests_counter_total": [],
     "fe_edition_armis_pipeline_vulnerabilities_search_cve_priority_duration_seconds_count": [],
     "fe_edition_armis_pipeline_vulnerabilities_search_cve_priority_duration_seconds_sum": [],
     "fe_edition_armis_pipeline_vulnerabilities_set_cve_priority_duration_seconds_count": [],
     "fe_edition_armis_pipeline_vulnerabilities_set_cve_priority_duration_seconds_sum": [],
+    "main_armis_orchestrator_number_of_integrations_exceeded_limit_counter_created": [],
     "main_armis_orchestrator_number_of_integrations_exceeded_limit_counter_total": [],
-    "sensor_armis_arp_poisoning_accounting_arp_poisoning_counter_total": [
-        "Infoblox Syslog"
-    ],
-    "sensor_armis_arp_poisoning_accounting_ip_conflicts_counter_total": [],
+    "sensor_armis_arp_poisoning_arp_poisoning_counter_created": [],
     "sensor_armis_arp_poisoning_arp_poisoning_counter_total": [],
+    "sensor_armis_arp_poisoning_dhcp_client_attacker_counter_created": [],
     "sensor_armis_arp_poisoning_dhcp_client_attacker_counter_total": [],
+    "sensor_armis_arp_poisoning_dhcp_clients_conflict_counter_created": [],
     "sensor_armis_arp_poisoning_dhcp_clients_conflict_counter_total": [],
+    "sensor_armis_arp_poisoning_ip_conflicts_counter_created": [],
     "sensor_armis_arp_poisoning_ip_conflicts_counter_total": [],
+    "sensor_armis_arp_poisoning_suspected_arp_poisoning_counter_created": [],
     "sensor_armis_arp_poisoning_suspected_arp_poisoning_counter_total": [],
-    "sensor_armis_base_accounting_negative_latencies_total": [],
+    "sensor_armis_snmp_client_unkown_ifindex_counter_created": [],
     "sensor_armis_snmp_client_unkown_ifindex_counter_total": [],
+    "sensor_armis_snort_not_ethernet_packets_created": [],
     "sensor_armis_snort_not_ethernet_packets_total": [],
+    "sensor_armis_snort_output_processor_alerts_received_counter_created": [],
     "sensor_armis_snort_output_processor_alerts_received_counter_total": [
         "Reckitt Remote Switch Threat Alerts"
     ],
+    "sensor_armis_snort_output_processor_alerts_with_no_internal_ip_created": [],
     "sensor_armis_snort_output_processor_alerts_with_no_internal_ip_total": [],
+    "sensor_armis_snort_unixsock_trigger_invalid_alert_data_length_created": [],
     "sensor_armis_snort_unixsock_trigger_invalid_alert_data_length_total": [],
+    "sensor_armis_snort_unixsock_trigger_no_ip_alerts_created": [],
     "sensor_armis_snort_unixsock_trigger_no_ip_alerts_total": []
 }

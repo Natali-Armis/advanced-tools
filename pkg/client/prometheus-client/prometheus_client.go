@@ -333,12 +333,12 @@ func (prom *PrometheusClient) GetMetricsAlertsFromAllEnvs(metrics []entity.Expor
 				if _, hasKey := alertMapping[metric.Name]; !hasKey {
 					alertMapping[metric.Name] = map[string]map[string]string{}
 				}
-				if _, hasKey := alertMapping[metric.Name][promeUrl]; !hasKey {
-					alertMapping[metric.Name][promeUrl] = map[string]string{}
-				}
 				for _, alertRuleList := range alertingRules {
 					for _, rule := range alertRuleList {
 						if strings.Contains(rule.Query, metric.Name) {
+							if _, hasKey := alertMapping[metric.Name][promeUrl]; !hasKey {
+								alertMapping[metric.Name][promeUrl] = map[string]string{}
+							}
 							alertMapping[metric.Name][promeUrl][rule.Name] = rule.Query
 						}
 					}
