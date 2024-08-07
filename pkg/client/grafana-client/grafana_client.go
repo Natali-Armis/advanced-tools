@@ -123,6 +123,7 @@ func (client *GrafanaClient) FindMetricsInDashboards(metrics []entity.ExportedMe
 			metricName := metric.Name
 			if _, hasKey := containingDashabords[metricName]; !hasKey {
 				containingDashabords[metricName] = []string{}
+
 			}
 			if containsMetric(dash, metricName) {
 				containingDashabords[metricName] = append(containingDashabords[metricName], dash.Title)

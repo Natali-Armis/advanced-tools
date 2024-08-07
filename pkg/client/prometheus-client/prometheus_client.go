@@ -156,6 +156,17 @@ func (prom *PrometheusClient) GetDistinctMetricsAndUsage(filter string, singleTe
 	return nil
 }
 
+func (prom *PrometheusClient) GetMetricInstanceName(metricName string) (string, error) {
+	log.Debug().Msgf("client: prometheus getting instance name for metric [%v]", metricName)
+	query := fmt.Sprintf(`count by (instance) (%v)`, metricName)
+	result, err := prom.ExecuteQuerySingleTenant(query)
+	if err != nil {
+		log.Error().Msgf("client: could not get instance name for metric [%v] %v", metricName, err.Error())
+		return "", err
+	}
+	return result, nil
+}
+
 func (prom *PrometheusClient) filterAndWriteOutMetrics(result string, filter string, fileSuffix string) error {
 	metricsLines := strings.Split(result, "\n")
 	var metrics []entity.MetricUsageCount
